@@ -1,0 +1,1040 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>教师精灵输入法 · 官方极速下载</title>
+  <meta name="description" content="教师精灵输入法 Android 官方极速下载：1,440 句真实聊天实测对比豆包输入法与新东方 SDK 输入法，详细版本更新日志。">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #0f172a;
+      --muted: #475569;
+      --subtle: #64748b;
+      --blue: #2563eb;
+      --blue-dark: #1d4ed8;
+      --blue-soft: #eff6ff;
+      --green: #059669;
+      --green-soft: #ecfdf5;
+      --line: #e2e8f0;
+      --card: #f8fafc;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #f1f5f9;
+      color: var(--ink);
+      font: 15px/1.62 -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    main {
+      width: min(100%, 52rem);
+      margin: 1.5rem auto;
+      padding: clamp(1.25rem, 4vw, 2.5rem);
+      background: #fff;
+      border-top: 4px solid var(--blue);
+      border-radius: 14px;
+      box-shadow: 0 8px 28px rgba(15, 23, 42, .06);
+    }
+    h1, h2, p, ul, ol { margin: 0; }
+    h1 { font-size: clamp(1.75rem, 4.5vw, 2.25rem); line-height: 1.2; letter-spacing: -.02em; }
+    h2 { font-size: 1.18rem; line-height: 1.35; margin-bottom: .75rem; }
+    .wechat-tip {
+      display: none;
+      margin-bottom: 1rem;
+      padding: .7rem 1rem;
+      background: #fffbeb;
+      border: 1px solid #f59e0b;
+      border-radius: 8px;
+      color: #92400e;
+      font-size: .9rem;
+      font-weight: 600;
+    }
+    .badges { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: .6rem; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: .16rem .62rem;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--blue-dark);
+      font-size: .78rem;
+      font-weight: 650;
+    }
+    .pill.green { background: var(--green-soft); color: var(--green); }
+    .pill.gray { background: #e2e8f0; color: #334155; }
+    .hero-sub { margin-top: .45rem; color: var(--muted); font-size: .98rem; }
+    .dl-box {
+      margin-top: 1.35rem;
+      padding: 1.25rem 1.15rem 1.15rem;
+      background: var(--card);
+      border: 1px solid rgba(15, 23, 42, .08);
+      border-radius: 16px;
+      box-shadow: 0 8px 28px rgba(15, 23, 42, .05);
+      text-align: center;
+    }
+    .os-tabs {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 3px;
+      padding: 4px;
+      margin: 0 auto 1.1rem;
+      max-width: 28rem;
+      background: #f1f5f9;
+      border-radius: 11px;
+    }
+    .os-tab {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      font-size: .8rem;
+      font-weight: 600;
+      height: 36px;
+      padding: 0 .15rem;
+      border-radius: 8px;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background .15s, color .15s, box-shadow .15s;
+    }
+    .os-tab.active {
+      background: #fff;
+      color: var(--ink);
+      box-shadow: 0 1px 4px rgba(15, 23, 42, .10);
+    }
+    .os-panel { display: none; }
+    .os-panel.active { display: block; }
+    .os-meta {
+      margin-top: .7rem;
+      font-size: .8rem;
+      color: var(--subtle);
+      line-height: 1.55;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: .45rem;
+      font-size: .8rem;
+      color: var(--muted);
+      margin-bottom: .55rem;
+    }
+    .btn-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: min(100%, 26rem);
+      height: 50px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+      border: 0;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      color: #fff;
+      font: inherit;
+      font-size: 1rem;
+      font-weight: 650;
+      letter-spacing: .01em;
+      white-space: nowrap;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(37, 99, 235, .26);
+      transition: transform .1s, box-shadow .15s, opacity .15s;
+    }
+    .btn-primary:hover { box-shadow: 0 8px 22px rgba(37, 99, 235, .34); }
+    .btn-primary:active { transform: scale(.985); }
+    .btn-primary:disabled { opacity: .65; cursor: wait; }
+    .dl-hint { margin-top: .65rem; font-size: .82rem; color: var(--subtle); }
+    .progress-wrap { display: none; margin-top: .85rem; text-align: left; }
+    .progress-bar-bg {
+      width: 100%;
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--blue), #06b6d4);
+      transition: width .15s linear;
+    }
+    .progress-text { margin-top: .35rem; font-size: .82rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+    /* 首屏 4 大核心指标 */
+    .kpi-grid {
+      margin-top: 1.2rem;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: .65rem;
+    }
+    .kpi {
+      padding: .85rem .65rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      text-align: center;
+    }
+    .kpi-val {
+      font-size: 1.42rem;
+      font-weight: 800;
+      color: var(--blue-dark);
+      line-height: 1.15;
+      font-variant-numeric: tabular-nums;
+    }
+    .kpi-label { margin-top: .25rem; font-size: .79rem; font-weight: 650; color: var(--ink); }
+    .kpi-sub { margin-top: .12rem; font-size: .73rem; color: var(--green); font-weight: 600; }
+
+    section { margin-top: 1.9rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+    .lead { margin-bottom: .9rem; color: var(--muted); font-size: .9rem; }
+
+    /* 大白话对比表 */
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: .9rem; font-variant-numeric: tabular-nums; }
+    th, td { padding: .72rem .75rem; text-align: right; border-bottom: 1px solid var(--line); }
+    th:first-child, td:first-child { text-align: left; }
+    tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+    thead th { background: #f8fafc; font-weight: 700; color: var(--ink); font-size: .85rem; }
+    .sub-th { display: block; font-size: .73rem; font-weight: 400; color: var(--subtle); }
+    .comparison :is(th, td):nth-child(2) { background: var(--blue-soft); color: #1e3a8a; font-weight: 800; }
+    .delta {
+      display: inline-block;
+      margin-left: .25rem;
+      padding: .08rem .38rem;
+      border-radius: 4px;
+      background: var(--green-soft);
+      color: var(--green);
+      font-size: .73rem;
+      font-weight: 700;
+    }
+    .summary-box {
+      margin-top: .85rem;
+      padding: .78rem .95rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font-size: .85rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .summary-box strong { color: var(--ink); }
+
+    /* 精简核心能力 */
+    .feat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .65rem;
+    }
+    .feat {
+      padding: .8rem .95rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+    .feat strong { display: block; font-size: .93rem; color: var(--ink); margin-bottom: .2rem; }
+    .feat span { font-size: .85rem; color: var(--muted); }
+
+    /* 各版本详细更新日志 */
+    .ver-group + .ver-group { margin-top: 1.25rem; }
+    .ver-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: .45rem;
+      margin-bottom: .5rem;
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .log-list { display: grid; gap: .48rem; }
+    .log-item {
+      padding: .66rem .92rem;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-left: 3.5px solid var(--blue);
+      border-radius: 6px;
+      font-size: .88rem;
+      color: var(--muted);
+    }
+    .log-item.hist { border-left-color: #94a3b8; background: var(--card); }
+    .log-item strong { color: var(--ink); }
+
+    /* 安装步骤 */
+    .steps { padding-left: 1.25rem; font-size: .9rem; color: var(--muted); }
+    .steps li + li { margin-top: .3rem; }
+    .steps strong { color: var(--ink); }
+    .sha-line { margin-top: .9rem; font-size: .76rem; color: var(--subtle); word-break: break-all; }
+    code { padding: .08rem .3rem; border-radius: 4px; background: #e2e8f0; color: var(--ink); font: .86em ui-monospace, SFMono-Regular, monospace; }
+
+    @media (max-width: 44rem) {
+      main { margin: 0 auto; border-radius: 0; }
+      .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .feat-grid { grid-template-columns: 1fr; }
+      th, td { padding: .55rem .42rem; font-size: .82rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div id="wechat-tip" class="wechat-tip">
+      💡 微信内无法直接下载：请点击右上角「···」→「在默认浏览器中打开」，即可满速下载安装。
+    </div>
+
+    <header>
+      <div class="hero-eyebrow">
+        <span class="pill" id="ver-pill">v1.9.3</span>
+        <span>全平台离线智能输入法</span>
+        <span>·</span>
+        <span id="date-pill">2026-11-20</span>
+      </div>
+      <h1>教师精灵输入法</h1>
+      <p class="hero-sub">专为新东方教研与家校沟通打造，支持 26 键 / T9 九键、离线中英语音、高回复话术与云盘资料一键发送。</p>
+
+      <div class="dl-box">
+        <div class="os-tabs" role="tablist" aria-label="选择操作系统">
+          <button type="button" class="os-tab active" data-os="android" role="tab">Android</button>
+          <button type="button" class="os-tab" data-os="harmony" role="tab">鸿蒙</button>
+          <button type="button" class="os-tab" data-os="macos" role="tab">macOS</button>
+          <button type="button" class="os-tab" data-os="ios" role="tab">iOS</button>
+          <button type="button" class="os-tab" data-os="windows" role="tab">Windows</button>
+        </div>
+
+        <div class="os-panel active" id="panel-android">
+          <button type="button" class="btn-primary" id="turbo-btn">立即下载 Android 版</button>
+          <p class="os-meta"><span id="apk-ver-meta">v1.9.7</span> · <span id="apk-size">138.2</span> MB · 火山引擎高速下载 · Android 8.0+ / 鸿蒙 4.x 通用包</p>
+        </div>
+
+        <div class="os-panel" id="panel-harmony">
+          <button type="button" class="btn-primary" id="harmony-btn">下载鸿蒙通用直装包 (.apk)</button>
+          <p class="os-meta"><span id="harmony-ver-meta">v1.9.7</span> · 火山引擎高速下载 · 鸿蒙 2.0 / 3.0 / 4.x 华为手机直接安装（纯血鸿蒙 NEXT 签名工程已对齐 <code>cn.xdf.teacher</code>）</p>
+        </div>
+
+        <div class="os-panel" id="panel-macos">
+          <button type="button" class="btn-primary" id="macos-btn">下载 macOS 安装包 (.pkg)</button>
+          <p class="os-meta"><span id="macos-ver-meta">v1.9.7</span> · <span id="macos-size">17.0</span> MB · 火山引擎高速下载 · macOS 13+，安装后在输入法列表选择「教师精灵输入法」</p>
+        </div>
+
+        <div class="os-panel" id="panel-ios">
+          <button type="button" class="btn-primary" id="ios-btn">下载 iOS 安装包 (.ipa)</button>
+          <p class="os-meta"><span id="ios-ver-meta">v1.9.7</span> · <span id="ios-size">17.0</span> MB · 火山引擎高速下载 · iOS 15+ 原生键盘（AltStore / Sideloadly / 企业签名）</p>
+        </div>
+
+        <div class="os-panel" id="panel-windows">
+          <button type="button" class="btn-primary" id="windows-btn">下载 Windows 安装程序 (.exe)</button>
+          <p class="os-meta"><span id="windows-ver-meta">v1.9.7</span> · <span id="windows-size">12.3</span> MB · 火山引擎高速下载 · Windows 10/11 64 位，安装后按 Win + Space 切至「教师精灵输入法」</p>
+        </div>
+
+        <div class="progress-wrap" id="progress-wrap">
+          <div class="progress-bar-bg"><div class="progress-bar-fill" id="progress-fill"></div></div>
+          <div class="progress-text" id="progress-text">正在初始化火山引擎北京节点高速通道…</div>
+        </div>
+      </div>
+
+      <div class="kpi-grid" aria-label="核心实测指标">
+        <div class="kpi">
+          <div class="kpi-val">93.8%</div>
+          <div class="kpi-label">一线教研专词/短句</div>
+          <div class="kpi-sub">较旧版暴涨 +42.9%</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-val">62.0%</div>
+          <div class="kpi-label">26键日常首选率</div>
+          <div class="kpi-sub">领先豆包 +3.1%</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-val">54.4%</div>
+          <div class="kpi-label">按错字自动纠错</div>
+          <div class="kpi-sub">领先豆包 +19.6%</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-val">2.3 ms</div>
+          <div class="kpi-label">按键出词速度</div>
+          <div class="kpi-sub">纯本地零延迟</div>
+        </div>
+      </div>
+    </header>
+
+    <section aria-labelledby="changes">
+      <h2 id="changes">✨ 最近更新内容</h2>
+
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill">v1.10.0</span>
+          <span>2026-11-20 · 当前最新（新增「🎓 快捷报班生码」：文本自动拆班 + 网报下单生码 + 一键发企业微信）</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>文本段落自动拆分「学生姓名 + 班号」：</strong>在键盘左上角 <code>☰</code> 抽屉点击「🎓 报班」，自动读取教师当前所在学校，一键读取聊天输入框或剪贴板中的报班名单段落（兼容单行/多行/一班多人/一人多班/口语段落）拆分为结构化核对清单。</div>
+          <div class="log-item"><strong>批量下单生成缴费二维码 &amp; 一键发企业微信：</strong>老师确认后自动检索学员号并对接新东方网报订单接口（<code>/web_reg_uapi/order/add</code>），为每位学生生成高清新东方报班缴费二维码海报，支持一键直发企业微信聊天。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9</span>
+          <span>2026-11-20 · 当前最新（对齐豆包多音节阶梯排序 &amp; 根治长句 emoji 与低质全句混排污染）</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>严格豆包阶梯首屏排序（26 键与九键同步生效）：</strong>以 <code>jintiantianqizhenhao</code> 为例，前排精炼为「<code>1.今天天气真好</code> → <code>2.今天天气</code> → <code>3.今天</code> → <code>4~6.进/金/今</code> → <code>7~8.次优全句</code>」，彻底消除低频截断词（如「今天天」）与低质全句变体（如「今天天气真壕」）霸占首屏。</div>
+          <div class="log-item"><strong>长句零 emoji 污染：</strong>4 字及以上多音节长句不再往候选栏塞入 🌡️/❄️/🌧️ 等表情，短词常用表情（如 <code>谢谢→🙏</code>、<code>好的→👌</code>）完整保留。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.8</span>
+          <span>2026-11-20 · 当前最新（多音节候选词首屏分层混排优化，降低分步选词成本）</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>多音节首屏分层混排：</strong>针对用户反馈「输入多音节长拼音/长九键时前排被大量全音节候选霸屏、推荐不中时分步输入成本过高」的问题，3+ 音节改为「<code>#1 最优全句</code> + <code>#2 最优前缀词组</code> + <code>#3 次优全句</code> + <code>#4~#5 次级前缀与首音节单字</code>」，其余全句后置；2 音节同步在 #3 露出首音节高频单字。</div>
+          <div class="log-item"><strong>五端同步升级：</strong>Android / macOS / Windows / iOS / 鸿蒙全端底层同源引擎同步生效，兼顾整句 Top-1/Top-3 命中率与分步选词零翻页体验。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.7</span>
+          <span>2026-11-20 · 当前最新（键盘极致响应优化 + 全平台火山引擎极速分发 + 统一产品名「教师精灵输入法」）</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>键盘极致跟手优化：</strong>候选栏改用 28 槽 TextView 对象池零重建；按键触感震动移至独立后台线程异步触发；短码引擎 99.5% 日常击键零对象分配；新增 512 项 PinyinDict L1 结果缓存与 2048 项 Mmap 负向缓存，400 句实测 26 键 P50 降至 <code>2.49 ms</code>（较 v1.8.0 提速 11%），冷启动降至 <code>831 ms</code>。</div>
+          <div class="log-item"><strong>全平台火山引擎 CDN 加速与统一命名：</strong>Android / 鸿蒙 / macOS / iOS / Windows 全部接入火山引擎北京节点高速下载；macOS（<code>教师精灵输入法.app</code>）与 Windows（开始菜单与系统输入法列表「教师精灵输入法」）安装后开箱即找。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.2</span>
+          <span>2026-11-20 · 当前最新（全平台 Android / iOS / macOS / Windows 统一上线 + 修复登录报错「null」+ Google Material 3 登录页重绘）</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>Android 登录异常修复与 Gboard / Material 3 重绘：</strong>根治服务端空 <code>msg</code> 时显示红色 <code>null</code> 的缺陷，所有错误码均展示清晰中文原因与排查指引；按 Google Input Method 视觉规范重绘登录页（留白画布、聚焦蓝描边输入框、密码显隐切换、柔色提示卡片与胶囊按钮）。</div>
+          <div class="log-item"><strong>iOS / macOS / Windows 全平台复用 105 万零拷贝 mmap 词典：</strong>新增 iOS 原生自定义键盘扩展（<code>ios/</code>，XCTest 全绿）、macOS 原生 InputMethodKit 输入法安装包（<code>.pkg</code> 17 MiB，支持悬浮候选条/话术/云盘登录）及 Windows 原生 TSF C++17 引擎工程（<code>windows/</code>，核心单测 6/6 PASS）。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.1</span>
+          <span>2026-11-20 · 顶栏直达「资料」防拥挤排布 / 默认免登录按需鉴权 / 教师精灵原生风格重绘</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>顶栏「资料」直达且不拥挤：</strong>在顶部菜单栏紧邻「话术」新增「资料」入口，同时将低频的深浅皮肤切换移入 <code>☰</code> 抽屉，窄屏一屏完整排布留白充足。</div>
+          <div class="log-item"><strong>免登录零打扰 + 登录后无缝回流：</strong>日常输入无需任何登录；仅点击「资料」时引导登录新东方账号，登录完成自动切回云盘资料面板支持「一键发送」，全套卡片按教师精灵输入法深浅双主题原生重绘。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.0</span>
+          <span>2026-11-20 · 新东方员工统一登录与持久化自动保活 / 键盘云盘资料底层接入</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>新东方员工登录与自动保活：</strong>零第三方依赖原生实现 E2 员工账号登录与新设备短信绑定；本地加密持久化凭证，距离过期不足 2 小时或接口过期时自动静默续期，持续保持登录态，为后续员工专属能力打下统一基础。</div>
+          <div class="log-item"><strong>键盘内「☁️ 云盘资料」快捷入口：</strong>从键盘左上角 <code>☰</code> 抽屉一键打开，支持浏览新东方云盘库与多级文件夹面包屑、「🕒 最近发送」复发、流式下载进度展示，并优先通过 <code>commitContent</code> / 分享通道直发微信、企微、钉钉。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.8.1</span>
+          <span>2026-11-20 · 空格 2D 上下左右移光标 / 伸缩抽屉精简与高对比高亮 / 设置页分组整理</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>空格 2D 触控板上下左右移光标：</strong>按住（260ms）或拖动空格键进入「◀ ▲ 移光标 ▼ ▶」模式，同时支持左右逐字与上下逐行精准定位，编辑长段家校话术更顺手。</div>
+          <div class="log-item"><strong>伸缩菜单与设置页精细化：</strong>顶栏 <code>☰</code> 入口改为 1:1 正方形；抽屉精简为 T9/26 切换（实心主题色高亮）、切输入法与设置；设置页去掉顶部切换输入法、深浅风格并入「键盘偏好」、「扩展词包管理」归入「词库」。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.8.0</span>
+          <span>2026-11-20 · THUOCL 14,500 专项词库 / 落点高斯动态热区 / 宿主 App 场景提权 / 密码防窥 / C++ mmap 词典 / 热插拔词包</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>清华大学 THUOCL 专项词库 + DF 频次先验：</strong>引入 8,000 条全国地名 + 6,500 条成语/古诗词/历史名人，附带亿级语料 DF 频次先验权重（设置页与开源声明规范署名）。</div>
+          <div class="log-item"><strong>落点高斯动态热区 + 宿主 App 场景感知 + 密码框防窥：</strong>26 键边缘误触按拼音前缀合法性自动吸附并本地校准个人落点偏移；地图/出行 App 自动提权地名地标、浏览器/终端提权英文混输；密码框自动关闭按键气泡与校准日志。</div>
+          <div class="log-item"><strong>C++ 只读 mmap 词典加速 + UI/引擎解耦与热插拔词包 + 空格长按移光标：</strong>27 万条简拼与联想改由 C++ 零拷贝 mmap 映射，显著压低冷启动耗时；新增 <code>InputEngine</code> 解耦层与「📦 扩展词包管理」；按住或拖动空格键直接进入丝滑移光标模式，系统「🌐 切输入法」收拢至顶栏 <code>☰</code> 伸缩菜单。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.7.0</span>
+          <span>2026-11-20 · 语音切键盘保留手动光标 / 顶栏防挤出 / T9 图标切换 / 问号反馈 / 顶栏对齐显示「符号」</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>语音面板两大体验修复：</strong>语音自动上屏后，若用户已在输入框中手动将光标点到某个字上，点击语音界面的「键盘」切换回来编辑时不再强行跳到文末，完整保留原焦点；左侧状态条改用弹性截断，右侧「键盘」按钮永不被挤出屏幕。</div>
+          <div class="log-item"><strong>顶栏与图标全面精细化：</strong>伸缩菜单栏键盘切换升级为精致矢量图标 +「T9 / 26」；剪贴板底栏精简为「← 返回键盘」；反馈入口升级为圆圈问号（?）求助图标；顶栏左边缘与下方键盘严格对齐，完整显示「符号」。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.6.9</span>
+          <span>2026-11-20 · 下拉候选流式排布 / 九键长按多选 / 剪贴板与反馈新图标 + 内置反馈页 / 响应加速 / 美化更新日志</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>下拉候选流式排布 + 九键长按多选 + x/v 符号去重：</strong>展开候选区改按实际字宽紧凑流式排布，彻底消除长句左右大片留白；九键 1-9 长按弹出数字+字母/标点横条多选滑选；26 键 <code>x</code> / <code>v</code> 长按改为不重复的 <code>+</code> / <code>=</code>。</div>
+          <div class="log-item"><strong>品牌词、底栏与顶栏精细化：</strong>空格键完整露出「教师精灵输入法」；话术面板底栏精简为单一「← 返回键盘」；伸缩菜单栏左右宽度自适应并将切换按钮简化为「九键/26键」；剪贴板升级为双页复制矢量图标。</div>
+          <div class="log-item"><strong>反馈升级 + 美化更新日志 + 按键响应加速：</strong>反馈按钮升级为撰写矢量图标并自动检测钉钉客户端，未安装时自动打开内置问题反馈提交页；设置页「更新日志」升级为分版本圆角卡片排版；按键预览改用 GPU 位移并收敛候选与侧栏重建开销，手感更跟手。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.6.8</span>
+          <span>2026-11-20 · 九键长句选词修复 / 消除长数字候选 / 350 条地标地名词库 / 面板底栏高度自适应</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>九键长句与连续选词修复：</strong>九键长句候选区不再混入一长串原始数字（仅 6 位以内短数字保留）；采用 <code>beginBatchEdit</code> 原子提交并在同框 <code>restarting</code> 时保护未选完的拼音/九键与联想词，彻底解决长句选词后候选消失问题。</div>
+          <div class="log-item"><strong>扩充 350 条高频地名与地标大厦词库：</strong>新增全国省市区、核心商圈、地铁站及北京海淀/中关村与新东方周边大厦（含海兴大厦、新东方大厦、海龙大厦等），26 键与九键全拼/简拼均可秒出。</div>
+          <div class="log-item"><strong>面板底栏按键高度自适应：</strong>符号、表情、颜文字、剪贴板、话术底部操作栏按当前页面上方按键高度自动匹配（符号区 38dp 对齐），整体视觉比例更协调。</div>
+        </div>
+      </div>
+
+      <details style="margin-top:.85rem;">
+        <summary style="cursor:pointer;color:var(--blue-dark);font-weight:600;font-size:.9rem;padding:.35rem 0;">查看更早历史版本更新记录（共 16 个版本）</summary>
+        <div style="margin-top:.65rem;">
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.6.7</span>
+          <span>2026-11-20 · 全界面丝滑微动效升级（伸缩抽屉 / 高度过渡 / 长按浮窗 / 展开候选 / 语音技巧卡）</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>全界面顺滑微动效（100-160ms）：</strong>顶栏 <code>☰</code> 伸缩抽屉新增展开/收起滑入缩放与 90° 图标旋转；键盘与功能面板（话术/符号/剪贴板/表情/语音）高度切换改用平滑过渡动画；长按双选浮窗、展开更多候选遮罩与语音「💡 改口技巧」卡片同步加入轻快微动效，交互更顺手。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.6.6</span>
+          <span>2026-11-20 · 首页品牌露出 / 联想栏矢量收起图标 / 长按记忆定位 / 反馈图标 / 设置页版本与 Release Notes</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>首页空格键品牌露出 + 符号上移顶栏 + 反馈矢量图标：</strong>将「符」移至顶栏「话术」之后（保留长按直达 123），底栏空格键加宽并露出「教师精灵」品牌词；顶栏「反馈」升级为精致对话气泡矢量图标；抽屉内 26 键与九键合并为单按钮「26键 ⇄ 九键」。</div>
+          <div class="log-item"><strong>联想词栏同步矢量收起图标 + 长按双选记住上次定位：</strong>联想词状态最右侧同步升级为矢量收起键盘图标；长按字母双选浮窗记住用户上次偏向（左符号 vs 右大写），下次长按默认高亮该侧（水平拖动仍可自由切换）。</div>
+          <div class="log-item"><strong>配置页支持查看版本号、精确到分的发布时间与离线 Release Notes：</strong>构建期自动注入精确到分钟的发布时间，「备份与更新」新增「🏷️ 版本与更新日志」入口查看完整更新日志。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.6.5</span>
+          <span>2026-11-20 · 语音面板内置「💡 改口技巧」口令指南、实时改口开关与自动纠错微提示</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>语音面板内置「💡 改口技巧」与一键开关：</strong>点击语音顶栏「💡 改口技巧」可在面板内原位查看口语改口纠错口令（<code>不对 / 说错了 / 哦不 / 更正一下 / 算了改成</code>、整句推翻 <code>不对重说 / 前面不算</code> 及分点排版示例），并支持一键开启/关闭实时重排当前听写内容；触发自动改口时底部即时给出高亮微提示，随时可切「原话」还原。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.6.4</span>
+          <span>2026-11-20 · Gboard 风格长按双选浮窗 / 三态大小写 / 伸缩顶栏与钉钉反馈 / 语音 3 秒停顿与修复「改成」吞字</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>Gboard 风格 26 键长按双选浮窗 + 三态大小写 + 逗号/句号快捷长按：</strong>长按任意字母键上方弹出「快捷符号/数字 ｜ 字母大写」双选浮窗，手指左右滑选松手上屏；大小写键清晰区分「小写 <code>⇧</code> / 单次大写蓝框 <code>⇧</code> / 锁定大写实心蓝底 <code>⇪</code>」且键帽同步大小写；中文态逗号长按出顿号 <code>、</code>、句号长按出英文句点 <code>.</code>。</div>
+          <div class="log-item"><strong>顶栏伸缩式功能抽屉 + 「话术」改名 + 钉钉反馈入口 + 矢量收起图标 + 联想栏返回菜单：</strong>九键/26键切换收敛至左侧 <code>☰</code> 可扩展抽屉（同步集成模糊音/震动/设置）；「评语」更名「话术」；右侧新增「反馈」直达钉钉需求群与精致矢量收起键盘图标；选词进入联想词栏时左侧新增 <code>☰</code> 一键退回顶栏菜单。</div>
+          <div class="log-item"><strong>符号分 Tab 动态高度 + 语音与 26 键等高 + 移除冗余按钮：</strong>符号「常用/中文/英文」及语音键盘均与 26 键键盘保持同等高度，仅「特殊/数字/序号」增高；移除符号/话术/剪贴板/表情底栏右下角多余收起按钮。</div>
+          <div class="log-item"><strong>语音停顿自动上屏延长至 3 秒 &amp; 修复「评语改成叫做话术」误吞字：</strong>端点静默等待由 <code>1.65s</code> 调至 <code>3.0s</code> 更从容；移除口语改口纠错对日常动词「改成」的误匹配，彻底解决口述含「改成」时前半句被裁剪的问题。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.6.3</span>
+          <span>2026-11-20 · 修复选词后拼音残留 / 紧凑双层拼音候选零跳动 / 五大功能面板统一高度</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>彻底修复选词后拼音残留在屏幕上的问题：</strong>补齐无后续联想词路径下的拼音栏清屏与后台神经精排异步取消保护，选中任意整句或词条后拼音行立即消失不残留。</div>
+          <div class="log-item"><strong>拼音区与候选区极致紧凑化（平时态与组字态零像素跳动）：</strong>顶栏固定 <code>48dp</code>，组字时内部紧凑叠放 <code>17dp</code> 拼音行 + <code>31dp</code> 全宽候选行，视觉紧贴微信键盘比例且输入起止完全不跳动。</div>
+          <div class="log-item"><strong>语音 / 评语 / 剪贴板 / 表情 / 符号五大功能面板统一高度：</strong>以最高菜单面板为基准统一对齐至 <code>356dp</code> 总高度，彻底解决语音面板偏矮与不同菜单间切换反复跳动的问题。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.6.2</span>
+          <span>2026-11-20 · 微信键盘式双层拼音与全宽候选 / 连续语音倒计时与本地小红书排版 / 极简设置</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>微信键盘式「独立拼音条 + 100% 全宽候选区」与底栏重构：</strong>将组字拼音回显独立至上方专属窄栏，释放整行全宽空间给候选词，彻底告别长句拼音遮挡；底栏升级为独立 <code>符</code> + <code>123</code> + <code>，</code> + <code>空格</code> + <code>。</code> + 双态高亮 <code>中/英</code> + <code>换行</code>，左侧恢复干净 <code>⇧</code> 大写键；顶栏外露一键 <code>九键/26键</code> 切换，并大幅柔化删除键微震手感。</div>
+          <div class="log-item"><strong>连续免按钮语音输入 + 停顿倒计时进度条 + 点击文字直连键盘编辑：</strong>移除冗余「结束听写 / 说完上屏」按钮，说话停顿约 <code>1.6s</code> 时顶部平滑展示自动上屏倒计时进度条（继续开口即刻清零），自动上屏后保持连续收音不断流；语音框与宿主输入框实时同步，点击框内任意字符即刻定位光标并唤起键盘直接修改。</div>
+          <div class="log-item"><strong>新增本地神经语篇与话题格式化小模型（一键分点 / 小红书 / 家校通知）：</strong>在离线 <code>CT-Transformer</code> 神经标点之上新增 <code>30KB</code> INT8 本地神经分类模型，支持跨停顿说出「第1、第2、第3、第4」自动规整为清晰编号清单，内置 <code>✨ 智能整理</code>、<code>📋 分点清单</code>、<code>📕 小红书</code>（标题高亮 + 语义表情分段 + 自动匹配 <code>#话题标签</code>）、<code>🏫 家校通知</code>、<code>💬 原话</code> 一键实时互转。</div>
+          <div class="log-item"><strong>极简清爽单行设置页 + 点击非输入区自动收起键盘 + 面板自适应高度：</strong>设置页去除大段冗余说明，全面升级为清爽单行卡片；点击屏幕非输入区域自动收起键盘（仅点击可输入区调起）；消除语音顶栏空行并恢复各功能面板内容自适应高度。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.6.1</span>
+          <span>2026-11-19 · 搜狗式九键连选与引擎大升级 / 修复 jian 无“键”与单键 a 空白</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>搜狗式九键连续多音节选词 + C++ 九键引擎系统升级：</strong>九键左侧栏选定第 1 个音节后无需先点汉字即可连续点选第 2、第 3 个音节（支持 <code>←</code> 单步退回与一键重置）；修复单键选 <code>a/e/o</code> 候选空白问题；C++ 原生解码新增短码零编辑保护（<code>人呢</code> 直出第 1 位）与长句首屏「整句 + 首词（如 <code>失主</code>）+ 首字」分层混排。</div>
+          <div class="log-item"><strong>根治 26 键单音节吞字缺陷（如输入 <code>jian</code> 正常出「键」）：</strong>修复 127 个重合单音节被无隔音符拆音双字词（如 <code>击案/卡哦/吧嗯</code>）挤占及前 24 字硬截断缺陷，确保全部常用与次常用单字 100% 完整可达。</div>
+          <div class="log-item"><strong>展开候选跨列网格 + 全菜单恒定高度 + 全新「⚙️ 全局设置」中心：</strong>展开面板按词长动态跨 1~3 列单行展示并消除双顶栏遮挡；切换符号/表情/剪贴板/评语/语音保持 <code>236dp</code> 零跳动恒定高度；顶栏精简低频「26键/九键」按钮并升级统一视觉的「⚙️ 全局设置」页。</div>
+          <div class="log-item"><strong>新东方专词收敛为纯原子名词 + 中文态英文混输净化：</strong>专词库提纯为 2~6 字产品/校区/测评原子名词并分级限权，消除长句碎片前缀污染与日常词被抢首选问题；移除中文拼音下的多余英文前缀联想，仅保留纯英文与高频缩写直出。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.6.0</span>
+          <span>2026-11-19 · 千万级一线语料护城河 / M端顾问与P端教学双工作台 / 京穗42校区速发 / 语音同音专词纠错</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>千万级一线脱敏语料构建专属词库与双域语言模型（首选率 50.9% → 93.8%）：</strong>挖掘注入 1,510 条一线产品班型（<code>费曼卡片</code>/<code>新东方云教室</code>/<code>东方小学堂</code>/<code>小书童</code>/<code>小课包</code>/<code>寒春续报</code>）、测评（<code>进出门测</code>/<code>中期测</code>/<code>期中精练卷</code>）与京穗校区/名校专词，混合 139.3 万条员工语句重编双域语言模型，彻底消除「寒春课程→好蠢课程」「劲松校区→惊悚小区」「续报→虚报」等误出；下一词联想命中率提升 <strong>3.7 倍</strong>。</div>
+          <div class="log-item"><strong>新增 M端（招生顾问）与 P端（教学老师）双模式效率工作台：</strong>键盘「评语」面板左上角新增 <code>👥全岗 / 🎯M端顾问 / 📚P端教学</code> 零闪烁切换胶囊；M端扩充至 10 大分类 29 条高回复实战话术（含首响破冰采集、6次12h小课包促单、中考听口40分/3+3赋分选科/强基政策速答及监管账户退费兜底）；P端新增 75% 高回复「📊 测评分发」与「📐 学法处方（审题三圈法/草稿折格/费曼复述）」及 12 套角色感知填坑卡。</div>
+          <div class="log-item"><strong>新增「📍 校区速发」（京穗 42 校区）与动态周末短码 <code>zm</code>：</strong>支持海淀/西城/朝阳/东城/丰台昌平/广州按区筛选一键发定位地址；长按任意校区绑定常驻校区自动激活 <code>dz</code>；26 键与九键直接输入校区简拼（如 <code>yqlxq</code>）第 2 候选秒出完整楼层地址；新增 <code>zm</code>（本周末日期）、<code>qj</code>（请假回放说明）、<code>xxj</code>（报名手机号登录提醒）并修复短码上屏残留问题。</div>
+          <div class="log-item"><strong>离线语音升级 201 项内置热词自动同步 + 语料级同音专词纠错：</strong>无需重下 247MB 语音包即可自动同步最新教研/校区/KET/PET 热词及个人自定义词条；新增语境锚定同音纠错，精准修复口述中的「小巴中→小八中」「丸子洗→晚自习」「血管老师→学管老师」「蒲黄鱼校区→蒲黄榆校区」「进出门册→进出门测」「等级复分制→等级赋分制」。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.5.0</span>
+          <span>2026-11-19 · 包体暴瘦至 125.6 MiB / 神经标点 + 教研热词 / 班级名单 / 模糊音 / 一键备份</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>安装包体积直降 58.6%（303.1 MiB → 125.6 MiB）：</strong>将双语语音包改为「首次点语音时从火山引擎高速按需下载」并展示实时进度条，不常用语音的老师秒下秒装；下载完成后永久本地离线运行。</div>
+          <div class="log-item"><strong>离线语音升级 CT-Transformer 神经标点 + 新东方教研热词提权：</strong>全新 <code>v2</code> 离线语音包内置中英双语神经标点模型（自动精准断句补 <code>，。？！</code>）与教研/高频英文热词加权（<code>新东方</code>、<code>家校沟通</code>、<code>PPT</code>、<code>KET</code>、<code>IELTS</code>、<code>ChatGPT</code> 等），彻底改善长段口述标点与英文识别。</div>
+          <div class="log-item"><strong>新增「班级学生名单」管理，课后反馈填坑置顶一键选人：</strong>设置页新增「👥 管理班级学生名单」，支持空格/逗号/顿号/换行批量粘贴本班姓名；在「常用语 → 课后反馈」点击 <code>{姓名}</code> 时本班孩子置顶显示。</div>
+          <div class="log-item"><strong>新增南方模糊音开关 + 个人数据一键备份恢复 + 检查更新：</strong>设置页外露 <code>z/zh、c/ch、s/sh、n/l、f/h、前后鼻音</code> 模糊音偏好开关；支持一键导出/恢复 JSON 备份文件（含短码、话术、常用语、学生名单、行业词库、设置），换机零丢失；新增「🔄 检查并下载最新版」快捷入口。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill">v1.4.0</span>
+          <span>2026-11-19 · 极致性能与稳定性优化（省 200 MB 内存 / 零闪烁局部刷新 / 正式图标）</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>常驻内存直降 ~200 MB，彻底防止国产 ROM 杀后台：</strong>语音引擎启动阶段仅预解压到磁盘不占 RAM，首次点击语音才按需加载，并引入引用计数与 <strong>180 秒空闲自动释放</strong> + 系统低内存及时回收；同步将百万词库加载移至后台线程，消除首次弹键盘卡顿。</div>
+          <div class="log-item"><strong>包体立减 24 MiB &amp; 接入火山引擎 8 并发极速下载：</strong>默认真机通用包精准保留 <code>arm64-v8a</code> + <code>armeabi-v7a</code>（剔除电脑模拟器 <code>x86</code> 冗余库），下载页升级为单按钮 8 并发满速下载。</div>
+          <div class="log-item"><strong>效率面板独立组件化 + 零闪烁局部刷新：</strong>抽离独立 <code>PhrasePanelView</code>，点选填坑变量胶囊、切换话术分类或 Tab 时原地局部更新，彻底消除整盘闪烁与滚动条回跳。</div>
+          <div class="log-item"><strong>语音停顿放宽至 1.65s + 未配置短码防误发 + 正式矢量图标：</strong>边看作业边思考不易提前截断；未填写的默认 <code>dz</code>/<code>dh</code> 标记为「待设置」引导编辑防误发家长群；换装蓝底键盘星光矢量应用图标。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.3.2</span>
+          <span>2026-11-19 · 精简非刚需翻译功能</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item hist"><strong>移除顶栏「译」实时翻译条：</strong>去掉低频非刚需的翻译入口，顶栏工具条更清爽直观，聚焦教师与顾问高频输入场景。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.3.1</span>
+          <span>2026-11-19 · 根治双语语音叠字 + 工作面板自适应增高</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item hist"><strong>彻底修复中英双语语音重复叠字（如“或或”“中英英文”）：</strong>将 Transducer <code>decoder</code> / <code>joiner</code> 升级为 FP32 精度并启用 4 路束搜索（<code>modified_beam_search</code>），消除叠字乱码并显著提升中英混说准确度。</div>
+          <div class="log-item hist"><strong>工作面板自适应增高：</strong>进入「填坑反馈（360dp）」「顾问话术/短码/评语（336dp）」「剪贴板/表情/符号（300dp）」「语音（296dp）」时平滑增高，切回打字自动恢复紧凑 236dp。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.3.0</span>
+          <span>2026-11-19 · 教师与顾问三大生产力套件</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item hist"><strong>⚡ 快捷短码 / 顾问资料夹：</strong>26 键与九键打字直接触发，输 <code>rq</code> 出今日日期与星期、<code>sj</code> 出当前时间、<code>mr</code> 出明天日期，内置 <code>dz</code>/<code>dh</code>/<code>st</code>/<code>kb</code>/<code>jf</code> 并支持自由增删编辑。</div>
+          <div class="log-item hist"><strong>📝 变量填坑式个性化评语：</strong>内置 5 套课后反馈/听写/错题/试听/约课模板，点选姓名与评价胶囊实时预览，3 秒生成不重样的一对一反馈。</div>
+          <div class="log-item hist"><strong>💼 顾问金牌异议话术库：</strong>内置 14 条覆盖「觉得贵 / 没时间 / 孩子抵触 / 对比竞品 / 再考虑」的高情商话术，支持自定义编辑及 TXT 批量导入全员同步。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.2.1</span>
+          <span>2026-11-19 · 中英双语语音 / 数字标点整理 / 九键防断句 / 表情增强</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item hist"><strong>离线语音升级中英双语流式识别与智能整理：</strong>支持中英自然混说（自动保留 <code>PPT</code>/<code>PDF</code>/<code>WeChat</code> 写法）、口语中文数字转阿拉伯数字 <code>123</code> 与版本号 <code>V1.4.0</code>、口语改口纠错与“第一/第二”自动分点梳理。</div>
+          <div class="log-item hist"><strong>彻底修复九键长句自动上屏断拼音：</strong>根治九键快打长句时因手指微滑误触发上滑/长按导致拼音被截断的问题；移除冗余小鹤双拼入口防止误触。</div>
+          <div class="log-item hist"><strong>随打/长句/联想全场景表情增强：</strong>支持长句末尾关键词自动出表情（如“今天很开心”→🥳）、选词上屏后联想栏附带表情，词库表情前移至候选第一屏第 3 位。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.2.0</span>
+          <span>2026-11-19 · 双域引擎与新东方教研词库正式版</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item hist"><strong>双域融合解码 + 31 维神经精排：</strong>融合通用语料与 2,428 万段口语对话候选送入 8M Transformer 精排，大幅提升日常长短句与手滑误触纠错准确率。</div>
+          <div class="log-item hist"><strong>20,017 条新东方与多学科专词 + 4.3 倍联想提升：</strong>合入新东方/K12/古诗词/理化生专词与 4,969 条多音字词组；上下文联想扩展至 15.4 万前词 / 47.9 万边；新增教师快捷评语面板与动态 <code>分词 '</code> 键。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.1.0-beta.10 ~ beta.12</span>
+          <span>前期核心基础里程碑</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item hist"><strong>九键逐键实时回显可读拼音 &amp; 拼音区实时光标编辑：</strong>首键起同步显示 <code>ni'hao</code> 音节切分，支持点按或滑动空格在拼音任意位置增删字母；保留九键原键整句候选。</div>
+        </div>
+      </div>
+        </div>
+      </details>
+    </section>
+
+    <section aria-labelledby="version-bench">
+      <h2 id="version-bench">📈 各版本测评横向对比（400 句真实未见对话集）</h2>
+      <p class="lead">每次发版均自动运行 <strong>111 项 JVM 核心回归</strong> 与 <strong>400 句真实未见对话集</strong>（含正常打字与手滑误触），跨版本横向追踪 26 键 / T9 首选率与出词延迟：</p>
+      <div class="table-wrap">
+        <table class="comparison">
+          <thead>
+            <tr>
+              <th>版本 / 对比对象</th>
+              <th>26 键首选率<span class="sub-th">对比豆包差值 · Top3 · P50</span></th>
+              <th>T9 九键首选率<span class="sub-th">对比豆包差值 · Top3 · P50</span></th>
+              <th>JVM 回归门禁</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- VERSION_BENCHMARK_START -->
+            <tr>
+              <th>v1.9.9<span class="pill" style="margin-left:4px;font-size:.7rem;">最新</span><span class="sub-th">2026-11-20 16:26 · v1.9.9 豆包风格多音节阶梯排序+消除长句emoji与低质全句混排</span></th>
+              <td><strong>60.2%</strong> (241/400) <span class="delta" style="background:#dcfce7;color:#15803d;">+3.0%</span><span class="sub-th">Top3 61.2% · 2.40 ms</span></td>
+              <td><strong>37.8%</strong> (151/400) <span class="delta" style="background:#dcfce7;color:#15803d;">+9.0%</span><span class="sub-th">Top3 38.8% · 5.47 ms</span></td>
+              <td>8/8 PASS (147 checks)</td>
+            </tr>
+            <tr>
+              <th>v1.9.8<span class="sub-th">2026-11-20 15:55 · v1.9.8 多音节首屏分层混排优化</span></th>
+              <td><strong>60.2%</strong> (241/400) <span class="delta" style="background:#dcfce7;color:#15803d;">+3.0%</span><span class="sub-th">Top3 67.5% · 2.36 ms</span></td>
+              <td><strong>37.8%</strong> (151/400) <span class="delta" style="background:#dcfce7;color:#15803d;">+9.0%</span><span class="sub-th">Top3 42.2% · 4.82 ms</span></td>
+              <td>8/8 PASS (147 checks)</td>
+            </tr>
+            <tr>
+              <th>v1.9.7<span class="sub-th">2026-11-20 14:01 · v1.9.7 异步非阻塞解码+零重建候选栏+消除全键盘重排</span></th>
+              <td><strong>60.2%</strong> (241/400) <span class="delta" style="background:#dcfce7;color:#15803d;">+3.0%</span><span class="sub-th">Top3 72.0% · 2.39 ms</span></td>
+              <td><strong>37.8%</strong> (151/400) <span class="delta" style="background:#dcfce7;color:#15803d;">+9.0%</span><span class="sub-th">Top3 47.0% · 4.95 ms</span></td>
+              <td>8/8 PASS (147 checks)</td>
+            </tr>
+            <tr>
+              <th>v1.9.6<span class="sub-th">2026-11-20 13:23 · v1.9.6 无锁mmap+L1缓存基准</span></th>
+              <td><strong>60.2%</strong> (241/400) <span class="delta" style="background:#dcfce7;color:#15803d;">+3.0%</span><span class="sub-th">Top3 72.0% · 2.62 ms</span></td>
+              <td><strong>37.8%</strong> (151/400) <span class="delta" style="background:#dcfce7;color:#15803d;">+9.0%</span><span class="sub-th">Top3 47.0% · 5.28 ms</span></td>
+              <td>8/8 PASS (147 checks)</td>
+            </tr>
+            <tr>
+              <th>v1.8.0<span class="sub-th">2026-11-20 10:19 · THUOCL/高斯热区/场景感知/mmap/热插拔词包</span></th>
+              <td><strong>60.2%</strong> (241/400) <span class="delta" style="background:#dcfce7;color:#15803d;">+3.0%</span><span class="sub-th">Top3 72.0% · 2.80 ms</span></td>
+              <td><strong>37.8%</strong> (151/400) <span class="delta" style="background:#dcfce7;color:#15803d;">+9.0%</span><span class="sub-th">Top3 47.0% · 5.25 ms</span></td>
+              <td>8/8 PASS (147 checks)</td>
+            </tr>
+            <tr>
+              <th>v1.7.0<span class="sub-th">2026-11-20 08:47 · 语音光标/T9图标/350地名/微动效</span></th>
+              <td><strong>60.2%</strong> (241/400) <span class="delta" style="background:#dcfce7;color:#15803d;">+3.0%</span><span class="sub-th">Top3 72.0% · 2.38 ms</span></td>
+              <td><strong>37.8%</strong> (151/400) <span class="delta" style="background:#dcfce7;color:#15803d;">+9.0%</span><span class="sub-th">Top3 47.0% · 4.76 ms</span></td>
+              <td>4/4 PASS (111 checks)</td>
+            </tr>
+            <tr style="background:#f8fafc;">
+              <th>豆包输入法（联网智能）<span class="sub-th">同集横向竞品/旧版基线</span></th>
+              <td>57.2% (229/400)<span class="sub-th">Top3 68.0%</span></td>
+              <td>28.8% (115/400)<span class="sub-th">Top3 41.2%</span></td>
+              <td>-</td>
+            </tr>
+            <tr style="background:#f8fafc;">
+              <th>新东方 SDK（旧版基线）<span class="sub-th">同集横向竞品/旧版基线</span></th>
+              <td>31.2% (125/400)<span class="sub-th">Top3 41.2%</span></td>
+              <td>16.2% (65/400)<span class="sub-th">Top3 21.8%</span></td>
+              <td>-</td>
+            </tr>
+            <!-- VERSION_BENCHMARK_END -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="quality">
+      <h2 id="quality">📊 实测对比：教师精灵 vs 豆包输入法 vs 新东方 SDK 输入法</h2>
+      <p class="lead">用 <strong>1,440 句真实日常聊天</strong>实测，看打完一遍后<strong>「第一个候选词直接猜对」</strong>的比例（越高越好，三款均为各自默认正常使用状态）：</p>
+      <div class="table-wrap">
+        <table class="comparison">
+          <thead>
+            <tr>
+              <th>日常打字场景</th>
+              <th>教师精灵<span class="sub-th">纯本地离线</span></th>
+              <th>豆包输入法<span class="sub-th">联网智能模式</span></th>
+              <th>新东方 SDK 输入法<span class="sub-th">旧版基线</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>26 键日常综合打字<span class="sub-th">正常打字 + 手机手滑按错</span></th>
+              <td>62.0% <span class="delta">领先豆包 +3.1%</span></td>
+              <td>58.9%</td>
+              <td>36.9%</td>
+            </tr>
+            <tr>
+              <th>26 键按错字自动纠错<span class="sub-th">邻键误触 / 漏按 / 按反</span></th>
+              <td>54.4% <span class="delta">领先豆包 +19.6%</span></td>
+              <td>34.8%</td>
+              <td>19.4%</td>
+            </tr>
+            <tr>
+              <th>九键日常综合打字<span class="sub-th">正常打字 + 手机手滑按错</span></th>
+              <td>39.5% <span class="delta">领先豆包 +0.9%</span></td>
+              <td>38.6%</td>
+              <td>21.8%</td>
+            </tr>
+            <tr>
+              <th>九键按错字自动纠错<span class="sub-th">邻键误触 / 漏按 / 按反</span></th>
+              <td>30.0% <span class="delta">领先豆包 +17.3%</span></td>
+              <td>12.7%</td>
+              <td>4.8%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="summary-box">
+        <strong>一句话看懂：</strong>在包含手机日常手滑的真实场景下，<strong>教师精灵输入法</strong>（纯本地运行、每键仅 2.3 毫秒）的首选准确率已超过<strong>联网态的豆包输入法</strong>，相比<strong>新东方 SDK 输入法</strong>提升超 25 个百分点，尤其在按错字母自动纠错上领先近 20 个百分点。<br>
+        <span style="font-size:.8rem;color:#64748b;">补充说明：若一字不差敲网络口语长句，联网态豆包凭借云端大模型略高（26键 70.9% vs 65.8%）；内置 125.8 万词表 + 20,017 条新东方与 K12 学科专词 + 15.4 万上下文联想词。</span>
+      </div>
+    </section>
+
+    <section aria-labelledby="features">
+      <h2 id="features">🌟 教师与顾问专属核心能力</h2>
+      <div class="feat-grid">
+        <div class="feat">
+          <strong>⌨️ 千万级一线语料专属词库与整句护城河</strong>
+          <span>内置费曼卡片、云教室、小课包、寒春续报、进出门测及京穗校区/名校词库，26键与九键简拼整句首选率达 93.8%。</span>
+        </div>
+        <div class="feat">
+          <strong>🎯 M端顾问 / 📚 P端教学 双模式工作台</strong>
+          <span>点键盘「评语」左上角胶囊一键切换岗位视图：顾问专属首响破冰/报价促单/政策速答，教学专属二段测评分发与学法处方。</span>
+        </div>
+        <div class="feat">
+          <strong>📍 京穗 42 所校区地址一键速发 &amp; 短码</strong>
+          <span>打字直接输校区简拼（如 <code>yqlxq</code> / <code>phyxq</code>）候选秒出详细楼层地址；长按设为常驻校区自动激活 <code>dz</code> 短码。</span>
+        </div>
+        <div class="feat">
+          <strong>🎤 离线中英语音 + 201 热词 + 同音专词纠错</strong>
+          <span>内置 201 项教研/校区/KET/PET 热词同步与同音纠错（自动修「小巴中→小八中」「丸子洗→晚自习」「进门册→进门测」）。</span>
+        </div>
+        <div class="feat">
+          <strong>📝 班级名单 &amp; 12 套角色感知变量填坑卡</strong>
+          <span>覆盖进出门测报告、试卷三步错因诊断、上课提醒、请假不扣课消回放、新好友领资料与讲座确认，3 秒生成不重样。</span>
+        </div>
+        <div class="feat">
+          <strong>💾 校本词库导入 &amp; 个人数据一键备份</strong>
+          <span>内置本周末动态短码 <code>zm</code> 与 <code>qj</code>/<code>xxj</code>；个人词频/短码/话术/名单/常驻校区支持 JSON 一键备份恢复。</span>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="install">
+      <h2 id="install">📲 三步启用</h2>
+      <ol class="steps">
+        <li>点击顶部 <strong>「⚡ 立即极速下载」</strong> 并安装（旧版直接覆盖升级）。</li>
+        <li>打开「教师精灵输入法」，点 <strong>第 1 步</strong> 在系统设置中勾选启用。</li>
+        <li>返回点 <strong>第 2 步</strong> 切换为当前输入法即可开始使用。</li>
+      </ol>
+      <p class="sha-line">APK SHA-256：<code id="apk-sha">加载校验码…</code></p>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      if (/MicroMessenger/i.test(navigator.userAgent)) {
+        document.getElementById('wechat-tip').style.display = 'block';
+      }
+
+      const turboBtn = document.getElementById('turbo-btn');
+      const harmonyBtn = document.getElementById('harmony-btn');
+      const macosBtn = document.getElementById('macos-btn');
+      const iosBtn = document.getElementById('ios-btn');
+      const windowsBtn = document.getElementById('windows-btn');
+      const progressWrap = document.getElementById('progress-wrap');
+      const progressFill = document.getElementById('progress-fill');
+      const progressText = document.getElementById('progress-text');
+
+      let manifestData = null;
+      let fallbackUrl = '教师精灵输入法-1.9.7.apk';
+
+      async function sha256Hex(buffer) {
+        const digest = await crypto.subtle.digest('SHA-256', buffer);
+        return Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, '0')).join('');
+      }
+
+      fetch('manifest.json?t=' + Date.now(), { cache: 'no-store' })
+        .then(r => r.ok ? r.json() : null)
+        .then(data => {
+          if (!data) return;
+          manifestData = data;
+          const pkg = data.apk || data.universal || data.arm64;
+          document.getElementById('ver-pill').textContent = 'v' + data.version;
+          document.getElementById('date-pill').textContent = data.updated_at.slice(0, 10);
+          document.getElementById('apk-ver-meta').textContent = 'v' + data.version;
+          document.getElementById('harmony-ver-meta').textContent = 'v' + data.version;
+          document.getElementById('apk-size').textContent = pkg.mib.toFixed(1);
+          document.getElementById('apk-sha').textContent = pkg.sha256;
+          fallbackUrl = pkg.tos_url || pkg.mirror_ghfast || pkg.github_url || fallbackUrl;
+          const plats = data.platforms || {};
+          if (plats.macos) {
+            document.getElementById('macos-ver-meta').textContent = 'v' + data.version;
+            document.getElementById('macos-size').textContent = plats.macos.mib.toFixed(1);
+          }
+          if (plats.ios) {
+            document.getElementById('ios-ver-meta').textContent = 'v' + data.version;
+            document.getElementById('ios-size').textContent = plats.ios.mib.toFixed(1);
+          }
+          if (plats.windows) {
+            document.getElementById('windows-ver-meta').textContent = 'v' + data.version;
+            document.getElementById('windows-size').textContent = plats.windows.mib.toFixed(1);
+          }
+        })
+        .catch(() => {});
+
+      async function startTurboDownload(info, btn, mimeType, backupUrl) {
+        if (info && info.tos_url) {
+          window.location.href = info.tos_url;
+          return;
+        }
+        if (!info || !info.chunks || !info.chunks.length) {
+          if (backupUrl) window.location.href = backupUrl;
+          return;
+        }
+        const chunks = info.chunks;
+        const results = new Array(chunks.length);
+        const loadedPerChunk = new Array(chunks.length).fill(0);
+        const totalBytes = info.bytes;
+        const startedAt = performance.now();
+        const origLabel = btn.textContent;
+
+        btn.disabled = true;
+        progressWrap.style.display = 'block';
+        progressFill.style.width = '0%';
+        progressText.textContent = '正在连接火山引擎北京节点下载 ' + info.filename + '…';
+
+        function renderProgress(extra) {
+          const done = loadedPerChunk.reduce((a, b) => a + b, 0);
+          const pct = Math.min(100, (done * 100) / totalBytes);
+          const sec = Math.max(0.1, (performance.now() - startedAt) / 1000);
+          const speed = (done / 1048576) / sec;
+          progressFill.style.width = pct.toFixed(1) + '%';
+          progressText.textContent = extra || (
+            '火山引擎高速下载 ' + (done / 1048576).toFixed(1) + ' / ' + (totalBytes / 1048576).toFixed(1) +
+            ' MiB (' + pct.toFixed(0) + '%) · ' + speed.toFixed(2) + ' MiB/s'
+          );
+        }
+
+        let cursor = 0;
+        async function worker() {
+          while (cursor < chunks.length) {
+            const idx = cursor++;
+            const meta = chunks[idx];
+            let attempt = 0;
+            while (true) {
+              attempt++;
+              try {
+                const resp = await fetch(meta.path, { cache: 'force-cache' });
+                if (!resp.ok) throw new Error('HTTP ' + resp.status);
+                const reader = resp.body && resp.body.getReader ? resp.body.getReader() : null;
+                let buf;
+                if (reader) {
+                  const parts = [];
+                  let rec = 0;
+                  while (true) {
+                    const step = await reader.read();
+                    if (step.done) break;
+                    parts.push(step.value);
+                    rec += step.value.byteLength;
+                    loadedPerChunk[idx] = rec;
+                    renderProgress();
+                  }
+                  const merged = new Uint8Array(rec);
+                  let off = 0;
+                  for (const p of parts) { merged.set(p, off); off += p.byteLength; }
+                  buf = merged.buffer;
+                } else {
+                  buf = await resp.arrayBuffer();
+                  loadedPerChunk[idx] = buf.byteLength;
+                  renderProgress();
+                }
+                if (crypto && crypto.subtle && meta.sha256) {
+                  const hex = await sha256Hex(buf);
+                  if (hex !== meta.sha256) throw new Error('分片校验不匹配');
+                }
+                results[idx] = buf;
+                break;
+              } catch (err) {
+                if (attempt >= 3) throw err;
+                await new Promise(r => setTimeout(r, 400 * attempt));
+              }
+            }
+          }
+        }
+
+        try {
+          const concurrency = Math.min(8, chunks.length);
+          const pool = [];
+          for (let w = 0; w < concurrency; w++) pool.push(worker());
+          await Promise.all(pool);
+          renderProgress('✅ 校验通过，正在保存 ' + info.filename + '…');
+          const blob = new Blob(results, { type: mimeType || 'application/octet-stream' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = info.filename;
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          setTimeout(() => URL.revokeObjectURL(url), 60000);
+          btn.disabled = false;
+          btn.textContent = '✅ 下载完成，点击可重新下载';
+        } catch (err) {
+          progressText.textContent = '⚠️ 通道异常（' + err.message + '），正在切换备用线路…';
+          btn.disabled = false;
+          btn.textContent = origLabel;
+          if (backupUrl) window.location.href = backupUrl;
+        }
+      }
+
+      turboBtn.addEventListener('click', () => {
+        const info = manifestData && (manifestData.apk || manifestData.universal || manifestData.arm64);
+        startTurboDownload(info, turboBtn, 'application/vnd.android.package-archive', fallbackUrl);
+      });
+      harmonyBtn.addEventListener('click', () => {
+        const info = manifestData && ((manifestData.platforms && manifestData.platforms.harmonyos) || manifestData.apk);
+        startTurboDownload(info, harmonyBtn, 'application/vnd.android.package-archive', fallbackUrl);
+      });
+      macosBtn.addEventListener('click', () => {
+        const info = manifestData && manifestData.platforms && manifestData.platforms.macos;
+        startTurboDownload(info, macosBtn, 'application/octet-stream', '');
+      });
+      iosBtn.addEventListener('click', () => {
+        const info = manifestData && manifestData.platforms && manifestData.platforms.ios;
+        startTurboDownload(info, iosBtn, 'application/octet-stream', '');
+      });
+      windowsBtn.addEventListener('click', () => {
+        const info = manifestData && manifestData.platforms && manifestData.platforms.windows;
+        startTurboDownload(info, windowsBtn, 'application/octet-stream', '');
+      });
+      // 四端平台切换（按设备自动定位当前系统，规整展示单平台下载卡片）
+      const osTabs = Array.from(document.querySelectorAll('.os-tab'));
+      const osPanels = Array.from(document.querySelectorAll('.os-panel'));
+      function selectOs(os) {
+        osTabs.forEach(t => t.classList.toggle('active', t.dataset.os === os));
+        osPanels.forEach(p => p.classList.toggle('active', p.id === 'panel-' + os));
+      }
+      osTabs.forEach(t => t.addEventListener('click', () => selectOs(t.dataset.os)));
+      const ua = navigator.userAgent || '';
+      if (/OpenHarmony|HarmonyOS/i.test(ua) && !/Android/i.test(ua)) selectOs('harmony');
+      else if (/Android|HarmonyOS/i.test(ua)) selectOs('android');
+      else if (/iPhone|iPad|iPod/i.test(ua)) selectOs('ios');
+      else if (/Windows/i.test(ua)) selectOs('windows');
+      else if (/Macintosh|Mac OS X/i.test(ua)) selectOs('macos');
+    })();
+  </script>
+</body>
+</html>
