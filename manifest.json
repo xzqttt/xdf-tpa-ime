@@ -1,0 +1,176 @@
+{
+  "name": "教师精灵输入法",
+  "version": "1.10.1",
+  "version_code": 46,
+  "updated_at": "2026-11-20 17:49:11 +0800",
+  "apk": {
+    "filename": "教师精灵输入法-1.10.1.apk",
+    "asset_name": "teacher-sprite-ime-1.10.1.apk",
+    "bytes": 144977977,
+    "mib": 138.26,
+    "sha256": "4552843fd62657c7a97e70972f5c857432b9269743e4a601769076584d610366",
+    "tos_url": "",
+    "tos_cdn": true,
+    "github_url": "https://github.com/xzqttt/xdf-tpa-ime/releases/download/v1.10.1/teacher-sprite-ime-1.10.1.apk",
+    "mirror_ghfast": "https://ghfast.top/https://github.com/xzqttt/xdf-tpa-ime/releases/download/v1.10.1/teacher-sprite-ime-1.10.1.apk",
+    "mirror_ghproxy": "https://gh-proxy.com/https://github.com/xzqttt/xdf-tpa-ime/releases/download/v1.10.1/teacher-sprite-ime-1.10.1.apk",
+    "chunks": [
+      {
+        "path": "https://ark-auto-2102112654-cn-beijing-default.tos-cn-beijing.volces.com/xdf-tpa-ime/releases/v1.10.1/part-00.bin",
+        "bytes": 15728640,
+        "sha256": "f2fb291738f8e888f82cf9a8359a8d40a886c01d10bb7dd99bcfe7cae0a605e4"
+      },
+      {
+        "path": "https://ark-auto-2102112654-cn-beijing-default.tos-cn-beijing.volces.com/xdf-tpa-ime/releases/v1.10.1/part-01.bin",
+        "bytes": 15728640,
+        "sha256": "a82cf9f9503e9580711d90f68d9bd0d62f2cc52cb048ed3889f87e77b522f12f"
+      },
+      {
+        "path": "https://ark-auto-2102112654-cn-beijing-default.tos-cn-beijing.volces.com/xdf-tpa-ime/releases/v1.10.1/part-02.bin",
+        "bytes": 15728640,
+        "sha256": "6295e4e5e951d568946e323abae51b977f6da439a005efdc4a75a83c0030662d"
+      },
+      {
+        "path": "https://ark-auto-2102112654-cn-beijing-default.tos-cn-beijing.volces.com/xdf-tpa-ime/releases/v1.10.1/part-03.bin",
+        "bytes": 15728640,
+        "sha256": "9cff4eba36aba0e0b8888589b27323204e75a75f489435ce416e6cd92b79afe1"
+      },
+      {
+        "path": "https://ark-auto-2102112654-cn-beijing-default.tos-cn-beijing.volces.com/xdf-tpa-ime/releases/v1.10.1/part-04.bin",
+        "bytes": 15728640,
+        "sha256": "c222185a0dea6886332f500515b8a3fd56321c06b50c5fe11ffda9425493864a"
+      },
+      {
+        "path": "https://ark-auto-2102112654-cn-beijing-default.tos-cn-beijing.volces.com/xdf-tpa-ime/releases/v1.10.1/part-05.bin",
+        "bytes": 15728640,
+        "sha256": "6ccf542d360d134c54aed12217cee317141ea6314a62b473ef0712ac5b3db0a1"
+      },
+      {
+        "path": "https://ark-auto-2102112654-cn-beijing-default.tos-cn-beijing.volces.com/xdf-tpa-ime/releases/v1.10.1/part-06.bin",
+        "bytes": 15728640,
+        "sha256": "089545bcdf212f5d4bac83ed2b12893629c995d7b291f9b95ce2d55469c9cbe8"
+      },
+      {
+        "path": "https://ark-auto-2102112654-cn-beijing-default.tos-cn-beijing.volces.com/xdf-tpa-ime/releases/v1.10.1/part-07.bin",
+        "bytes": 15728640,
+        "sha256": "7e8660bc71031c02ed5bf5c57bba5ed8ec68a19b2a172b98a422936134d84a7d"
+      },
+      {
+        "path": "https://ark-auto-2102112654-cn-beijing-default.tos-cn-beijing.volces.com/xdf-tpa-ime/releases/v1.10.1/part-08.bin",
+        "bytes": 15728640,
+        "sha256": "e4694adccd772e62a5de7ab120d4e085106c9a7e938ea8a5eddd588668a16ef8"
+      },
+      {
+        "path": "https://ark-auto-2102112654-cn-beijing-default.tos-cn-beijing.volces.com/xdf-tpa-ime/releases/v1.10.1/part-09.bin",
+        "bytes": 3420217,
+        "sha256": "d928e81df272bf66ad0b95737276fa4a299d4453f09732b05dc34bff904856f4"
+      }
+    ]
+  },
+  "platforms": {
+    "macos": {
+      "filename": "教师精灵输入法-macOS-1.9.9.pkg",
+      "bytes": 111796534,
+      "mib": 106.62,
+      "sha256": "8d8902e9d1d161aefb780f892f989461fda9dfd6f2e9a57754f753e65bc6812d",
+      "chunks": [
+        {
+          "path": "https://ark-auto-2102112654-cn-beijing-default.tos-cn-beijing.volces.com/xdf-tpa-ime/releases/v1.10.1/macos-part-00.bin",
+          "bytes": 15728640,
+          "sha256": "8b2656642f245e2d0b32b600dfc12b0fc45ec996bac5187e5e26aca61bf4b9a5"
+        },
+        {
+          "path": "https://ark-auto-2102112654-cn-beijing-default.tos-cn-beijing.volces.com/xdf-tpa-ime/releases/v1.10.1/macos-part-01.bin",
+          "bytes": 15728640,
+          "sha256": "398863aeb754ae6c3a8b58c37ff4bbbd578b1d367d9c3749a2f13250d67b4651"
+        },
+        {
+          "path": "https://ark-auto-2102112654-cn-beijing-default.tos-cn-beijing.volces.com/xdf-tpa-ime/releases/v1.10.1/macos-part-02.bin",
+          "bytes": 15728640,
+          "sha256": "e5a324984d47a245d55e2d324d1e44d2486929bd83d087fc56dd7d0242d2b51f"
+        },
+        {
+          "path": "https://ark-auto-2102112654-cn-beijing-default.tos-cn-beijing.volces.com/xdf-tpa-ime/releases/v1.10.1/macos-part-03.bin",
+          "bytes": 15728640,
+          "sha256": "45e4cbe984aafbccd1a2d9dfc8ab79f8aa8ab47072882c2a68c544c8d973a4a3"
+        },
+        {
+          "path": "https://ark-auto-2102112654-cn-beijing-default.tos-cn-beijing.volces.com/xdf-tpa-ime/releases/v1.10.1/macos-part-04.bin",
+          "bytes": 15728640,
+          "sha256": "1f9fc3c3daf0da582f458292c9b4d41a4fe6f2c59f3e3c7f034091b86d4268ad"
+        },
+        {
+          "path": "https://ark-auto-2102112654-cn-beijing-default.tos-cn-beijing.volces.com/xdf-tpa-ime/releases/v1.10.1/macos-part-05.bin",
+          "bytes": 15728640,
+          "sha256": "b1902719da56c3adf0f9808144c4f3d2771d57221f6012f115b5c587c8879942"
+        },
+        {
+          "path": "https://ark-auto-2102112654-cn-beijing-default.tos-cn-beijing.volces.com/xdf-tpa-ime/releases/v1.10.1/macos-part-06.bin",
+          "bytes": 15728640,
+          "sha256": "76445e87b2bdd4a7720581f7218fc4cc77da2364f914128a1e6be69f91fa5622"
+        },
+        {
+          "path": "https://ark-auto-2102112654-cn-beijing-default.tos-cn-beijing.volces.com/xdf-tpa-ime/releases/v1.10.1/macos-part-07.bin",
+          "bytes": 1696054,
+          "sha256": "a94398cb179592b4a874f5389b9711c8650896e9aa01446ec17bfd16d7aca74e"
+        }
+      ]
+    },
+    "ios": {
+      "filename": "教师精灵输入法-iOS-1.9.9.ipa",
+      "bytes": 18006933,
+      "mib": 17.17,
+      "sha256": "7bbb2185eb1d9c5ca7be85f3a33361d3bb06dc4b210e63c7edab830da654e0e5",
+      "chunks": [
+        {
+          "path": "https://ark-auto-2102112654-cn-beijing-default.tos-cn-beijing.volces.com/xdf-tpa-ime/releases/v1.10.1/ios-part-00.bin",
+          "bytes": 15728640,
+          "sha256": "c8e48be3dd524ac82c01e9be9c3a493ae4f6256520387f9968eb8bb95911e515"
+        },
+        {
+          "path": "https://ark-auto-2102112654-cn-beijing-default.tos-cn-beijing.volces.com/xdf-tpa-ime/releases/v1.10.1/ios-part-01.bin",
+          "bytes": 2278293,
+          "sha256": "333d3575b3ababb61d6429d7b8ae26862d56f87dca23b719566f7321af7181a0"
+        }
+      ]
+    },
+    "windows": {
+      "filename": "教师精灵输入法-Windows-Setup-1.9.9.exe",
+      "bytes": 81961808,
+      "mib": 78.16,
+      "sha256": "268015344fd579bf38563cce0e851ce6cccd1b55154ed0ccf4173d2a17028a7e",
+      "chunks": [
+        {
+          "path": "https://ark-auto-2102112654-cn-beijing-default.tos-cn-beijing.volces.com/xdf-tpa-ime/releases/v1.10.1/windows-part-00.bin",
+          "bytes": 15728640,
+          "sha256": "ad65b79dc711bd8ec833210f831e3d00589369de87d852ee4559c512944f0b48"
+        },
+        {
+          "path": "https://ark-auto-2102112654-cn-beijing-default.tos-cn-beijing.volces.com/xdf-tpa-ime/releases/v1.10.1/windows-part-01.bin",
+          "bytes": 15728640,
+          "sha256": "0490b5e53bbe1dde203615cd81859f1fe9e830bfa749c2699e3f02553d5a51f0"
+        },
+        {
+          "path": "https://ark-auto-2102112654-cn-beijing-default.tos-cn-beijing.volces.com/xdf-tpa-ime/releases/v1.10.1/windows-part-02.bin",
+          "bytes": 15728640,
+          "sha256": "ec3908b58adce4998028bddc8c4ead9489a23fc8583d1500f5ca67517766898f"
+        },
+        {
+          "path": "https://ark-auto-2102112654-cn-beijing-default.tos-cn-beijing.volces.com/xdf-tpa-ime/releases/v1.10.1/windows-part-03.bin",
+          "bytes": 15728640,
+          "sha256": "9d8a9b4c4ff615e3b4709dbbb434c27c749981b727550cf6d4302233f7466f17"
+        },
+        {
+          "path": "https://ark-auto-2102112654-cn-beijing-default.tos-cn-beijing.volces.com/xdf-tpa-ime/releases/v1.10.1/windows-part-04.bin",
+          "bytes": 15728640,
+          "sha256": "5f38c8529a822ff59e0000972143adebf27c263b6733f427060a72531b8d9813"
+        },
+        {
+          "path": "https://ark-auto-2102112654-cn-beijing-default.tos-cn-beijing.volces.com/xdf-tpa-ime/releases/v1.10.1/windows-part-05.bin",
+          "bytes": 3318608,
+          "sha256": "ed7a9ff28d3ab56ecb2530daf8e0e6a8be420df706becf0a146d3f3a760430c6"
+        }
+      ]
+    }
+  }
+}
