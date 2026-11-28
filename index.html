@@ -1,0 +1,2758 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>教师精灵输入法 · 官方极速下载</title>
+  <meta name="description" content="教师精灵输入法五端官方极速下载：支持 Android / 鸿蒙 / macOS / iOS / Windows，内置新东方家校专属词库、离线语音与高回复话术，火山引擎高速分发。">
+  <meta name="theme-color" id="meta-theme-color" content="#f1f5f9">
+  <script>
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem('tpa_site_theme'); } catch (e) {}
+      var sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var hour = new Date().getHours();
+      var autoDark = sysDark || hour >= 20 || hour < 7;
+      var theme = (saved === 'dark' || saved === 'light') ? saved : (autoDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+      var meta = document.getElementById('meta-theme-color');
+      if (meta) meta.setAttribute('content', theme === 'dark' ? '#0b1120' : '#f1f5f9');
+    })();
+  </script>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f1f5f9;
+      --surface: #ffffff;
+      --surface-2: #f8fafc;
+      --surface-hover: #f1f5f9;
+      --tab-track: #f1f5f9;
+      --tab-active: #ffffff;
+      --ink: #0f172a;
+      --muted: #475569;
+      --subtle: #64748b;
+      --blue: #2563eb;
+      --blue-dark: #1d4ed8;
+      --blue-grad-end: #1d4ed8;
+      --blue-soft: #eff6ff;
+      --blue-col-ink: #1e3a8a;
+      --green: #059669;
+      --green-soft: #ecfdf5;
+      --delta-pos-bg: #dcfce7;
+      --delta-pos-ink: #15803d;
+      --delta-neg-bg: #fee2e2;
+      --delta-neg-ink: #b91c1c;
+      --delta-flat-bg: #f1f5f9;
+      --delta-flat-ink: #475569;
+      --pill-gray-bg: #e2e8f0;
+      --pill-gray-ink: #334155;
+      --code-bg: #e2e8f0;
+      --line: #e2e8f0;
+      --border-soft: rgba(15, 23, 42, .08);
+      --card: var(--surface-2);
+      --row-baseline: #f8fafc;
+      --warn-bg: #fffbeb;
+      --warn-border: #f59e0b;
+      --warn-ink: #92400e;
+      --hist-accent: #94a3b8;
+      --shadow-main: 0 8px 28px rgba(15, 23, 42, .06);
+      --shadow-box: 0 6px 22px rgba(15, 23, 42, .04);
+      --shadow-tab: 0 1px 4px rgba(15, 23, 42, .10);
+      --shadow-btn: 0 6px 18px rgba(37, 99, 235, .25);
+      --shadow-btn-hover: 0 8px 22px rgba(37, 99, 235, .34);
+    }
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #0b1120;
+      --surface: #111827;
+      --surface-2: #162033;
+      --surface-hover: #1e293b;
+      --tab-track: #0f172a;
+      --tab-active: #1e293b;
+      --ink: #e2e8f0;
+      --muted: #94a3b8;
+      --subtle: #7c8da6;
+      --blue: #3b82f6;
+      --blue-dark: #60a5fa;
+      --blue-grad-end: #2563eb;
+      --blue-soft: rgba(59, 130, 246, .16);
+      --blue-col-ink: #bfdbfe;
+      --green: #34d399;
+      --green-soft: rgba(16, 185, 129, .16);
+      --delta-pos-bg: rgba(16, 185, 129, .18);
+      --delta-pos-ink: #6ee7b7;
+      --delta-neg-bg: rgba(239, 68, 68, .18);
+      --delta-neg-ink: #fca5a5;
+      --delta-flat-bg: rgba(148, 163, 184, .16);
+      --delta-flat-ink: #94a3b8;
+      --pill-gray-bg: #1e293b;
+      --pill-gray-ink: #cbd5e1;
+      --code-bg: #1e293b;
+      --line: #233047;
+      --border-soft: rgba(148, 163, 184, .16);
+      --card: var(--surface-2);
+      --row-baseline: #141e30;
+      --warn-bg: rgba(245, 158, 11, .12);
+      --warn-border: rgba(245, 158, 11, .45);
+      --warn-ink: #fcd34d;
+      --hist-accent: #475569;
+      --shadow-main: 0 12px 34px rgba(0, 0, 0, .45);
+      --shadow-box: 0 6px 22px rgba(0, 0, 0, .28);
+      --shadow-tab: 0 1px 4px rgba(0, 0, 0, .35);
+      --shadow-btn: 0 6px 18px rgba(37, 99, 235, .28);
+      --shadow-btn-hover: 0 8px 22px rgba(59, 130, 246, .35);
+    }
+    @media (prefers-color-scheme: dark) {
+      html:not([data-theme="light"]) {
+        color-scheme: dark;
+        --bg: #0b1120;
+        --surface: #111827;
+        --surface-2: #162033;
+        --surface-hover: #1e293b;
+        --tab-track: #0f172a;
+        --tab-active: #1e293b;
+        --ink: #e2e8f0;
+        --muted: #94a3b8;
+        --subtle: #7c8da6;
+        --blue: #3b82f6;
+        --blue-dark: #60a5fa;
+        --blue-grad-end: #2563eb;
+        --blue-soft: rgba(59, 130, 246, .16);
+        --blue-col-ink: #bfdbfe;
+        --green: #34d399;
+        --green-soft: rgba(16, 185, 129, .16);
+        --delta-pos-bg: rgba(16, 185, 129, .18);
+        --delta-pos-ink: #6ee7b7;
+        --delta-neg-bg: rgba(239, 68, 68, .18);
+        --delta-neg-ink: #fca5a5;
+        --delta-flat-bg: rgba(148, 163, 184, .16);
+        --delta-flat-ink: #94a3b8;
+        --pill-gray-bg: #1e293b;
+        --pill-gray-ink: #cbd5e1;
+        --code-bg: #1e293b;
+        --line: #233047;
+        --border-soft: rgba(148, 163, 184, .16);
+        --card: var(--surface-2);
+        --row-baseline: #141e30;
+        --warn-bg: rgba(245, 158, 11, .12);
+        --warn-border: rgba(245, 158, 11, .45);
+        --warn-ink: #fcd34d;
+        --hist-accent: #475569;
+        --shadow-main: 0 12px 34px rgba(0, 0, 0, .45);
+        --shadow-box: 0 6px 22px rgba(0, 0, 0, .28);
+        --shadow-tab: 0 1px 4px rgba(0, 0, 0, .35);
+        --shadow-btn: 0 6px 18px rgba(37, 99, 235, .28);
+        --shadow-btn-hover: 0 8px 22px rgba(59, 130, 246, .35);
+      }
+    }
+    * { box-sizing: border-box; }
+    a { color: var(--blue-dark); }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 15px/1.6 -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    main {
+      width: min(100%, 52rem);
+      margin: 1.25rem auto;
+      padding: clamp(1.15rem, 3.5vw, 2.1rem);
+      background: var(--surface);
+      border-top: 4px solid var(--blue);
+      border-radius: 14px;
+      box-shadow: var(--shadow-main);
+    }
+    h1, h2, h3, p, ul, ol { margin: 0; }
+    h1 { font-size: clamp(1.7rem, 4.4vw, 2.15rem); line-height: 1.2; letter-spacing: -.02em; }
+    h2 { font-size: 1.12rem; line-height: 1.35; margin-bottom: .65rem; }
+    .wechat-tip {
+      display: none;
+      margin-bottom: .9rem;
+      padding: .65rem .95rem;
+      background: var(--warn-bg);
+      border: 1px solid var(--warn-border);
+      border-radius: 8px;
+      color: var(--warn-ink);
+      font-size: .88rem;
+      font-weight: 600;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: .15rem .6rem;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--blue-dark);
+      font-size: .78rem;
+      font-weight: 650;
+    }
+    .pill.green { background: var(--green-soft); color: var(--green); }
+    .pill.gray { background: var(--pill-gray-bg); color: var(--pill-gray-ink); }
+    .hero-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: .65rem;
+      margin-bottom: .45rem;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: .45rem;
+      font-size: .8rem;
+      color: var(--muted);
+    }
+    .theme-toggle {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      gap: .32rem;
+      padding: .24rem .62rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface-2);
+      color: var(--muted);
+      font: inherit;
+      font-size: .76rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background .15s, color .15s, border-color .15s;
+    }
+    .theme-toggle:hover { background: var(--surface-hover); color: var(--ink); }
+    .theme-toggle svg {
+      width: 13px;
+      height: 13px;
+      flex: 0 0 auto;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .hero-sub { margin-top: .38rem; color: var(--muted); font-size: .95rem; }
+    .dl-box {
+      margin-top: 1.05rem;
+      padding: 1.05rem 1rem 1rem;
+      background: var(--card);
+      border: 1px solid var(--border-soft);
+      border-radius: 14px;
+      box-shadow: var(--shadow-box);
+      text-align: center;
+    }
+    .os-tabs {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 3px;
+      padding: 4px;
+      margin: 0 auto .9rem;
+      max-width: 28rem;
+      background: var(--tab-track);
+      border-radius: 11px;
+    }
+    .os-tab {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      font-size: .8rem;
+      font-weight: 600;
+      height: 35px;
+      padding: 0 .15rem;
+      border-radius: 8px;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background .15s, color .15s, box-shadow .15s;
+    }
+    .os-tab.active {
+      background: var(--tab-active);
+      color: var(--ink);
+      box-shadow: var(--shadow-tab);
+    }
+    .os-panel { display: none; }
+    .os-panel.active { display: block; }
+    .os-meta {
+      margin-top: .6rem;
+      font-size: .79rem;
+      color: var(--subtle);
+      line-height: 1.5;
+    }
+    .btn-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: min(100%, 26rem);
+      height: 48px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+      border: 0;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-grad-end) 100%);
+      color: #f8fafc;
+      font: inherit;
+      font-size: .98rem;
+      font-weight: 650;
+      letter-spacing: .01em;
+      white-space: nowrap;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: var(--shadow-btn);
+      transition: transform .1s, box-shadow .15s, opacity .15s;
+    }
+    .btn-primary:hover { box-shadow: var(--shadow-btn-hover); }
+    .btn-primary:active { transform: scale(.985); }
+    .btn-primary:disabled { opacity: .65; cursor: wait; }
+    .progress-wrap { display: none; margin-top: .8rem; text-align: left; }
+    .progress-bar-bg {
+      width: 100%;
+      height: 8px;
+      background: var(--pill-gray-bg);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--blue), #06b6d4);
+      transition: width .15s linear;
+    }
+    .progress-text { margin-top: .32rem; font-size: .8rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+    /* 首屏 4 大核心指标 */
+    .kpi-grid {
+      margin-top: .95rem;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: .6rem;
+    }
+    .kpi {
+      padding: .75rem .55rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      text-align: center;
+    }
+    .kpi-val {
+      font-size: 1.36rem;
+      font-weight: 800;
+      color: var(--blue-dark);
+      line-height: 1.15;
+      font-variant-numeric: tabular-nums;
+    }
+    .kpi-label { margin-top: .2rem; font-size: .78rem; font-weight: 650; color: var(--ink); }
+    .kpi-sub { margin-top: .1rem; font-size: .72rem; color: var(--green); font-weight: 600; }
+
+    section { margin-top: 1.35rem; padding-top: 1.15rem; border-top: 1px solid var(--line); }
+    .lead { margin-bottom: .75rem; color: var(--muted); font-size: .88rem; }
+
+    /* 三步启用横向卡片 */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: .6rem;
+    }
+    .step-card {
+      display: flex;
+      align-items: flex-start;
+      gap: .55rem;
+      padding: .68rem .78rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+    .step-num {
+      flex: 0 0 22px;
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--blue-dark);
+      font-size: .78rem;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: .08rem;
+    }
+    .step-title { display: block; font-size: .88rem; font-weight: 700; color: var(--ink); line-height: 1.3; }
+    .step-desc { display: block; margin-top: .12rem; font-size: .79rem; color: var(--muted); line-height: 1.45; }
+    .sha-line { margin-top: .65rem; font-size: .75rem; color: var(--subtle); word-break: break-all; }
+    code { padding: .06rem .28rem; border-radius: 4px; background: var(--code-bg); color: var(--ink); font: .85em ui-monospace, SFMono-Regular, monospace; }
+
+    /* 折叠面板与 4-Tab 实测报告 */
+    .fold {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card);
+      overflow: hidden;
+    }
+    .fold > summary {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .65rem;
+      padding: .72rem .92rem;
+      cursor: pointer;
+      font-size: .92rem;
+      font-weight: 700;
+      color: var(--ink);
+      user-select: none;
+      transition: background .15s;
+    }
+    .fold > summary:hover { background: var(--surface-hover); }
+    .fold > summary::-webkit-details-marker { display: none; }
+    .fold > summary::before {
+      content: "▸";
+      display: inline-block;
+      flex: 0 0 auto;
+      color: var(--blue-dark);
+      font-size: .88rem;
+      line-height: 1;
+    }
+    .fold[open] > summary::before { content: "▾"; }
+    .fold[open] > summary {
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+    }
+    .fold-main { flex: 1 1 auto; }
+    .fold-hint {
+      flex: 0 1 auto;
+      font-size: .76rem;
+      font-weight: 500;
+      color: var(--subtle);
+      text-align: right;
+    }
+    .fold-body { padding: .85rem; background: var(--surface); }
+    .sub-fold { margin-top: .8rem; border-radius: 10px; }
+    .sub-fold > summary { padding: .6rem .82rem; font-size: .86rem; font-weight: 650; }
+    .sub-fold .fold-body { padding: .75rem; }
+
+    .bench-tabs {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 4px;
+      padding: 4px;
+      margin-bottom: .85rem;
+      background: var(--tab-track);
+      border-radius: 10px;
+    }
+    .bench-tab {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      font-size: .81rem;
+      font-weight: 600;
+      height: 36px;
+      padding: 0 .35rem;
+      border-radius: 7px;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background .15s, color .15s, box-shadow .15s;
+    }
+    .bench-tab.active {
+      background: var(--tab-active);
+      color: var(--blue-dark);
+      font-weight: 700;
+      box-shadow: var(--shadow-tab);
+    }
+    .bench-panel { display: none; }
+    .bench-panel.active { display: block; }
+    .bench-title { margin: 0 0 .5rem; font-size: .98rem; font-weight: 700; color: var(--ink); }
+
+    /* 大白话对比表 */
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: .88rem; font-variant-numeric: tabular-nums; }
+    th, td { padding: .64rem .7rem; text-align: right; border-bottom: 1px solid var(--line); }
+    th:first-child, td:first-child { text-align: left; }
+    tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+    thead th { background: var(--surface-2); font-weight: 700; color: var(--ink); font-size: .83rem; }
+    tr.row-baseline th, tr.row-baseline td { background: var(--row-baseline); }
+    .sub-th { display: block; font-size: .72rem; font-weight: 400; color: var(--subtle); }
+    .comparison :is(th, td):nth-child(2) { background: var(--blue-soft); color: var(--blue-col-ink); font-weight: 800; }
+    .delta {
+      display: inline-block;
+      margin-left: .25rem;
+      padding: .06rem .36rem;
+      border-radius: 4px;
+      background: var(--green-soft);
+      color: var(--green);
+      font-size: .72rem;
+      font-weight: 700;
+    }
+    .delta-pos { background: var(--delta-pos-bg); color: var(--delta-pos-ink); }
+    .delta-neg { background: var(--delta-neg-bg); color: var(--delta-neg-ink); }
+    .delta-flat { background: var(--delta-flat-bg); color: var(--delta-flat-ink); }
+    .summary-box {
+      margin-top: .75rem;
+      padding: .72rem .9rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font-size: .84rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .summary-box strong { color: var(--ink); }
+    .summary-note { font-size: .8rem; color: var(--subtle); }
+
+    /* 精简核心能力 */
+    .feat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .6rem;
+    }
+    .feat {
+      padding: .68rem .85rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+    .feat strong { display: block; font-size: .9rem; color: var(--ink); margin-bottom: .16rem; }
+    .feat span { font-size: .83rem; color: var(--muted); line-height: 1.5; }
+
+    /* 各版本更新日志 */
+    .ver-group + .ver-group { margin-top: 1.05rem; }
+    .ver-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: .4rem;
+      margin-bottom: .45rem;
+      font-size: .92rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .ver-time { font-size: .78rem; font-weight: 500; color: var(--subtle); font-variant-numeric: tabular-nums; }
+    .ver-title { font-weight: 700; color: var(--ink); }
+    .log-list { display: grid; gap: .42rem; }
+    .log-item {
+      padding: .56rem .82rem;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-left: 3.5px solid var(--blue);
+      border-radius: 6px;
+      font-size: .855rem;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+    .log-item.hist { border-left-color: var(--hist-accent); background: var(--card); }
+    .log-item strong { color: var(--ink); }
+
+    @media (max-width: 44rem) {
+      main { margin: 0 auto; border-radius: 0; }
+      .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .steps-grid { grid-template-columns: 1fr; gap: .45rem; }
+      .step-card { padding: .58rem .72rem; }
+      .feat-grid { grid-template-columns: 1fr; }
+      .bench-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .fold > summary { flex-wrap: wrap; padding: .66rem .78rem; }
+      .fold-hint { width: 100%; text-align: left; padding-left: 1.1rem; }
+      .fold-body { padding: .72rem; }
+      th, td { padding: .52rem .4rem; font-size: .8rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div id="wechat-tip" class="wechat-tip">
+      💡 微信内无法直接下载：请点击右上角「···」→「在默认浏览器中打开」，即可满速下载安装。
+    </div>
+
+    <header>
+      <div class="hero-top">
+        <div class="hero-eyebrow">
+          <span class="pill" id="ver-pill">v1.9.9 (Build 87)</span>
+          <span>全平台离线智能输入法</span>
+          <span>·</span>
+          <span id="date-pill">2026-11-28 16:24</span>
+        </div>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="切换深浅色主题">
+          <svg id="theme-icon" viewBox="0 0 24 24" aria-hidden="true"></svg>
+          <span id="theme-label">深浅</span>
+        </button>
+      </div>
+      <h1>教师精灵输入法</h1>
+      <p class="hero-sub">新东方教研与家校沟通专属输入法，离线整句识别、高回复话术与云盘资料一键直发。</p>
+
+      <div class="dl-box">
+        <div class="os-tabs" role="tablist" aria-label="选择操作系统">
+          <button type="button" class="os-tab active" data-os="android" role="tab">Android</button>
+          <button type="button" class="os-tab" data-os="harmony" role="tab">鸿蒙</button>
+          <button type="button" class="os-tab" data-os="macos" role="tab">macOS</button>
+          <button type="button" class="os-tab" data-os="ios" role="tab">iOS</button>
+          <button type="button" class="os-tab" data-os="windows" role="tab">Windows</button>
+        </div>
+
+        <div class="os-panel active" id="panel-android">
+          <button type="button" class="btn-primary" id="turbo-btn">立即下载 Android 版</button>
+          <p class="os-meta"><span id="apk-ver-meta">v1.9.9</span> (Build <span id="apk-build-meta">87</span>) · <span id="apk-size">140.6</span> MB · 火山引擎高速下载 · Android 8.0+ / 鸿蒙 4.x 通用包</p>
+        </div>
+
+        <div class="os-panel" id="panel-harmony">
+          <button type="button" class="btn-primary" id="harmony-btn">下载鸿蒙通用直装包 (.apk)</button>
+          <p class="os-meta"><span id="harmony-ver-meta">v1.9.9</span> · 火山引擎高速下载 · 鸿蒙 2.0 / 3.0 / 4.x 华为手机直装（纯血鸿蒙 NEXT <code>cn.xdf.teacher</code> v65 已同步双通道词库与领域覆盖层）</p>
+        </div>
+
+        <div class="os-panel" id="panel-macos">
+          <button type="button" class="btn-primary" id="macos-btn">下载 macOS 安装包 (.pkg)</button>
+          <p class="os-meta"><span id="macos-ver-meta">v1.9.9</span> (Build 72) · <span id="macos-size">95.6</span> MB · 火山引擎高速下载 · macOS 13+ Apple Silicon &amp; Intel 通用</p>
+        </div>
+
+        <div class="os-panel" id="panel-ios">
+          <button type="button" class="btn-primary" id="ios-btn">下载 iOS 安装包 (.ipa)</button>
+          <p class="os-meta"><span id="ios-ver-meta">v1.9.9</span> (Build 74) · <span id="ios-size">17.1</span> MB · 火山引擎高速下载 · iOS 15+ 原生键盘（未重签包，需自签名侧载 / 企业签名）</p>
+        </div>
+
+        <div class="os-panel" id="panel-windows">
+          <button type="button" class="btn-primary" id="windows-btn">下载 Windows 安装程序 (.exe)</button>
+          <p class="os-meta"><span id="windows-ver-meta">v1.9.9</span> · <span id="windows-size">99.7</span> MB · 火山引擎高速下载 · Windows 10/11 (x64 + x86 极速秒装 TSF + 零拷贝共享内存)</p>
+        </div>
+
+        <div class="progress-wrap" id="progress-wrap">
+          <div class="progress-bar-bg"><div class="progress-bar-fill" id="progress-fill"></div></div>
+          <div class="progress-text" id="progress-text">正在初始化火山引擎北京节点高速通道…</div>
+        </div>
+      </div>
+
+      <!-- HERO_KPI_START -->
+      <div class="kpi-grid" aria-label="核心实测指标">
+        <div class="kpi">
+          <div class="kpi-val">93.8%</div>
+          <div class="kpi-label">一线教研专词/短句</div>
+          <div class="kpi-sub">较旧版暴涨 +42.9%</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-val">62.2%</div>
+          <div class="kpi-label">26键日常首选率</div>
+          <div class="kpi-sub">领先豆包 +3.3%</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-val">54.4%</div>
+          <div class="kpi-label">按错字自动纠错</div>
+          <div class="kpi-sub">领先豆包 +19.6%</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-val">1.13 ms</div>
+          <div class="kpi-label">26键单键P50出词</div>
+          <div class="kpi-sub">纯本地零延迟</div>
+        </div>
+      </div>
+      <!-- HERO_KPI_END -->
+    </header>
+
+    <section aria-labelledby="install">
+      <h2 id="install">📲 三步启用</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <span class="step-num">1</span>
+          <div>
+            <strong class="step-title">下载安装</strong>
+            <span class="step-desc">点击上方下载按钮安装对应版本，旧版可直接覆盖升级。</span>
+          </div>
+        </div>
+        <div class="step-card">
+          <span class="step-num">2</span>
+          <div>
+            <strong class="step-title">系统启用</strong>
+            <span class="step-desc">打开「教师精灵输入法」，按第 1 步在系统设置中勾选启用。</span>
+          </div>
+        </div>
+        <div class="step-card">
+          <span class="step-num">3</span>
+          <div>
+            <strong class="step-title">切换使用</strong>
+            <span class="step-desc">返回点第 2 步切换为当前输入法即可开始打字。</span>
+          </div>
+        </div>
+      </div>
+      <p class="sha-line"><span id="sha-label">Android APK</span> SHA-256：<code id="apk-sha">加载校验码…</code></p>
+    </section>
+
+    <section aria-labelledby="changes">
+      <h2 id="changes">✨ 最新版本更新</h2>
+      <p class="lead" style="margin-bottom:.75rem;display:flex;flex-wrap:wrap;align-items:center;gap:.45rem;">
+        <span class="pill">v1.9.9 (Android Build 87 / macOS Build 72 / iOS Build 74 / 鸿蒙 NEXT v65)</span>
+        <span>五端同步，默认仅展示最新版本</span>
+      </p>
+
+      <!-- LATEST_CHANGELOG: 仅保留最新 1 个 Build 展开；后续发版将上一条移入下方历史 details -->
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill">v1.9.9 · Build 87 (Android)</span>
+          <span class="ver-time" id="b87-ver-time">2026-11-28 20:20</span>
+          <span class="ver-title">伴聊端侧模型 v2.0.0 升级（严重答非所问降 46%）、顶栏极简交互与动态「教师精灵」徽标上线</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>端侧 AI 伴聊模型升级至 v2.0.0（ChatInsight 300 句真实未见评测通过率 +10.0 pp）：</strong>剔除提示词中误导模型的 <code>｜场景：</code> 标签捷径，重做零矛盾净版教师蒸馏与 <code>rank=8</code> 温和 LoRA 微调，收紧 <code>CompanionKnowledgeRag</code> FAQ 注入门控与同事原话护栏；300 句员工隔离真实评测集同裁判对比：综合通过率由 <code>60.0% → 70.0%</code>（<code>+10.0 pp</code>），严重答非所问由 <code>21.7% → 11.7%</code>（降幅 <code>46%</code>），企微直接可用率由 <code>78.0% → 88.7%</code>，幻觉率由 <code>22.0% → 10.7%</code>，10 分均分 <code>7.51 → 8.52</code>，P50 <code>113.4 ms</code>（<code>ADVERSARIAL_25</code> <code>24/25 = 96.0%</code>，零思考/PII/身份越界泄漏）；设置页支持在线版本检测与一键升级端侧模型（<code>378.3 MB</code> / <code>26</code> 分片 · 火山引擎 TOS <code>v2.0.0</code>）。</div>
+          <div class="log-item"><strong>ChatInsight 300 句端侧模型专项对比（同一公平上下文裁判）：</strong>
+            <div class="table-wrap" style="margin-top:.45rem;">
+              <table class="comparison">
+                <thead>
+                  <tr>
+                    <th>核心质量维度（300 条真实未见对话）</th>
+                    <th>旧版 v1 模型</th>
+                    <th>新版 v2.0.0 模型</th>
+                    <th>变化</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th>综合通过率（切题/人设/安全满分且 ≥8/10）</th><td>60.0% (180/300)</td><td><strong>70.0% (210/300)</strong></td><td><span class="delta delta-pos">+10.0 pp</span></td></tr>
+                  <tr><th>严重答非所问率（relevance = 0）</th><td>21.7% (65/300)</td><td><strong>11.7% (35/300)</strong></td><td><span class="delta delta-pos">-10.0 pp（-46%）</span></td></tr>
+                  <tr><th>广义答非所问率（含套话/漏细节 relevance ≤ 1）</th><td>39.3% (118/300)</td><td><strong>29.7% (89/300)</strong></td><td><span class="delta delta-pos">-9.6 pp</span></td></tr>
+                  <tr><th>角色反转/错位率（persona &lt; 2）</th><td>27.0% (81/300)</td><td><strong>19.0% (57/300)</strong></td><td><span class="delta delta-pos">-8.0 pp</span></td></tr>
+                  <tr><th>幻觉/不安全率（factuality_safety &lt; 2）</th><td>22.0% (66/300)</td><td><strong>10.7% (32/300)</strong></td><td><span class="delta delta-pos">-11.3 pp（-51%）</span></td></tr>
+                  <tr><th>企微可直接发送率 · 10 分制均分</th><td>78.0% · 7.51 分</td><td><strong>88.7% · 8.52 分</strong></td><td><span class="delta delta-pos">+10.7 pp · +1.01 分</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="log-item"><strong>顶部菜单栏交互精简 &amp; 动态「教师精灵」徽标上线：</strong>全面移除各面板内「返回键盘」与最右侧「收起键盘」键，任意功能面板（话术 / 资料 / 符号 / 剪贴板 / 表情 / 语音）再次点击顶栏高亮入口即可一键回到打字键盘；左侧 <code>☰</code> 伸缩菜单新增「长按切换系统输入法」手势；最右侧上线全新高清圆形「教师精灵」徽标（<code>ic_teacher_sprite</code>，<code>TeacherSpriteBadgeView</code> 深浅双色融边，空闲态零动画静态，在 AI 推理、企微扫描、语音转写与模型下载时触发青蓝外发光旋弧与微星动态提示），并修复伴聊浮层定位严格置于顶栏下方不遮挡菜单。</div>
+          <div class="log-item"><strong>全量三测评门禁（门禁 A + 门禁 B + 门禁 3）同包实测通过（<code>140.6 MB</code> 通用签名包）：</strong>4,000 条 v5 26 键 <code>83.3% / 90.2% / 93.1%</code>（<code>1.01 / 1.74 ms</code>）、T9 <code>52.8% / 60.5% / 65.8%</code>（<code>2.02 / 3.80 ms</code>）；1,440 句日常对话 26 键 <code>62.2%</code>（超豆包联网版 <code>+3.3%</code>，错输超 <code>+19.6%</code>）/ T9 <code>39.5%</code>（<code>+0.9%</code>）；2,000 家校集 26 键 <code>68.3%</code>（<code>+4.2%</code>）/ T9 <code>43.1%</code>（<code>+5.1%</code>）；门禁 3 万象新文 26 键 <code>81.0%</code>（字准 <code>96.73%</code>）、水杉新语料 1,631 句 <code>87.5%</code>（字准 <code>97.93%</code>）、水杉九键长句 T9 <code>90.1%</code>（<code>98.46%</code>）；同机 44 键 <code>Input+Layout P50/P95</code> <code>0.247 / 0.872 ms</code>（P95 领先豆包 <code>3.903 ms</code> 超 <code>4.4×</code>）、<code>Total Frame P50</code> <code>17.206 ms</code>（豆包 <code>29.330 ms</code>）、44 键耗时 <code>0.848 s</code>（豆包 <code>1.372 s</code>），<code>26 键 / T9 引擎 P50</code> <code>1.220 / 2.319 ms</code>，触感 <code>44/44</code>，编码退格 <code>DOWN (0ms)</code>。</div>
+        </div>
+      </div>
+
+      <details class="fold" style="margin-top:.85rem;">
+        <summary>
+          <span class="fold-main">查看历史版本更新记录（Build 86 及更早共 59 个版本）</span>
+          <span class="fold-hint">按时间倒序</span>
+        </summary>
+        <div class="fold-body">
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 86 (Android)</span>
+          <span class="ver-time" id="b86-ver-time">2026-11-28 16:24</span>
+          <span class="ver-title">企微「✨ 精灵伴聊」端侧 Qwen3-0.6B INT4 离线 AI 模型、零 PII 联系人风格记忆 RAG 与按需分片下载上线</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>端侧 Qwen3-0.6B INT4 个性化「✨ 精灵 AI 定制」上线（零 APK 膨胀 + arm64-v8a NDK SIMD）：</strong>基于教师蒸馏 <code>2,150</code> 条零 PII 多轮样本 LoRA 微调并量化为 <code>378.3 MB</code> <code>Q4_K_M</code> GGUF（对抗评测 <code>25/25 = 100.0%</code>，思考/PII/身份越界泄漏均为 <code>0</code>），集成 <code>llama.cpp</code> <code>arm64-v8a</code> NDK（<code>-march=armv8.2-a+dotprod+fp16</code>）仅增约 <code>2.7 MB</code>，安装包保持 <code>140.6 MB</code>；支持在设置页「端侧 AI 伴聊模型（0.6B）」按需 4 线程断点从火山引擎 TOS 下载与 SHA-256 校验，未下载或非 ARMv8.2 设备零感知平滑回退 Build 85 零延迟规则引擎。</div>
+          <div class="log-item"><strong>零 PII 联系人风格记忆 + 本地知识 RAG 与抽屉流式体验：</strong><code>CompanionKnowledgeRag</code> 端侧实时注入 175 校区地址、300 FAQ 与 11 家竞品作战卡事实底座，<code>ContactStyleMemory</code> 仅对联系人口碑作加盐 SHA-256 哈希并以 EMA 记住 <code>亲切具体 / 专业干练 / 简短高效</code> 三档偏好（零对话原文或身份信息落盘/上传）；伴聊抽屉新增「✨ 精灵 AI 定制」实时流式卡片、顶栏风格快切与「↻ 换一句」，深浅色自动跟随系统并确保与规则卡片同屏清晰可见。</div>
+          <div class="log-item"><strong>打字零回归与全量三测评门禁全绿（<code>140.6 MB</code> 通用签名包）：</strong>AI 推理运行于独立后台低优线程，支持新请求 <code>&lt;20ms</code> 抢占取消与 <code>90s</code> 闲置/<code>onTrimMemory</code> 自动卸载。4,000 条 v5 26 键 <code>83.3% / 90.2% / 93.1%</code>（<code>0.999 / 1.717 ms</code>）、T9 <code>52.8% / 60.5% / 65.8%</code>（<code>2.018 / 3.793 ms</code>）；1,440 句日常对话 26 键 <code>62.2%</code>（超豆包 <code>+3.3%</code>）/ T9 <code>39.5%</code>（<code>+0.9%</code>）；2,000 家校集 26 键 <code>68.3%</code>（<code>+4.2%</code>）/ T9 <code>43.1%</code>（<code>+5.1%</code>）；门禁 3 万象新文 26 键 <code>81.0%</code>（<code>96.73%</code>）、水杉新语料 1,631 句 <code>87.5%</code>（<code>97.93%</code>）；同机 44 键 <code>Input+Layout P50/P95</code> <code>0.350 / 0.849 ms</code>（P95 领先豆包 <code>3.802 ms</code> 超 4 倍）、<code>Total Frame P50</code> <code>17.102 ms</code>（豆包 <code>28.836 ms</code>）、44 键耗时 <code>0.885 s</code>（豆包 <code>1.383 s</code>），<code>26 键 / T9 P50</code> <code>1.200 / 2.355 ms</code>，触感 <code>44/44</code>。</div>
+        </div>
+      </div>
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 85 (Android)</span>
+          <span class="ver-time" id="b85-ver-time">2026-11-28 12:41</span>
+          <span class="ver-title">企微「✨ 精灵伴聊」4 轮双向上下文升级、9 类防误判护栏与全端品牌图文向导上线</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>「✨ 精灵伴聊」双向上下文与直开抽屉交互：</strong>企微顶栏状态胶囊升级为 <code>✨ 精灵● / ⏸ / ⚠</code>，短按直接展开等高伴聊抽屉（内置 <code>⏸ 暂停</code> 按钮，长按即时扫描诊断）；<code>WeComContextBridge</code> 重塑为 4 轮双向 <code>ChatTurn</code>（按「对方 / 我」分色展示原文），同步修复长多行左对齐来信气泡误删（<code>n.left &gt;= 0.24W</code>）、隐形搜索 <code>EditText</code> 截断消息区与底部 3% 边缘容差 3 大真机漏抓根因，并预留 <code>SpriteCompanionEngine</code> 插件挂钩。</div>
+          <div class="log-item"><strong>彻底消除 9 类真实聊天场景误判（181 项 M3 自测 100% 通过）：</strong>严格以 <code>externalParent</code> 隔离内部同事群与外部家长流（同事绝不误推家长话术或退费 FAQ，新增 <code>🤝 同事转述</code>）；重写 <code>XdfToolsPack.matchBestFaqs</code> 为非重叠 2-gram（<code>j += 2</code>）与退费/学段/陈述句三护栏；拆分 <code>🎉 成绩喜报</code>、<code>🧭 学习习惯</code> 与精确化 <code>📐 学情反馈</code>；消息体学科/学段优先于群名备注，并支持按海淀/朝阳/广州等区域从 175 校区库精准荐校。</div>
+          <div class="log-item"><strong>全端品牌视觉图文引导升级与三测评门禁全绿（<code>138.0 MB</code> 通用签名包）：</strong>新增深浅双色自适应底部抽屉 <code>SpriteSheetDialog</code> 与 6 幅 Canvas 矢量向导图（<code>SpriteGuideIllustrations</code>），彻底替换输入法启用、企微解除受限、安装/麦克风权限、词库导入等全端 6 处纯文字弹窗并自动跟随系统深色外观。4,000 条 v5 26 键 <code>83.3% / 90.2% / 93.1%</code>（<code>1.03 / 1.87 ms</code>）、T9 <code>52.8% / 60.5% / 65.8%</code>（<code>2.05 / 4.00 ms</code>）；1,440 句日常对话 26 键 <code>62.2%</code>（超豆包 <code>+3.3%</code>）/ T9 <code>39.5%</code>（<code>+0.9%</code>）；2,000 家校集 26 键 <code>68.3%</code>（<code>+4.2%</code>）/ T9 <code>43.1%</code>（<code>+5.1%</code>）；门禁 3 万象新文 26 键 <code>81.0%</code>（<code>96.73%</code>）、水杉新语料 1,631 句 <code>87.5%</code>（<code>97.93%</code>）；同机 44 键 <code>Total Frame P50</code> <code>16.727 ms</code>（五版最优，豆包 <code>30.758 ms</code>）、44 键耗时 <code>0.992 s</code>（豆包 <code>1.577 s</code>）、<code>Input+Layout P50/P95</code> <code>0.143 / 3.455 ms</code>（豆包 <code>0.191 / 5.250 ms</code>），26 键引擎 <code>1.191 ms</code>、T9 <code>2.316 ms</code>，触感 <code>44/44</code>。</div>
+        </div>
+      </div>
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 84 (Android)</span>
+          <span class="ver-time" id="b84-ver-time">2026-11-28 09:18</span>
+          <span class="ver-title">企微本屏可见区对方气泡精准提取、家长同事分流、300 FAQ 匹配与全文预览交互</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>严格限定本屏可见对方消息（不读两屏外与己方刚发气泡）：</strong><code>WeComContextAccessibilityService</code> 结合输入法窗口顶边与输入框 <code>EditText</code> 顶边动态锁定聊天可见区下界 <code>chatAreaBottom</code>（严格只读、绝不读输入框草稿与零模拟点击）；<code>WeComContextBridge</code> 剔除键盘下方旧消息、右侧己方已发气泡（<code>isClearlyOutgoingBubble</code>）、群聊发送者小字昵称及已读人数/语音时长/<code>[图片]</code> 等噪声，仅取本屏最新 <code>1–2</code> 条对方消息。</div>
+          <div class="log-item"><strong>回复精准度重做与全新两级全文预览浮层：</strong>自动区分外部家长（<code>@微信</code>/外部联系人/家长备注）与内部同事，绝不把备注或群名拼入意图且坚持最新一条消息优先；高优家校场景直连 <code>300</code> 条本地离线 FAQ 语义检索与 <code>11</code> 家竞品作战卡，补全会议/发资料/约电话/致谢/问候/确认 <code>6</code> 类自然对话意图；低置信闲聊设 <code>autoPopup=false</code> 仅后台备选不打扰。点顶栏徽章、右侧 <code>| ∨</code> 或长按 <code>企微●</code> 可打开等高全文预览浮层，顶部卡片回显本屏引文与 <code>↻ 重读</code>，完整多行展示后点按上屏。</div>
+          <div class="log-item"><strong>全量三测评门禁（门禁 A + B + 门禁 3）同包实测通过（<code>138.0 MB</code> 通用签名包）：</strong>4,000 条 v5 26 键 <code>83.3% / 90.2% / 93.1%</code>（<code>1.11 / 5.68 ms</code>）、T9 <code>52.8% / 60.5% / 65.8%</code>（<code>2.37 / 8.21 ms</code>）；1,440 句日常对话 26 键 <code>62.2% / 72.3% / 77.0%</code> 领先豆包联网版 1.5.6 <code>+3.3%</code>（错输领先 <code>+19.6%</code>）、T9 <code>39.5% / 45.2% / 49.3%</code> 领先豆包 <code>+0.9%</code>（错输领先 <code>+17.3%</code>）；2,000 条家校集 26 键 <code>68.3%</code>（超 B78 <code>+4.2%</code>）、T9 <code>43.1%</code>（超 B78 <code>+5.1%</code>）；门禁 3 万象五体裁 26 键 <code>60.2%</code>（字准 <code>94.41%</code>）/ T9 <code>48.0%</code>（<code>87.91%</code>）、万象新文 26 键 <code>81.0%</code>（<code>96.73%</code>）/ T9 <code>63.6%</code>（<code>90.47%</code>）、水杉九键长句 26 键 <code>96.3%</code>（<code>99.54%</code>）/ T9 <code>90.1%</code>（<code>98.46%</code>）、水杉新语料 1,631 句 26 键 <code>87.5%</code>（<code>97.93%</code>）/ T9 <code>74.2%</code>（<code>93.94%</code>）；同机 44 键 <code>Input+Layout P50/P95</code> 为 <code>0.29 / 1.19 ms</code>（P95 领先豆包 <code>2.486 ms</code> 超 2 倍），26 键引擎 P50 <code>1.218 ms</code>、T9 <code>2.438 ms</code>，触感 <code>44/44</code>，编码期退格 <code>DOWN (0ms)</code>。</div>
+        </div>
+      </div>
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 83 (Android)</span>
+          <span class="ver-time" id="b83-ver-time">2026-11-28 06:20</span>
+          <span class="ver-title">企微只读无障碍真机漏识别全链路修复 + 升级断连显式重连提示</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>彻底修复企业微信真机聊天气泡与家长备注漏识别：</strong>在 <code>wecom_a11y_config.xml</code> 补齐 <code>flagIncludeNotImportantViews</code> 与视图焦点/点击/滚动事件，兼容企微自研富文本视图与私有化企微（<code>com.tencent.weworklocal</code>）；<code>WeComContextAccessibilityService</code> 升级为多窗口评分择优（不再被悬浮窗/空窗口截断）、<code>MAX_DEPTH=48 / MAX_NODES=600</code> 深树扫描、屏外隐藏 Tab 剪枝与物理全屏坐标统一；<code>WeComContextBridge</code> 放宽宽屏/左对齐标题与半滚出视口气泡匹配并过滤企微底部快捷工具栏与时间戳杂音，纯图片/语音对话亦可凭家长备注兜底弹出通用快捷回复（严格保持只读、零落盘、零上传）。</div>
+          <div class="log-item"><strong>消除升级/省电后无障碍服务断连静默与同框重启漏扫：</strong>主动检测「系统开关已开但后台服务未绑定（<code>!isServiceConnected</code>）」状态，在设置页与键盘顶栏明确提示 <code>需重连 / 企微⚠</code>（点按直达系统无障碍设置关闭再重开），替代此前误报运行中而静默不吐词的问题；修复 <code>onStartInputView</code> 同框重启早返回路径跳过激活与扫描，升级 <code>0 / 300 / 900 ms</code> 三段补扫、长按 <code>企微●</code> 零 PII 实时诊断摘要，以及关闭/上屏同条消息防 400ms 反复回弹。</div>
+          <div class="log-item"><strong>全量三测评门禁（门禁 A + B + 门禁 3）同包实测通过（<code>138.0 MB</code> 通用签名包）：</strong>4,000 条 v5 26 键 <code>83.3% / 90.2% / 93.1%</code>（<code>1.02 / 1.85 ms</code>）、T9 <code>52.8% / 60.5% / 65.8%</code>（<code>2.04 / 4.00 ms</code>）；1,440 句日常对话领先豆包联网版 1.5.6 <code>+3.3%</code>（错输领先 <code>+19.6%</code>）；2,000 条家校集超越 B78 基线 <code>+4.2% / +5.1%</code>；门禁 3 万象/水杉 <code>2,213</code> 句公开集万象新文 26 键 <code>81.0%</code>（字准 <code>96.73%</code>）、水杉新语料未见 <code>87.5%</code>（字准 <code>97.93%</code>）、水杉九键长句 T9 <code>90.1%</code>（字准 <code>98.46%</code>）；同机 44 键 <code>Input+Layout P50/P95</code> 为 <code>0.144 / 0.768 ms</code>（领先豆包 <code>0.659 / 5.494 ms</code> 超 4.5 倍），<code>Total Frame P50</code> <code>17.124 ms</code>（豆包 <code>33.378 ms</code>）。</div>
+        </div>
+      </div>
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 82 (Android)</span>
+          <span class="ver-time" id="b82-ver-time">2026-11-28 04:15</span>
+          <span class="ver-title">应用内自动升级全链路修复 + 企微聊天助手上手全面简化</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>应用内自动升级全链路修复可用：</strong>修复 <code>triggerAutoCheckAndDownloadIfDue</code> 提前写时间戳导致 4 小时锁死与失败不重试、<code>NOT_METERED</code> 过滤手机热点/企业 Wi-Fi 跳过静默下载、后台下载点击「查看进度」触发互斥报错、Android 11–14 开启安装权限杀进程丢失状态、及 <code>v1.9.9</code> 多 Build 共享火山引擎 TOS 分片路径导致 1 年 CDN 缓存碰撞 6 大断点；升级为设置页 <code>3</code> 分钟 / 后台 <code>30</code> 分钟自动检查、热点 Wi-Fi 自动续传、进程重启自动恢复拉起系统安装器、顶栏 <code>☰</code> 外露红点提示，并补齐 <code>com.tencent.wework</code> 包可见性声明修复「打开企业微信」跳转。</div>
+          <div class="log-item"><strong>企微聊天助手上手全面简化（系统授权即生效）：</strong>在系统无障碍开启「教师精灵·企微聊天助手」且工号已登录后即自动激活运行（取消设置页二次开关与晦涩配置）；无障碍服务增加 <code>flagRetrieveInteractiveWindows</code> 与 <code>getWindows()</code> 精准识别企微聊天窗，弹起键盘立即主动识别；新增「📍 上课/校区」（自动联动常驻校区地址）与通用「💬 快捷回复」兜底，顶栏「企微●」仅在企微前台展示并支持点按暂停/长按刷新。</div>
+          <div class="log-item"><strong>全量双测评门禁与五版同台测速通过（<code>138.0 MB</code> 通用签名包）：</strong>4,000 条 v5 26 键 <code>83.3% / 90.2% / 93.1%</code>（<code>1.02 / 1.87 ms</code>）、T9 <code>52.8% / 60.5% / 65.8%</code>（<code>2.08 / 4.17 ms</code>）；1,440 句日常对话领先豆包联网版 1.5.6 <code>+3.3%</code>（错输领先 <code>+19.6%</code>）；2,000 条新东方家校集超越 B78 基线 <code>+4.2% / +5.1%</code>；同机 44 键 <code>Input+Layout P50/P95</code> 为 <code>0.237 / 0.901 ms</code>（五版最优 P95，领先豆包联网版 <code>0.688 / 4.854 ms</code> 超 5 倍），<code>Total Frame P50</code> <code>18.847 ms</code>（豆包 <code>35.508 ms</code>）。</div>
+        </div>
+      </div>
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 81 (Android)</span>
+          <span class="ver-time" id="b81-ver-time">2026-11-28 00:40</span>
+          <span class="ver-title">M3 跨部门交接卡 / 手机号防明文误发 / 资料追问钩子 + 企微只读感知实验室 &amp; Hex 面板体验精修</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>M3 三项零权限家校协同主力上线（100% 纯离线）：</strong>在话术工作台「🤝 内部交接」与候选编码（<code>stjk</code>/<code>tkbk</code>/<code>mpjj</code>/<code>tfyj</code>）上线 4 类 M↔P 一键填坑交接卡（强制齐备必填项并自动脱敏手机号）；新增 11 位手机号防明文误发实时拦截胶囊（精确放行 <code>138****5678</code> 与 12 位及以上单号）；云盘资料发出 90 秒内自动浮出 3 条高推进探需追问短句。</div>
+          <div class="log-item"><strong>实验室可选企微只读无障碍画像关联 &amp; 界面交互精修：</strong>设置页底部新增默认关闭、须员工工号登录并经系统受限设置 3 步引导开启的「实验室功能」，仅在 <code>com.tencent.wework</code> 前台只读匹配 6 类沟通意图与加盐本地微缩画像（零持久化、零上传、离开即清）；同时移除顶栏麦克风右侧「全岗」按钮、修复「FAQ速查」及全部内容面板切换分类时页面回滚顶部问题、移除各面板顶部说明行以释放阅读空间，并按照 Hex 规范重绘矢量下拉选词与「∧」收起按钮。</div>
+          <div class="log-item"><strong>全量双测评门禁与四版同台测速通过（<code>138.0 MB</code> 通用签名包）：</strong>4,000 条 v5 26 键 <code>83.3% / 90.2% / 93.1%</code>（<code>1.01 / 1.84 ms</code>）、T9 <code>52.8% / 60.5% / 65.8%</code>（<code>2.04 / 4.00 ms</code>）；1,440 句日常对话领先豆包联网版 1.5.6 <code>+3.3%</code>（错输领先 <code>+19.6%</code>）；2,000 条新东方家校集超越 B78 基线 <code>+4.2% / +5.1%</code>；同机 44 键 <code>Input+Layout P50/P95</code> 为 <code>0.142 / 0.619 ms</code>（五版最优 P95，领先豆包联网版 <code>0.513 / 4.829 ms</code> 近 4 倍），<code>Total Frame P50</code> <code>17.822 ms</code>（豆包 <code>33.391 ms</code>）。</div>
+        </div>
+      </div>
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 80 (Android)</span>
+          <span class="ver-time" id="b80-ver-time">2026-11-27 21:50</span>
+          <span class="ver-title">M2 新东方离线家校工作台 + 应用内 4 线程断点自动升级 + 短码直发</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>M2 离线家校工具包与岗位工作台（100% 纯离线零联网推理）：</strong>随包集成并通过 TOS OTA 热更 <code>xdf_tools_pack.json.gz</code>（<code>78,984 B</code>、零 PII），工号登录后解锁全国 <code>175</code> 校区、Top <code>300</code> 家校 FAQ 毫秒检索与 <code>11</code> 家竞品 + <code>4</code> 大异议作战卡（候选输 <code>xueersi</code> 等直出 ⚡ 作战卡，支持年级/学科微调与 🎲 换话术）；P 端新增 <code>5×4</code> 防撞衫「📐 学法处方」、顶栏一键切换 <code>全岗 / M顾问 / P教学</code>、符号置顶 <code>16</code> 项学科公式条及「📝 课后点评」语音结构化模板。</div>
+          <div class="log-item"><strong>短码开箱直发 &amp; 应用内 4 线程断点自动升级：</strong>修复 <code>dz</code>/<code>dh</code> 等内置「资料短码」跳转设置页问题（改为开箱即用直接发送，仍支持绑定常驻校区自动填充），补充 26 键 <code>zliu</code>/<code>zri</code>/<code>xzliu</code>/<code>mx</code> 智能日期短码并移除「常用收藏」；上线应用内自动升级（TOS + Pages 双清单 4 线程断点分片下载、SHA-256 验签、Wi-Fi 自动预下载与一键安装）。</div>
+          <div class="log-item"><strong>双测评门禁与 XDF 专项零退化（<code>138.0 MB</code> 通用包）：</strong>4,000 条 v5 26 键 <code>83.3% / 90.2% / 93.1%</code>、T9 <code>52.8% / 60.5% / 65.8%</code>；1,440 句日常对话领先豆包联网版 1.5.6 <code>+3.3%</code>（错输领先 <code>+19.6%</code>）；2,000 条新东方家校集超越 B78 基线 <code>+4.2% / +5.1%</code>；同机 44 键 <code>Input+Layout P50</code> <code>0.138 ms</code>（领先豆包 <code>1.072 ms</code> 近 8 倍）。</div>
+        </div>
+      </div>
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 79 (Android / iOS B74 / macOS B72 / Windows / 鸿蒙 v65)</span>
+          <span class="ver-time" id="b79-ver-time">2026-11-27 18:20</span>
+          <span class="ver-title">新东方家校双通道词库 + 运行时整句领域覆盖层 + Hex 四角键 1.5 格等宽对齐</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>新东方家校双通道词库与零内存开销整句领域覆盖层（全端同步）：</strong>沉淀 <code>1,437</code> 条教研/校区/排课/退费专词与 <code>167</code> 组联想、<code>512</code> 行离线语音热词及 OTA 热词源（<code>batch=20261127</code>，<code>350</code> 条）；C++17 共享核心接入只读 <code>DomainOverlay</code>，赋能五端整句解码并支持 <code>kPackEdu</code> 热切换。</div>
+          <div class="log-item"><strong>对齐 Hex 四角键 1.5 格等宽与底行十格竖缝（Android Build 79）：</strong>统一 26 键与符号底行权重为 <code>1.5 / 1.0 / 4.0 / 1.0 / 1.0 / 1.5</code>，修复 Shift、退格、换行、<code>?123</code> 宽窄不均并对齐 Z/M 竖缝与物理像素字号（九键边栏同步对齐）。</div>
+          <div class="log-item"><strong>全量双测评与 XDF 家校专项全面超越基线（<code>137.9 MB</code> 通用包）：</strong>2,000 条家校集（vs B78）26 键 <code>64.1% → 68.3% (+4.2%)</code>、T9 <code>38.0% → 43.1% (+5.1%)</code>；4,000 条 v5 26 键 <code>83.3% / 90.2% / 93.1%</code>、T9 <code>52.8% / 60.5% / 65.8%</code>；1,440 句对话领先豆包联网版 <code>+3.3%</code>；44 键响应 P50 <code>0.259 ms</code>、掉帧率五版最低 <code>67.39%</code>。</div>
+        </div>
+      </div>
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 78 (Android)</span>
+          <span class="ver-time">2026-11-27 13:34</span>
+          <span class="ver-title">修复持续选联想词顶栏重合 &amp; 统一全部菜单面板与键盘完全等高零跳动</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>彻底修复持续点按联想词时顶部菜单与候选栏重合（Android）：</strong>收口全部 15 处顶栏显隐至唯一互斥开关，修正 <code>closeVoice()</code> 在未开启语音时因宿主输入框触发异步 <code>restartInput()</code> 误将工具栏置显的根因，并在结束选词与清拼时主动失效在途异步查词，配合候选栏不透明底色与点击遮罩，确保 26 键与九键连续点按联想词全程干净互斥、一点「☰」即切回菜单栏。</div>
+          <div class="log-item"><strong>全面统一所有菜单界面高度与键盘完全一致，消除切换跳动：</strong>移除<code>话术</code>、<code>云盘资料</code>、<code>符号目录</code>、<code>剪贴板</code>、<code>表情</code>与<code>持续语音</code>界面原本额外拉高的容器高度策略，所有菜单与扩展界面均严格锁定为当前打字键盘高度（随 7 档键盘高度设置同步等高缩放），并紧凑优化持续语音面板垂直排布以保证核心字幕与操控区清晰不裁切，切入/跨切/返回键盘实现零上下跳变。</div>
+          <div class="log-item"><strong>双测评门禁全面通过（<code>137.7 MB</code> 通用签名包）：</strong>4,000 条 v5 回归集实测 26 键 <code>82.9% / 89.7% / 92.9%</code>（单键 P50 <code>0.96 ms</code>）、T9 <code>52.5% / 59.9% / 65.2%</code>（P50 <code>1.91 ms</code>）；1,440 句真实对话 26 键 <code>62.0% / 72.3% / 77.1%</code>（领先豆包联网版 <code>+3.1%</code>，错输 <code>54.4%</code> 领先 <code>+19.6%</code>）、T9 <code>39.5% / 45.2% / 49.3%</code>（领先 <code>+0.9%</code>，错输 <code>30.0%</code> 领先 <code>+17.3%</code>）；同机 44 键连击测速 Build 78 <code>Input+Layout P50</code> 降至四版最优 <code>0.248 ms</code>（<code>Max 0.673 ms</code>，44 键总耗时缩至 <code>0.661 s</code>），<code>Total Frame P50</code> 稳居 <code>16.718 ms</code>（豆包联网版 1.5.6 <code>Input+Layout P50/P95</code> 为 <code>0.360 / 5.841 ms</code>、44 键耗时 <code>1.245 s</code>）。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 77 / iOS Build 73 / macOS Build 71 / 鸿蒙 v64</span>
+          <span class="ver-time">2026-11-27 10:43</span>
+          <span class="ver-title">顶栏还原符号与常驻直切、统一右上角返回键盘并去底栏、丝滑表情顶栏及分步选词连续续选修复</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>顶栏「符号」还原至「资料」右侧，全界面常驻菜单直切：</strong>将「符号」入口恢复到顶栏「资料」右侧（自适应紧凑排布，<code>360dp</code> 屏幕零裁剪），进入<code>话术</code>、<code>云盘资料</code>、<code>符号目录</code>、<code>剪贴板</code>、<code>持续语音</code>或<code>表情</code>面板后顶部菜单栏均保持常驻，支持跨面板一步直切。</div>
+          <div class="log-item"><strong>全面去除菜单面板底栏，统一右上角「返回键盘」：</strong><code>话术</code>、<code>云盘资料</code>、<code>符号目录</code>、<code>剪贴板</code> 与 <code>表情</code> 面板全部移除底部 <code>[ABC][空格][⌫]</code> 操作栏以最大化内容可视空间；取消各面板左上角分散返回键，所有非打字界面统一由右上角按钮切换为高亮「‹ ⌨ 返回键盘」图标（长按仍可切换系统输入法）。</div>
+          <div class="log-item"><strong>表情面板顶部同步一致并保住丝滑手感：</strong>表情工作台保持顶栏与右上角「返回键盘」风格一致，同时去除面板高度渐变动画、统一菜单面板高度并将 <code>setRecentEmojiProvider</code> 收敛至构造期单次绑定，保留 AndroidX <code>EmojiPickerView</code> 原生丝滑开屏与流畅滑动。</div>
+          <div class="log-item"><strong>修复分步选词后剩余拼音与联想词消失（五端共用核心 + Android）：</strong>根治 C++17 核心 1-edit 纠错吞尾导致前缀词误标 <code>consumedLen==fullLength</code> 问题，并在 Android 端保留未消尽分词引号、防止宿主异步 <code>onUpdateSelection</code> 回调误清剩余编码，打通「实际大小→实际+大小」「<code>jintianq</code>→今天+u→今天去」「<code>womendouhenhao</code>→我们+都很好」连续选词（同步更新 iOS B73 / macOS B71 / Windows / 鸿蒙 NEXT v64）。</div>
+          <div class="log-item"><strong>全端构建与双测评门禁全面通过，官网接入全版本门禁历史对比：</strong>官网新增 <code>1,440</code> 句对话、<code>4,000</code> 条 v5 与按键响应门禁 B 全版本历史横向对比表；Build 77 实测 4,000 条 v5 26 键 <code>82.9% / 89.7% / 92.9%</code>（P50 <code>0.95 ms</code>）、T9 <code>52.5% / 59.9% / 65.2%</code>（P50 <code>1.90 ms</code>），1,440 句日常对话 26 键 <code>62.0%</code>（领先豆包联网版 <code>+3.1%</code>，错输 <code>54.4%</code> 领先 <code>+19.6%</code>）、T9 <code>39.5%</code>（领先 <code>+0.9%</code>）；44 键连击 <code>Input+Layout P95/Max</code> 降至四版最低 <code>0.565 / 0.66 ms</code>（豆包联网版 1.5.6 为 <code>16.975 / 17.984 ms</code>），<code>Total Frame P50</code> 为 <code>16.724 ms</code>（豆包 <code>34.569 ms</code>）。同步发布 Android B77（<code>137.7 MB</code>）、iOS B73（<code>16.9 MB</code>）、macOS B71（<code>95.5 MB</code>）与 Windows（<code>99.6 MB</code>）。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 76 / iOS Build 72</span>
+          <span class="ver-time">2026-11-27 08:17</span>
+          <span class="ver-title">Hex 大字号/四角矢量键、顶栏放大与语音纯图标、三大面板极简返回及「实际大小」分步选词修复</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>对标 Hex 放大键帽字号与顶部工具栏：</strong>重构 <code>KeyLabelScaler</code> 比例缩放规则（字母基准 <code>26.5 dp</code> / 功能键 <code>16.5 dp</code> / 上标 <code>9.0 dp</code> / 高度上限 <code>0.78</code>），显著增大 26 键、T9 九键、数字与符号键字号；顶栏高度提升至 <code>46 dp</code>，<code>话术</code>/<code>资料</code> 增至 <code>15.5 dp</code> <code>sans-serif-medium</code> 并锁定未激活态字重。</div>
+          <div class="log-item"><strong>统一左下角 &amp; 右下角 Hex 矢量功能键：</strong>在 <code>ImeIconFactory</code> 新增 <code>Shift</code> 矢量子母态/锁定态、<code>退格</code> 与跟随输入框语义的白色 <code>Enter</code> 动作键矢量图标，左下角 <code>?123</code>/<code>ABC</code>/<code>分词</code> 全部对齐 Hex <code>Medium</code> 紧凑风格（含符号底行与表情底栏）。</div>
+          <div class="log-item"><strong>语音纯图标并入表情右侧 &amp; 三大面板去底栏极简返回：</strong>将语音入口移至顶栏表情按钮右侧仅保留矢量麦克风图标（去除文字胶囊）；<code>话术</code> / <code>云盘资料</code> / <code>剪贴板</code> 移除底部 <code>48 dp</code> <code>[ABC][空格][⌫]</code> 底栏，仅在顶栏最左侧保留 <code>32×28 dp</code> 轻量「‹ ⌨」返回图标，最大化列表可视内容区（表情面板保留底部操作栏）。</div>
+          <div class="log-item"><strong>修复「实际大小」分步选词与 T9 锁定首音节首屏单字（Android / iOS 共用核心）：</strong>修复 T9 多音节锁定前缀未耗尽时 <code>consumedLen</code> 误标全长与 800ms 分步选词异步 <code>onUpdateSelection(-1,-1)</code> 误清剩余串问题，确保 26 键与 T9 输入「实际大小」先选「实际」后均可连续续选「大小」（完整保留微信 <code>ok</code> 选表情清框守卫）；同步修复 T9 锁定单个首音节（如 <code>3293684+fa</code>）时高频单字「发」被前缀词挤出首屏 Top-8。</div>
+          <div class="log-item"><strong>全套双测评门禁与 iOS Build 72 同步发版：</strong>4,000 条 v5 实测 26 键 <code>82.9% / 89.7% / 92.9%</code>（P50 <code>0.92 ms</code>），T9 <code>52.5% / 59.9% / 65.2%</code>（P50 <code>1.89 ms</code>）；1,440 句日常对话 26 键 <code>62.0% / 72.3% / 77.1%</code>（领先豆包联网版 <code>+3.1%</code>），T9 <code>39.5% / 45.2% / 49.3%</code>（领先 <code>+0.9%</code>）；44 键连击 <code>Input+Layout P50/P95</code> 降至 <code>0.153 / 0.574 ms</code>（豆包联网版 <code>0.268 / 10.416 ms</code>），<code>Total Frame P50</code> 保持 <code>16.734 ms</code>（豆包 <code>33.391 ms</code>）。iOS 同步构建 v1.9.9 Build 72（<code>16.9 MB</code>）。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 75 / iOS Build 71</span>
+          <span class="ver-time">2026-11-27 02:42</span>
+          <span class="ver-title">Hex 3×2 矢量菜单、统一底栏丝滑面板、微信 ok 防复推、语音静音开关与 T9 核心/精排全面修复</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>Hex 3×2 纯矢量菜单抽屉 &amp; 收起键长按切输入法：</strong>修复局部坐标判断与遮罩防穿透（点抽屉外与右上角「✕」均可可靠关闭且不误触字母）；去除杂色 emoji 重构对称 3×2 纯矢量菜单抽屉，并将「切输入法」移至右上角收起键盘图标长按呼出（<code>pickKeyboard</code>）。</div>
+          <div class="log-item"><strong>话术 / 云盘资料 / 剪贴板丝滑重构 &amp; 统一 <code>[ABC][空格][⌫]</code> 底栏：</strong>复用 Emoji 页的 AndroidX <code>RecyclerView</code> + 实例缓存与状态记忆，三大面板全面对齐 Hex <code>[ABC][空格][⌫]</code> 紧凑底栏，云盘「‹ 上一级」收敛进面包屑条。</div>
+          <div class="log-item"><strong>微信 <code>ok</code> 推荐表情防残留 &amp; 语音面板硬件级静音开关：</strong>在 <code>onStartInputView</code> / <code>onUpdateSelection</code> 增加宿主清框检测，解决微信点选推荐表情后 <code>ok</code> 滞留输入框导致重复推荐的问题；持续语音面板移除「轻点暂停」文案，底部中央麦克风升级为硬件级红/蓝一键静音开关（暂停 <code>AudioRecord</code>、保留模型常驻且静音期屏蔽 20s 自动休眠）。</div>
+          <div class="log-item"><strong>统一核心 T9 五大高频修复 &amp; <code>SentenceChoice</code> 精排链恢复：</strong>修正 <code>8</code> 误出「你」、<code>9</code> 丢「我」、<code>2</code> 丢「啊」、<code>24</code> 难找「比」、<code>9438</code> 缺「字符/自负」，补全 5+ 键长简拼（<code>74997→蒲黄榆校区</code>）、短简拼防错音挤占（<code>5948→家校沟通</code>、<code>3657→费曼卡片</code>、<code>bjb→白金班</code>）、自定义词 T9/分隔符/字母过滤、T9 英文/表情与单 mmap 读音反查 <code>inferPhraseReading</code>；恢复 <code>ChoiceRanker</code> 精排链，400 句实测 26 键 Top-3 回升至 <code>71.2%</code>（首屏 <code>76.0%</code>），T9 Top-3 回升至 <code>43.8%</code>（首屏 <code>47.8%</code>）。</div>
+          <div class="log-item"><strong>全套双测评门禁（4,000 v5 + 1,440 对话 + 4 版同机测速）与 iOS Build 71 同步：</strong>4,000 条 v5 实测 26 键 <code>82.9% / 89.7% / 92.9%</code>（单键 P50 <code>0.92 ms</code>），T9 <code>52.5% / 59.9% / 65.2%</code>（P50 <code>1.89 ms</code>）；Android 14 同机 44 键连击 Build 75 <code>Input+Layout P95</code> 降至 <code>0.609 ms</code>（豆包联网版 1.5.6 为 <code>10.492 ms</code>）、<code>Total Frame P50</code> 降至 <code>16.731 ms</code>（豆包为 <code>33.383 ms</code>）。iOS 同步打包 v1.9.9 Build 71（<code>16.9 MB</code>）。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 74</span>
+          <span class="ver-time">2026-11-26 15:48</span>
+          <span class="ver-title">Hex 风格 ?123 符号数字合一键盘、精简顶栏与双行防溢出菜单抽屉（Android 专项体验优化）</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>?123 符号数字合一、顶栏精简“符号”：</strong>新增 <code>KeySymbolLayout</code>，将左下角 <code>123</code> 升级为 <code>?123</code> 统一入口，支持第 1 页（<code>1-0</code> 数字 + 常用中英标点与长按/上滑变体）、第 2 页（<code>=\&lt;</code> 数学/货币/括弧扩展符号）及「更多」完整分类符号目录，切换与字母盘严格等高（实测 <code>1@π</code> 零高度跳动）；同时保留按住 <code>?123</code> 上滑 123 九宫格快捷手势并移除顶栏冗余的“符号”按钮。</div>
+          <div class="log-item"><strong>☰ 双行等宽防溢出菜单抽屉：</strong>移除原先横向滚动条，重构为 <code>MATCH_PARENT</code> 双行自适应卡片（第一行 4 格等宽图标卡：切九键/26、深浅外观、7 色键帽主题、键盘高度；第二行 3 格等宽胶囊：<code>❓ 反馈</code>、<code>🌐 切输入法</code>、<code>⚙️ 设置</code>），E2E 实测 <code>[0, 1080]</code> 零横向裁剪溢出；调整外观/主题/高度时保持抽屉展开实时预览，点击抽屉外自动收起。</div>
+          <div class="log-item"><strong>按键延迟基准（Build 70 vs 73 vs 74）：</strong>Pixel 3a Android 14 同机 44 键连击 + 60 句内核对比：Build 74 <code>Input+Layout P95</code> 降至 <code>1.269 ms</code>（Build 73 为 <code>1.433 ms</code> / Build 70 为 <code>2.78 ms</code>），<code>Total Frame P50</code> <code>33.378 ms</code>、44 键连击总耗时最快 <code>1.215 s</code>（Build 73 <code>1.293 s</code> / Build 70 <code>1.559 s</code>），<code>Input+Layout P50</code> <code>0.171 ms</code>、<code>TICK 44/44</code>、编码期退格 <code>DOWN (0ms)</code>。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 73</span>
+          <span class="ver-time">2026-11-26 14:42</span>
+          <span class="ver-title">全面落地 Hex 视觉规范、7 套键帽主题、Rollover 双指连击与极简顶栏（Android 专项升级）</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>零死区网格与双指连击（KeyRowLayout + KeyRollover + KeyLabelScaler）：</strong>引入 <code>KeyRowLayout</code> 保持视觉键帽边距（侧边距 <code>1.9 dp</code> / 键间距 <code>5.33 dp</code>）的同时实现接缝到接缝全宽命中；新增 <code>KeyRollover</code> 与 <code>KeyboardTouchBox</code> <code>ACTION_POINTER_DOWN</code> 联动，双拇指交替连击时按按下先后顺序即时上屏零吞字；接入 <code>KeyLabelScaler</code> 按键帽物理几何等比例缩放丝印字体（免疫系统字体放大溢出）。</div>
+          <div class="log-item"><strong>ViewGroupOverlay 零重排气泡与后台合并声震反馈：</strong>按键气泡迁移至 <code>root.getOverlay()</code> 按需挂载并从根视图树移除，消除击键重排开销；<code>KeyHaptics</code> 将 4 类区分按键系统音效与 <code>7 ms</code> <code>EFFECT_TICK</code> 合并入后台单槽线程（零 UI 线程 Binder IPC）。Pixel 3a Android 14 同机实测：<code>Input+Layout P50</code> 降至 <code>0.343 ms</code>（Build 72 为 <code>0.401 ms</code> / Build 70 为 <code>0.395 ms</code>）、<code>Total Frame P50</code> 降至 <code>50.788 ms</code>（Build 72 为 <code>57.41 ms</code> / Build 70 为 <code>67.047 ms</code>）、<code>Max 2.714 ms</code>（Build 70 为 <code>14.441 ms</code>）、<code>TICK 44/44</code>、编码期退格 <code>DOWN (0ms)</code>。</div>
+          <div class="log-item"><strong>Hex 扁平 7 套键帽主题体系 &amp; 44dp 高呼吸感极简顶栏：</strong>新增 <code>KeyColorTheme</code>（自动跟随、曜石黑、纯粹白、深海蓝、森林绿、琥珀棕、勃艮第 7 套键帽配色，仅染键帽与浮窗，底板维持整洁浅/深灰），支持设置页与 <code>☰</code> 抽屉实时切换，非“换行”动作键按语义高亮；顶栏收敛至 <code>44dp</code> 去除外框并采用矢量菜单/剪贴板/笑脸图标与尾随柔底色“语音”胶囊，反馈入口收拢至 <code>☰</code> 抽屉。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 72</span>
+          <span class="ver-time">2026-11-26 13:38</span>
+          <span class="ver-title">修复长按全屏遮罩、消除按键粘滞与优化语音标点切句（Android 专项体验修复 + 响应对比评测）</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>彻底修复长按键全屏遮罩 Bug：</strong>将 <code>longPressScrim</code> 由 <code>MATCH_PARENT</code> 改为显式键盘区高度，并在 <code>showLongPressOptions()</code> 内实时按 <code>mainColumn.getHeight()</code> 约束与在 <code>rebuild()</code> 时强制清理，解决长按字母/九键弹出候选项时遮罩膨胀全屏问题（E2E 实测 <code>held_top == base_top == 1286</code>）。</div>
+          <div class="log-item"><strong>全面消除按键粘滞与触感拖沓：</strong>恢复 <code>7 ms</code> 轻脆 <code>EFFECT_TICK</code> 振感与单槽最新覆盖队列（启动期异步预热 zero-IPC），按键气泡改用 <code>VISIBLE &lt;-&gt; INVISIBLE</code> 消除每次击键整树重排、取消普通键抬手二次振动、恢复编码期退格 <code>ACTION_DOWN</code> 0ms 即时触发。Pixel 3a Android 14 同机实测：Input+Layout P95 降至 <code>1.601 ms</code>（Build 70 为 <code>3.081 ms</code>、Build 71 为 <code>2.214 ms</code>），峰值毛刺 Max 从 <code>9.229 ms</code> 降至 <code>2.365 ms</code>，44 键连击耗时最快（<code>1.001 s</code>），26 键引擎解码 P50 <code>1.071 ms</code>。</div>
+          <div class="log-item"><strong>离线语音标点、话轮切分与自然数字修复：</strong><code>DictationText</code> 放行「哪一个 / 这一个 / 一个人」不再误转「哪1个」；避免在神经网络已有标点文本上二次误插逗号（「咱们都，同时」「了，吗？」），并新增口语标点修复规则自动纠正「招对了。乔欣… → 招。对了，乔欣…」「同时招看，遇到 → 同时招，看遇到」及句中问句边界；多段停顿停句自动衔接逗号不粘连。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 71</span>
+          <span class="ver-time">2026-11-26 12:15</span>
+          <span class="ver-title">接入 Hex 原版丝滑表情面板、离线语音大核与内存加固及 Gboard 级触感微交互（Android 专项升级）</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>原版 AndroidX EmojiPicker 表情面板：</strong>移除文字颜文字标签，原封不动接入 Hex 同款 <code>androidx.emoji2:emoji2-emojipicker:1.7.0</code>；支持 10 大分类吸顶导航、长按肤色变体、<code>Paint.hasGlyph</code> 兼容过滤与本地常用持久化，进入表情盘隐藏顶栏并全高展示，底部对齐 <code>[ABC] [空格] [⌫]</code> 极速返键。</div>
+          <div class="log-item"><strong>离线语音 P0 底层加固：</strong>SenseVoice 原生推理按 <code>cpu_capacity</code> 自动绑定大核（上限 4 线程），空闲 2 分钟静默释放模型内存、冷启动前校验 <code>250 MB</code> 可用内存防低端机闪退；录音/下载期间保持屏幕常亮，切换输入框或丢失焦点时保留 2 分钟纯内存「<code>🎙 补插上句</code>」恢复条一键补回。</div>
+          <div class="log-item"><strong>Gboard / Hex 级 P1 触感与微交互：</strong>升级双阶段振动反馈（按下 Click + 长按/语音停止 Tick + 滑选 <code>5 ms</code> 脉冲），新增按键长按浮层聚光压暗与右缘气泡镜像、退格左滑按词选中松手删除（清拼态严格隔离不误删已上屏词）、<code>Shift</code> / <code>123</code> 按住滑选自动回字母盘及 7 档键盘高度实时调节。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 70</span>
+          <span class="ver-time">2026-11-26 10:06</span>
+          <span class="ver-title">中文模式支持连续输入连字符标识、邮箱与网址（五端同步发版）</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>中文情景连续拼写标识、邮箱与网址不断开：</strong>在中文模式下输入连字符标识（如 <code>xdf-tpa-ime</code>、<code>gpt-4o</code>）、邮箱（<code>user@xdf.cn</code>、输入 <code>@</code> 自动补全 <code>@xdf.cn</code> / <code>@qq.com</code> 等常用域）与网址（<code>https://xzqttt.github.io/xdf-tpa-ime</code>、<code>www.xdf.cn</code>）时自动进入并延续 ASCII 原串编码，不再在敲下 <code>-</code> / <code>@</code> / <code>:</code> / <code>/</code> / <code>.</code> 时被强制转为汉字并打断；同时完整保留常规中文句末标点（<code>nihao.</code> → <code>你好。</code>、<code>xdf.</code> → <code>新东方。</code>）与桌面端已有翻页态向前翻页。</div>
+          <div class="log-item"><strong>五端核心与键盘交互全面对齐：</strong>共用 C++17 核心扩充编码上限至 <code>96</code> 键并隔离 ASCII 记忆（避免污染中文词组/T9 索引）；Android 26 键/上滑符号/数字盘、macOS、Windows TSF、iOS 扩展与鸿蒙 NEXT 全端同步支持符号与字母数字连续拼接及域名前缀识别。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 69</span>
+          <span class="ver-time">2026-11-26 07:09</span>
+          <span class="ver-title">语音返回键盘必落输入键盘 &amp; 零节流 60fps 随说随出</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>彻底修复语音「⌨️ 键盘」返回失灵与界面跑偏：</strong>从「话术 / 云盘资料 / 表情 / 功能菜单」打开语音后再点返回键盘时，强制重置为当前 26 键 / 九键 / 数字键盘（不再退回资料或话术页面）；开启语音即刻无残影清理浮层抽屉，增大 <code>⌨️ 键盘</code> 返回热区并覆盖顶左全角 <code>TouchDelegate</code>，杜绝切换竞态与假死。</div>
+          <div class="log-item"><strong>零节流极速流式出字与 60fps 跟手交互：</strong>原生 C++ JNI 新增 <code>acceptStream</code> 与零 JSON 直出 UTF-8 接口，音频分片缩至 <code>15.6 ms</code> 并取消 80ms 预览节流，合并主线程投递防止慢帧堆积；UI 改用 Canvas 自绘声波与 <code>scaleX</code> 进度条消除 <code>requestLayout()</code> 卡顿，新增说话先导「正在听取…」反馈、LCP 首帧 0ms 增量 60fps 逐字揭示与主题色闪烁光标，实现极致“随说随出”。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 68</span>
+          <span class="ver-time">2026-11-26 06:18</span>
+          <span class="ver-title">重构免提连续语音工作台（无重影实时字幕、2秒断句、全拇指操控）</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>无重影实时字幕与 2 秒自动断句：</strong>说话期间语音面板仅展示当前正在说的实时句（不再与上方宿主输入框双份重影）；停顿约 <code>2.0</code> 秒全自动识别成句上屏并立即清空面板字幕，顶栏温和提示 <code>✓ 已自动上屏</code>，同时卡片内提供 <code>↶ 撤回上句</code>；全面下线易引起误解的“改口纠错”开关与技巧弹窗，坚持免手动「完成」全自动听写体验。</div>
+          <div class="log-item"><strong>拇指人体工学主控区与场景风格保留：</strong>顶栏极简为 <code>⌨️ 键盘</code> 与状态轻标；底部三区重构为左侧 <code>，</code>/<code>。</code>/<code>？</code> 与 <code>换行</code>/<code>清空</code>、中间发光脉冲大圆形声纹麦克风（含两侧对称动态声波）、右侧连按 <code>⌫</code> 退格与联动宿主编辑动作的 <code>发送</code>/<code>换行</code> 主键，中部横滑保留 5 项场景一键排版。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 67</span>
+          <span class="ver-time">2026-11-25 20:50</span>
+          <span class="ver-title">彻底移除 T9 九键候选区数字原串干扰（全移动端一致）</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>彻底清理 T9 中文候选区数字：</strong>移除共用 C++17 核心 <code>decodeT9</code> 与 Android Java 降级路径对 1 位按键（<code>2</code>–<code>9</code>）、<code>&le;6</code> 位短数字串、无匹配兜底及音节锁定后（如输入 <code>8979</code> 并锁定 <code>t'y'q'w</code> 时第 2 位出现 <code>8979</code>）的原始数字注入逻辑，并全面拦截 <code>learn()</code> 与历史 <code>USER_T9</code> 中的纯数字回流（同步覆盖 Android / iOS / 鸿蒙 NEXT）；输入纯数字可直接使用「123」数字键盘或回车上屏。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 66</span>
+          <span class="ver-time">2026-11-25 19:04</span>
+          <span class="ver-title">266MB 整句模型 3x 提速 &amp; 五端零拷贝桥接与渲染全面减负</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>共用 266MB 整句语言模型 3x–4x 深度加速：</strong><code>phonetic_decoder.cpp</code> 落地 Exact Best-First 束搜索剪枝、O(1) 64K 单字概率表与退避缓存、32K 二元转移动态缓存及历史前缀槽位复用；26 键冷击键 P50 提速约 3 倍，16 字节超长整句断崖降幅约 4 倍，T9 整句解码同幅提速，且全量 400 句实测首选率与 <code>shangshuwentime → 上述问题么</code> 保持零回退。</div>
+          <div class="log-item"><strong>五端原生桥接与候选条 UI 渲染池化：</strong><code>core</code> 新增零拷贝扁平 C-API（<code>xdf_engine_candidates_flat</code> / <code>decode_t9_flat</code>）；iOS 与 macOS <code>PinyinEngine</code> 改为直接零拷贝 UTF-8 解析扁平结果、差分防抖 <code>syncWorkbenchPrefsToCore</code>、<code>CloudSyncClient</code> 内存脏标记去重，并启用 <code>UIButton</code> / <code>NSButton</code> 候选池；Windows TSF 缓存 GDI 字体/画刷/双缓冲句柄并单次 <code>queryCandidatesRich</code> 查询；鸿蒙 NEXT 新增 N-API <code>candidatesRich</code>、字符串句柄复用、折叠态收敛前 28 项与写盘去重。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 65</span>
+          <span class="ver-time">2026-11-25 17:34</span>
+          <span class="ver-title">修复 266MB 整句模型断联与多音字错字 &amp; 五端输入低延迟深度优化</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>根治长句首选错字（如 <code>shangshuwentime</code> →「上述问题么」）：</strong>修复 Android JNI <code>loadModel</code> 与 C-API <code>tpa_phonetic_decode</code> 指针割裂导致 266MB 双域 N-gram 整句语言模型在真机被旁路的严重缺陷；全表审计清理 <code>chars.idx</code> 中 40 个音节的脏读音与无条件字频多音字劫持（移除 <code>me→点</code>、<code>na→么</code>、<code>qi→年</code> 等脏项，恢复各音节现代常用主读音首位），Android 整句模型与 iOS/预热前贪心兜底双路径同步恢复精准组句。</div>
+          <div class="log-item"><strong>五端全链路输入低延迟优化：</strong><code>core/</code> 新增状态签名一致性 L1 查询 LRU 缓存（热命中 <code>~7µs</code>）、零红黑树流式 JSON 序列化与偏好设置幂等防抖；Android <code>KeyboardTouchBox</code> 改为布局期缓存热区与纯内存父链偏移（零 <code>getLocationInWindow</code>）、固定按键圆角阴影轮廓、消除每键 40+ 次 <code>nativeRemainingInput</code> JNI 往返、启用 Java L1 缓存并移除主线程冗余 <code>SharedPreferences</code> 写盘；iOS 缓存 <code>TouchSnapBoardView</code> 按钮矩阵，Windows 节流每键 Win32 文件与注册表调用，鸿蒙 NEXT 与 macOS 按需收敛候选拉取上限。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 64</span>
+          <span class="ver-time">2026-11-25 16:19</span>
+          <span class="ver-title">五端云端热词 OTA 持续更新机制落地（免发版每日热更新）</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>云端热词 OTA 每日免发版热更新：</strong>上线独立 <code>L2</code> 云端热词层与火山引擎 TOS 公开热词源（首批收录 210 条 AI 工具 / 教培 / 办公 / 通用新词，含「通义听悟」「秘塔AI」「智谱清言」等），发版构建同步合入包内 <code>L3</code> 基线 12 表词典；五端支持 24 小时后台静默检查（<code>If-None-Match</code> HTTP 304 零流量跳过）+ SHA-256 常量时间验签与 gzip 解包 + 设置页一键检查更新，Android 同步联动重建 <code>sherpa-onnx</code> 离线语音偏置热词，且与个人记忆 <code>user_lexicon_v2.json</code> 及 E2EE 云同步彻底隔离（2~3 字短简拼自动避让高频基础词）。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 63</span>
+          <span class="ver-time">2026-11-25 14:36</span>
+          <span class="ver-title">五端彻底清除小鹤双拼冗余入口与底层代码</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>专注全拼 / 混拼 / 九键体验：</strong>全面移除 Android / iOS / macOS / 鸿蒙 NEXT / Windows 与共用 C++17 核心中的小鹤双拼设置入口、拼音转换、C ABI / JNI / N-API 接口及云同步/备份字段，自动兼容忽略旧备份与旧云端残留字段，专注 26 键全拼、简拼、混拼、九键 T9 与南方模糊音体验。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 62</span>
+          <span class="ver-time">2026-11-25 14:01</span>
+          <span class="ver-title">八项真机深度问题一次修复（场景感知 / 词包 / 备份 v2 / 密码防护 / 双手滚打与横屏）</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>场景感知、外置词包、安全加固与双手盲打修复：</strong>打通 XDMD v2 第 12 张词包表（<code>kWordPacks</code>）与 C++17 核心 <code>AppContextRouter</code> 场景感知（地图自动提权地名、微信/企微/钉钉提权家校词、浏览器/终端提权英文撞码）及内置词包独立启停；修复外部词包移除不刷新并升级本地 JSON 备份 v2（完整含自学习记忆库）；密码框强制切英文/数字并拦截候选、明文 logcat 与系统敏感剪贴板（<code>IS_SENSITIVE</code>），广播收口为签名级权限并在销毁时注销；修复双手高速盲打第二指绕过 2D 热区纠偏问题（支持 <code>directDownTarget</code> Roll-Over + <code>getActionMasked</code>），并全端补齐横屏/分屏自适应高度及 iOS/鸿蒙 15 分钟节流后台自动云同步。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 61</span>
+          <span class="ver-time">2026-11-25 12:01</span>
+          <span class="ver-title">全键盘零物理死区 &amp; 2D 高斯动态热区（Android / iOS / 鸿蒙）</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>零死区缝隙吸附 + 2D 动态热区：</strong>彻底消除键帽间距/行间缝隙与第二行 <code>a/l</code> 两侧留白触摸死区，手指点在两键之间自动吸附最近按键（<code>KeyboardTouchBox</code> / iOS <code>TouchSnapBoardView.hitTest</code> / 鸿蒙零间距热区层）；全面激活横纵二维（2D）高斯坐标分布 + 拼音前缀引导（如 <code>zh</code> 后优先吸附合法韵母）与 <code>±4dp</code> 个人 X/Y 落点自适应校准，在按下瞬间直接锁定目标按键与预览气泡，并新增功能键 <code>28dp</code> 宽容滑移防脱靶与双指滚打衔接。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 60</span>
+          <span class="ver-time">2026-11-25 11:32</span>
+          <span class="ver-title">击键 CoW 提速 4 倍 / 防抖原子落盘 / 云同步条件写与 15 分钟自动同步</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>性能架构、隐私与多端云同步全面加固：</strong>击键热路径引入 <code>CoW</code> 只读用户快照缓存（耗时降至约 1/4）；学习记忆改用 <code>1.5s</code> 防抖合并 + 跨进程文件锁原子替换写盘，切出输入框/收起键盘立即刷新落盘，并新增 LFU + 时间衰减上限裁剪与 90 天墓碑 GC；云同步接入 <code>ETag / If-Match</code> 条件更新、<code>HTTP 412</code> 冲突重试 3 次、SHA-256 偏好指纹稳定时间戳与无变更跳过重复上传，Android / macOS 新增 15 分钟节流后台静默自动同步；全端同步收紧密码/安全输入框防学词与剪贴板防窥，并修正 Android 应用内「下载最新版」跳转链接。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · macOS Build 68 / Windows 秒装</span>
+          <span class="ver-time">2026-11-24 21:29</span>
+          <span class="ver-title">Windows 1–2 秒极速安装 + 零拷贝共享内存 + 桌面无 T9 整句模型</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>桌面端安装包瘦身与零拷贝共享内存（macOS Build 68 降至 95.1 MB）：</strong>Windows 安装器由固实 LZMA（安装期单线程硬解写盘 323 MiB）全面重构为非固实 <code>zlib</code> + <code>phonetic_desktop.model.gz</code> <code>SetCompress off</code> 流式直拷，并裁剪 3 个 PE 调试符号瘦身 88%（<code>42.54 → 5.1 MiB</code>，减少 Defender 扫描卡顿）；首次切换输入法时由升级版 9-bit 查表流式 <code>tiny_inflate</code> 在后台约 1 秒解压至 <code>%LOCALAPPDATA%</code> 版本化缓存，并通过 <code>CreateFileMappingW</code> 跨应用共享只读物理页（告别每进程 254 MiB 重复堆内存）；同步构建桌面无 T9 精简整句大模型（剔除 33.91 MiB T9 Trie，<code>94.5 → 86.2 MiB</code>），Windows 安装包控制为 <strong>99.2 MB</strong>、macOS Build 68 进一步降至 <strong>95.1 MB</strong>。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 59 / iOS Build 67 / 鸿蒙 v62</span>
+          <span class="ver-time">2026-11-24 18:35</span>
+          <span class="ver-title">XDMD v2 紧凑词典（Android 瘦身 59.25 MiB）+ PC 英文模式联想候选</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>五端统一 <code>core/</code> 词库编译架构（XDMD v2）与 Android 包体暴瘦 59.25 MiB（192.03 → 132.78 MiB）：</strong>推出变长紧凑零拷贝格式 <code>XDMD v2</code>（移动端词典 <code>52.83 → 35.72 MiB</code>，iOS <code>21.0 → 16.5 MB</code>）；Android 端（Build 59）彻底下线 ~21.4 MiB 重复旧文本与旧 <code>lexicon_mmap.bin</code>，改为在 APK 内嵌入压缩版 <code>core_lexicon_mmap.bin.gz</code>（<strong>14.95 MiB</strong>）并在首次激活按 CRC 解压后零拷贝 <code>mmap</code> 映射，同时跳过旧版 Java 大词表堆解析并将英文候选、表情查找、剩余串与热插拔外置词包全部收口进统一 C++17 核心。</div>
+          <div class="log-item"><strong>macOS (Build 67+) &amp; Windows PC 端新增英文模式联想候选词 + 剔除冗余 T9 九键词库：</strong>PC 英文模式下打字实时弹出英文补全候选条（支持 1 字母高频词、6+ 长词前缀扫描、<code>Shift</code> 首字母/全大写大小写保持、常见缩写 <code>don't</code>/<code>I'm</code> 与纯英文词频自学习而不污染中文拼音库）；<code>空格</code> 自动附带空格上屏、<code>回车</code> 保留原文、句末标点自动带选中词上屏，设置面板支持随时开关；同步启用桌面无 T9 专用词典档案（<code>core_lexicon_desktop.bin</code>，<strong>26.55 MiB</strong>，较前版再省 ~9.2 MiB）。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 58 / Apple Build 66 / Windows</span>
+          <span class="ver-time">2026-11-24 16:33</span>
+          <span class="ver-title">精确全拼防形近异音词劫持 + 全拼/首字母混拼联想 + Windows 覆盖热替换修复</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>修复精确全拼被形近异音记忆词反向劫持（如输入 <code>zuoyou</code> 误出「所有」）：</strong>当整句模型在精确全拼旁附带 1 键形近容错词（如 <code>zuoyou</code> 带出「所有」<code>suoyou</code>、<code>kaoshi</code> 带出「老师」、<code>zhijian</code> 带出「时间」），此前因只检查词频不校验读音，只要用户历史打过「所有」，打 <code>zuoyou</code> 就会把「所有」抬到首位；现五端统一校验读音匹配，确保精确词「左右」「考试」「之间」始终优先，同时保留同音词学习与真实错字纠错。</div>
+          <div class="log-item"><strong>全拼 + 首字母全简混拼联想全面升级（五端同步生效）：</strong>支持“首字全拼 + 后续字首字母/前缀”高频直出，如输入 <code>zhey</code> 直出「这样」（不再误出「中耳炎」或「主要」），同步打通 <code>xianz</code>（现在）、<code>jint</code>（今天）、<code>mingt</code>（明天）、<code>meiy</code>（没有）、<code>zhid</code>（知道）、<code>shij</code>（时间）、<code>kaos</code>（考试）、<code>yinw</code>（因为）、<code>laos</code>（老师）、<code>xindf</code>/<code>xindongf</code>（新东方）以及人名半简拼 <code>xiazq</code>/<code>xiazhiq</code>（夏志权）。</div>
+          <div class="log-item"><strong>修复 Windows 覆盖/重装报「无法打开要写入的文件: TeacherSpriteIME.dll」及 64 位注册问题：</strong>升级时自动关闭伴侣工具 <code>TeacherSpriteTool.exe</code>，对正在被系统/应用（资源管理器、微信、浏览器等）映射占用的 <code>TeacherSpriteIME.dll</code> / <code>TeacherSpriteIME32.dll</code> 与词典/模型采用 NTFS 改名移入 <code>_old</code> + <code>/REBOOTOK</code> 延迟清理热替换（若旧版锁死只读数据则写 <code>.new</code> 重启原子替换），修复 32 位安装器 WOW64 文件重定向导致 64 位 <code>regsvr32</code> 注册落空的问题，并将底层词典/语音模型加载切换为宽字符 <code>CreateFileW</code> + <code>FILE_SHARE_DELETE</code> 以完整兼容中文安装路径。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 56 / 五端统一核心</span>
+          <span class="ver-time">2026-11-24 12:35</span>
+          <span class="ver-title">五端收口唯一 C++17 核心、端到端加密云同步、第三方词库导入、人名选字无截断 &amp; macOS Build 62+ 浮窗治理</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>修复安卓普通输入自学习与五端分步整词记忆一致性（Android Build 56+）：</strong>修复安卓端分步点选人名/新词（如 <code>xiazhiquan</code> 逐字选出「夏志权」）仅写入旧 Java 词表未进入统一 C++17 核心、导致再输入全拼或简拼（如 <code>xzq</code>）仍出「行政区」的问题；同步修复核心引擎 T9 九键精确记忆置顶被整句模型压后，以及 Windows / 鸿蒙 NEXT 分步整词自动累计学习。</div>
+          <div class="log-item"><strong>五端收口为唯一 C++17 核心引擎（以安卓端规则为准）：</strong>Android / macOS (Build 64) / iOS (Build 64) / Windows (1.9.9) / 鸿蒙 NEXT 全部统一到底层 <code>core/</code> C++17 解码与排序引擎，共用同一份 11 表 <code>52.83 MiB</code> 零拷贝 mmap 词典与 <code>user_lexicon_v2.json</code>，保障五端候选词顺序、自学习历史与联想一致。</div>
+          <div class="log-item"><strong>个人端到端加密云同步 &amp; 主流第三方词库一站式导入：</strong>基于火山引擎 TOS 个人隐藏档案（<code>AES-256-CBC + HMAC-SHA256</code> 按员工密钥端到端加密 + <code>CRDT/LWW</code> 确定性合并），支持搜狗（<code>.scel</code> / <code>.qcel</code> / <code>.txt</code> / <code>.ini</code>）、百度（<code>.bdict</code> / <code>.bcd</code> / <code>.txt</code> / <code>.ini</code>）、QQ（<code>.qpyd</code> / <code>.txt</code>）、Rime（<code>.dict.yaml</code> / <code>*.userdb.txt</code>）及微信/通用词表（自动识别 UTF-8 / UTF-16 / GB18030），并双向漫游五端词频、二元记忆、自定义词库与偏好。</div>
+          <div class="log-item"><strong>解除多音节首字 16/18/30 字截断 &amp; macOS Build 62+ 根治联想浮窗停留：</strong>五端统一抬升候选上限至 120 词、修复 <code>xiazhiquan</code> 等多音节选字不可达与二音节单字排序；macOS 默认关闭上屏联想浮窗并补齐 <code>2.5 秒</code> 自动收起、点击浮窗外/<code>✕</code>/组合键/切应用即时清理。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · Build 54 / 四端工作台对齐</span>
+          <span class="ver-time">2026-11-23 18:48</span>
+          <span class="ver-title">macOS / Windows / iOS / 鸿蒙 NEXT 完整对齐核心体验、桌面快捷键与移动端交互升级</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>全端完整对齐安卓核心体验与教师工作台：</strong>Android 提升 v1.9.9 <code>versionCode</code> 支持由实验线无损覆盖升级；macOS / Windows / iOS / 鸿蒙 NEXT 同步打通 105 万+ 零拷贝 mmap 词典 + 整句大模型、个人分词/二元上下文记忆、12 模板 + 29 话术 + 42 校区 4-Tab 工作台、短码/校区直出及新东方 E2 云盘资料直发（含 1005 新设备短信绑定与静默续期）。</div>
+          <div class="log-item"><strong>macOS &amp; Windows 桌面手感与 iOS / 鸿蒙 NEXT 效率升级：</strong>桌面端支持候选游标左右/Tab 导航、右键与 <code>Ctrl+Delete</code> 忘词、小数点/时间冒号半角保护、对称中英引号与全局快捷键；iOS (Build 61) 支持 3 态外观/Shift、<code>⌫</code> 连删、顶行数字长按与 4 列展开网格；鸿蒙 (versionCode 61) 修复 T9 点音节锁定并接入振动马达与可编辑模板。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.9 · 首发</span>
+          <span class="ver-time">2026-11-20 16:29</span>
+          <span class="ver-title">严格豆包阶梯首屏排序 &amp; 长句零 emoji 污染</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>严格豆包阶梯首屏排序 &amp; 长句零 emoji 污染：</strong>26 键与九键同步按「最优全句 → 最优前缀 → 次优词组/单字」分层展示，消除低频截断词与无用全句变体，长句不混入表情并保留短词常用语义推荐。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.8</span>
+          <span>2026-11-20 · 多音节候选词首屏分层混排优化，降低分步选词成本</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>多音节首屏分层混排：</strong>针对用户反馈「输入多音节长拼音/长九键时前排被大量全音节候选霸屏、推荐不中时分步输入成本过高」的问题，3+ 音节改为「<code>#1 最优全句</code> + <code>#2 最优前缀词组</code> + <code>#3 次优全句</code> + <code>#4~#5 次级前缀与首音节单字</code>」，其余全句后置；2 音节同步在 #3 露出首音节高频单字。</div>
+          <div class="log-item"><strong>五端同步升级：</strong>Android / macOS / Windows / iOS / 鸿蒙全端底层同源引擎同步生效，兼顾整句 Top-1/Top-3 命中率与分步选词零翻页体验。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.7</span>
+          <span>2026-11-20 · 键盘极致响应优化 + 全平台火山引擎极速分发 + 统一产品名「教师精灵输入法」</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>键盘极致跟手优化：</strong>候选栏改用 28 槽 TextView 对象池零重建；按键触感震动移至独立后台线程异步触发；短码引擎 99.5% 日常击键零对象分配；新增 512 项 PinyinDict L1 结果缓存与 2048 项 Mmap 负向缓存，400 句实测 26 键 P50 降至 <code>2.49 ms</code>（较 v1.8.0 提速 11%），冷启动降至 <code>831 ms</code>。</div>
+          <div class="log-item"><strong>全平台火山引擎 CDN 加速与统一命名：</strong>Android / 鸿蒙 / macOS / iOS / Windows 全部接入火山引擎北京节点高速下载；macOS（<code>教师精灵输入法.app</code>）与 Windows（开始菜单与系统输入法列表「教师精灵输入法」）安装后开箱即找。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.2</span>
+          <span>2026-11-20 · 全平台 Android / iOS / macOS / Windows 统一上线 + 修复登录报错「null」+ Google Material 3 登录页重绘</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>Android 登录异常修复与 Gboard / Material 3 重绘：</strong>根治服务端空 <code>msg</code> 时显示红色 <code>null</code> 的缺陷，所有错误码均展示清晰中文原因与排查指引；按 Google Input Method 视觉规范重绘登录页（留白画布、聚焦蓝描边输入框、密码显隐切换、柔色提示卡片与胶囊按钮）。</div>
+          <div class="log-item"><strong>iOS / macOS / Windows 全平台复用 105 万零拷贝 mmap 词典：</strong>新增 iOS 原生自定义键盘扩展（<code>ios/</code>，XCTest 全绿）、macOS 原生 InputMethodKit 输入法安装包（<code>.pkg</code> 17 MiB，支持悬浮候选条/话术/云盘登录）及 Windows 原生 TSF C++17 引擎工程（<code>windows/</code>，核心单测 6/6 PASS）。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.1</span>
+          <span>2026-11-20 · 顶栏直达「资料」防拥挤排布 / 默认免登录按需鉴权 / 教师精灵原生风格重绘</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>顶栏「资料」直达且不拥挤：</strong>在顶部菜单栏紧邻「话术」新增「资料」入口，同时将低频的深浅皮肤切换移入 <code>☰</code> 抽屉，窄屏一屏完整排布留白充足。</div>
+          <div class="log-item"><strong>免登录零打扰 + 登录后无缝回流：</strong>日常输入无需任何登录；仅点击「资料」时引导登录新东方账号，登录完成自动切回云盘资料面板支持「一键发送」，全套卡片按教师精灵输入法深浅双主题原生重绘。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.9.0</span>
+          <span>2026-11-20 · 新东方员工统一登录与持久化自动保活 / 键盘云盘资料底层接入</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>新东方员工登录与自动保活：</strong>零第三方依赖原生实现 E2 员工账号登录与新设备短信绑定；本地加密持久化凭证，距离过期不足 2 小时或接口过期时自动静默续期，持续保持登录态，为后续员工专属能力打下统一基础。</div>
+          <div class="log-item"><strong>键盘内「☁️ 云盘资料」快捷入口：</strong>从键盘左上角 <code>☰</code> 抽屉一键打开，支持浏览新东方云盘库与多级文件夹面包屑、「🕒 最近发送」复发、流式下载进度展示，并优先通过 <code>commitContent</code> / 分享通道直发微信、企微、钉钉。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.8.1</span>
+          <span>2026-11-20 · 空格 2D 上下左右移光标 / 伸缩抽屉精简与高对比高亮 / 设置页分组整理</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>空格 2D 触控板上下左右移光标：</strong>按住（260ms）或拖动空格键进入「◀ ▲ 移光标 ▼ ▶」模式，同时支持左右逐字与上下逐行精准定位，编辑长段家校话术更顺手。</div>
+          <div class="log-item"><strong>伸缩菜单与设置页精细化：</strong>顶栏 <code>☰</code> 入口改为 1:1 正方形；抽屉精简为 T9/26 切换（实心主题色高亮）、切输入法与设置；设置页去掉顶部切换输入法、深浅风格并入「键盘偏好」、「扩展词包管理」归入「词库」。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.8.0</span>
+          <span>2026-11-20 · THUOCL 14,500 专项词库 / 落点高斯动态热区 / 宿主 App 场景提权 / 密码防窥 / C++ mmap 词典 / 热插拔词包</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>清华大学 THUOCL 专项词库 + DF 频次先验：</strong>引入 8,000 条全国地名 + 6,500 条成语/古诗词/历史名人，附带亿级语料 DF 频次先验权重（设置页与开源声明规范署名）。</div>
+          <div class="log-item"><strong>落点高斯动态热区 + 宿主 App 场景感知 + 密码框防窥：</strong>26 键边缘误触按拼音前缀合法性自动吸附并本地校准个人落点偏移；地图/出行 App 自动提权地名地标、浏览器/终端提权英文混输；密码框自动关闭按键气泡与校准日志。</div>
+          <div class="log-item"><strong>C++ 只读 mmap 词典加速 + UI/引擎解耦与热插拔词包 + 空格长按移光标：</strong>27 万条简拼与联想改由 C++ 零拷贝 mmap 映射，显著压低冷启动耗时；新增 <code>InputEngine</code> 解耦层与「📦 扩展词包管理」；按住或拖动空格键直接进入丝滑移光标模式，系统「🌐 切输入法」收拢至顶栏 <code>☰</code> 伸缩菜单。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.7.0</span>
+          <span>2026-11-20 · 语音切键盘保留手动光标 / 顶栏防挤出 / T9 图标切换 / 问号反馈 / 顶栏对齐显示「符号」</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>语音面板两大体验修复：</strong>语音自动上屏后，若用户已在输入框中手动将光标点到某个字上，点击语音界面的「键盘」切换回来编辑时不再强行跳到文末，完整保留原焦点；左侧状态条改用弹性截断，右侧「键盘」按钮永不被挤出屏幕。</div>
+          <div class="log-item"><strong>顶栏与图标全面精细化：</strong>伸缩菜单栏键盘切换升级为精致矢量图标 +「T9 / 26」；剪贴板底栏精简为「← 返回键盘」；反馈入口升级为圆圈问号（?）求助图标；顶栏左边缘与下方键盘严格对齐，完整显示「符号」。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.6.9</span>
+          <span>2026-11-20 · 下拉候选流式排布 / 九键长按多选 / 剪贴板与反馈新图标 + 内置反馈页 / 响应加速 / 美化更新日志</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>下拉候选流式排布 + 九键长按多选 + x/v 符号去重：</strong>展开候选区改按实际字宽紧凑流式排布，彻底消除长句左右大片留白；九键 1-9 长按弹出数字+字母/标点横条多选滑选；26 键 <code>x</code> / <code>v</code> 长按改为不重复的 <code>+</code> / <code>=</code>。</div>
+          <div class="log-item"><strong>品牌词、底栏与顶栏精细化：</strong>空格键完整露出「教师精灵输入法」；话术面板底栏精简为单一「← 返回键盘」；伸缩菜单栏左右宽度自适应并将切换按钮简化为「九键/26键」；剪贴板升级为双页复制矢量图标。</div>
+          <div class="log-item"><strong>反馈升级 + 美化更新日志 + 按键响应加速：</strong>反馈按钮升级为撰写矢量图标并自动检测钉钉客户端，未安装时自动打开内置问题反馈提交页；设置页「更新日志」升级为分版本圆角卡片排版；按键预览改用 GPU 位移并收敛候选与侧栏重建开销，手感更跟手。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.6.8</span>
+          <span>2026-11-20 · 九键长句选词修复 / 消除长数字候选 / 350 条地标地名词库 / 面板底栏高度自适应</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>九键长句与连续选词修复：</strong>九键长句候选区不再混入一长串原始数字（仅 6 位以内短数字保留）；采用 <code>beginBatchEdit</code> 原子提交并在同框 <code>restarting</code> 时保护未选完的拼音/九键与联想词，彻底解决长句选词后候选消失问题。</div>
+          <div class="log-item"><strong>扩充 350 条高频地名与地标大厦词库：</strong>新增全国省市区、核心商圈、地铁站及北京海淀/中关村与新东方周边大厦（含海兴大厦、新东方大厦、海龙大厦等），26 键与九键全拼/简拼均可秒出。</div>
+          <div class="log-item"><strong>面板底栏按键高度自适应：</strong>符号、表情、颜文字、剪贴板、话术底部操作栏按当前页面上方按键高度自动匹配（符号区 38dp 对齐），整体视觉比例更协调。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.6.7</span>
+          <span>2026-11-20 · 全界面丝滑微动效升级（伸缩抽屉 / 高度过渡 / 长按浮窗 / 展开候选 / 语音技巧卡）</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>全界面顺滑微动效（100-160ms）：</strong>顶栏 <code>☰</code> 伸缩抽屉新增展开/收起滑入缩放与 90° 图标旋转；键盘与功能面板（话术/符号/剪贴板/表情/语音）高度切换改用平滑过渡动画；长按双选浮窗、展开更多候选遮罩与语音「💡 改口技巧」卡片同步加入轻快微动效，交互更顺手。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.6.6</span>
+          <span>2026-11-20 · 首页品牌露出 / 联想栏矢量收起图标 / 长按记忆定位 / 反馈图标 / 设置页版本与 Release Notes</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>首页空格键品牌露出 + 符号上移顶栏 + 反馈矢量图标：</strong>将「符」移至顶栏「话术」之后（保留长按直达 123），底栏空格键加宽并露出「教师精灵」品牌词；顶栏「反馈」升级为精致对话气泡矢量图标；抽屉内 26 键与九键合并为单按钮「26键 ⇄ 九键」。</div>
+          <div class="log-item"><strong>联想词栏同步矢量收起图标 + 长按双选记住上次定位：</strong>联想词状态最右侧同步升级为矢量收起键盘图标；长按字母双选浮窗记住用户上次偏向（左符号 vs 右大写），下次长按默认高亮该侧（水平拖动仍可自由切换）。</div>
+          <div class="log-item"><strong>配置页支持查看版本号、精确到分的发布时间与离线 Release Notes：</strong>构建期自动注入精确到分钟的发布时间，「备份与更新」新增「🏷️ 版本与更新日志」入口查看完整更新日志。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.6.5</span>
+          <span>2026-11-20 · 语音面板内置「💡 改口技巧」口令指南、实时改口开关与自动纠错微提示</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>语音面板内置「💡 改口技巧」与一键开关：</strong>点击语音顶栏「💡 改口技巧」可在面板内原位查看口语改口纠错口令（<code>不对 / 说错了 / 哦不 / 更正一下 / 算了改成</code>、整句推翻 <code>不对重说 / 前面不算</code> 及分点排版示例），并支持一键开启/关闭实时重排当前听写内容；触发自动改口时底部即时给出高亮微提示，随时可切「原话」还原。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.6.4</span>
+          <span>2026-11-20 · Gboard 风格长按双选浮窗 / 三态大小写 / 伸缩顶栏与钉钉反馈 / 语音 3 秒停顿与修复「改成」吞字</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>Gboard 风格 26 键长按双选浮窗 + 三态大小写 + 逗号/句号快捷长按：</strong>长按任意字母键上方弹出「快捷符号/数字 ｜ 字母大写」双选浮窗，手指左右滑选松手上屏；大小写键清晰区分「小写 <code>⇧</code> / 单次大写蓝框 <code>⇧</code> / 锁定大写实心蓝底 <code>⇪</code>」且键帽同步大小写；中文态逗号长按出顿号 <code>、</code>、句号长按出英文句点 <code>.</code>。</div>
+          <div class="log-item"><strong>顶栏伸缩式功能抽屉 + 「话术」改名 + 钉钉反馈入口 + 矢量收起图标 + 联想栏返回菜单：</strong>九键/26键切换收敛至左侧 <code>☰</code> 可扩展抽屉（同步集成模糊音/震动/设置）；「评语」更名「话术」；右侧新增「反馈」直达钉钉需求群与精致矢量收起键盘图标；选词进入联想词栏时左侧新增 <code>☰</code> 一键退回顶栏菜单。</div>
+          <div class="log-item"><strong>符号分 Tab 动态高度 + 语音与 26 键等高 + 移除冗余按钮：</strong>符号「常用/中文/英文」及语音键盘均与 26 键键盘保持同等高度，仅「特殊/数字/序号」增高；移除符号/话术/剪贴板/表情底栏右下角多余收起按钮。</div>
+          <div class="log-item"><strong>语音停顿自动上屏延长至 3 秒 &amp; 修复「评语改成叫做话术」误吞字：</strong>端点静默等待由 <code>1.65s</code> 调至 <code>3.0s</code> 更从容；移除口语改口纠错对日常动词「改成」的误匹配，彻底解决口述含「改成」时前半句被裁剪的问题。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.6.3</span>
+          <span>2026-11-20 · 修复选词后拼音残留 / 紧凑双层拼音候选零跳动 / 五大功能面板统一高度</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>彻底修复选词后拼音残留在屏幕上的问题：</strong>补齐无后续联想词路径下的拼音栏清屏与后台神经精排异步取消保护，选中任意整句或词条后拼音行立即消失不残留。</div>
+          <div class="log-item"><strong>拼音区与候选区极致紧凑化（平时态与组字态零像素跳动）：</strong>顶栏固定 <code>48dp</code>，组字时内部紧凑叠放 <code>17dp</code> 拼音行 + <code>31dp</code> 全宽候选行，视觉紧贴微信键盘比例且输入起止完全不跳动。</div>
+          <div class="log-item"><strong>语音 / 评语 / 剪贴板 / 表情 / 符号五大功能面板统一高度：</strong>以最高菜单面板为基准统一对齐至 <code>356dp</code> 总高度，彻底解决语音面板偏矮与不同菜单间切换反复跳动的问题。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.6.2</span>
+          <span>2026-11-20 · 微信键盘式双层拼音与全宽候选 / 连续语音倒计时与本地小红书排版 / 极简设置</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>微信键盘式「独立拼音条 + 100% 全宽候选区」与底栏重构：</strong>将组字拼音回显独立至上方专属窄栏，释放整行全宽空间给候选词，彻底告别长句拼音遮挡；底栏升级为独立 <code>符</code> + <code>123</code> + <code>，</code> + <code>空格</code> + <code>。</code> + 双态高亮 <code>中/英</code> + <code>换行</code>，左侧恢复干净 <code>⇧</code> 大写键；顶栏外露一键 <code>九键/26键</code> 切换，并大幅柔化删除键微震手感。</div>
+          <div class="log-item"><strong>连续免按钮语音输入 + 停顿倒计时进度条 + 点击文字直连键盘编辑：</strong>移除冗余「结束听写 / 说完上屏」按钮，说话停顿约 <code>1.6s</code> 时顶部平滑展示自动上屏倒计时进度条（继续开口即刻清零），自动上屏后保持连续收音不断流；语音框与宿主输入框实时同步，点击框内任意字符即刻定位光标并唤起键盘直接修改。</div>
+          <div class="log-item"><strong>新增本地神经语篇与话题格式化小模型（一键分点 / 小红书 / 家校通知）：</strong>在离线 <code>CT-Transformer</code> 神经标点之上新增 <code>30KB</code> INT8 本地神经分类模型，支持跨停顿说出「第1、第2、第3、第4」自动规整为清晰编号清单，内置 <code>✨ 智能整理</code>、<code>📋 分点清单</code>、<code>📕 小红书</code>（标题高亮 + 语义表情分段 + 自动匹配 <code>#话题标签</code>）、<code>🏫 家校通知</code>、<code>💬 原话</code> 一键实时互转。</div>
+          <div class="log-item"><strong>极简清爽单行设置页 + 点击非输入区自动收起键盘 + 面板自适应高度：</strong>设置页去除大段冗余说明，全面升级为清爽单行卡片；点击屏幕非输入区域自动收起键盘（仅点击可输入区调起）；消除语音顶栏空行并恢复各功能面板内容自适应高度。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.6.1</span>
+          <span>2026-11-19 · 搜狗式九键连选与引擎大升级 / 修复 jian 无“键”与单键 a 空白</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>搜狗式九键连续多音节选词 + C++ 九键引擎系统升级：</strong>九键左侧栏选定第 1 个音节后无需先点汉字即可连续点选第 2、第 3 个音节（支持 <code>←</code> 单步退回与一键重置）；修复单键选 <code>a/e/o</code> 候选空白问题；C++ 原生解码新增短码零编辑保护（<code>人呢</code> 直出第 1 位）与长句首屏「整句 + 首词（如 <code>失主</code>）+ 首字」分层混排。</div>
+          <div class="log-item"><strong>根治 26 键单音节吞字缺陷（如输入 <code>jian</code> 正常出「键」）：</strong>修复 127 个重合单音节被无隔音符拆音双字词（如 <code>击案/卡哦/吧嗯</code>）挤占及前 24 字硬截断缺陷，确保全部常用与次常用单字 100% 完整可达。</div>
+          <div class="log-item"><strong>展开候选跨列网格 + 全菜单恒定高度 + 全新「⚙️ 全局设置」中心：</strong>展开面板按词长动态跨 1~3 列单行展示并消除双顶栏遮挡；切换符号/表情/剪贴板/评语/语音保持 <code>236dp</code> 零跳动恒定高度；顶栏精简低频「26键/九键」按钮并升级统一视觉的「⚙️ 全局设置」页。</div>
+          <div class="log-item"><strong>新东方专词收敛为纯原子名词 + 中文态英文混输净化：</strong>专词库提纯为 2~6 字产品/校区/测评原子名词并分级限权，消除长句碎片前缀污染与日常词被抢首选问题；移除中文拼音下的多余英文前缀联想，仅保留纯英文与高频缩写直出。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.6.0</span>
+          <span>2026-11-19 · 千万级一线语料护城河 / M端顾问与P端教学双工作台 / 京穗42校区速发 / 语音同音专词纠错</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>千万级一线脱敏语料构建专属词库与双域语言模型（首选率 50.9% → 93.8%）：</strong>挖掘注入 1,510 条一线产品班型（<code>费曼卡片</code>/<code>新东方云教室</code>/<code>东方小学堂</code>/<code>小书童</code>/<code>小课包</code>/<code>寒春续报</code>）、测评（<code>进出门测</code>/<code>中期测</code>/<code>期中精练卷</code>）与京穗校区/名校专词，混合 139.3 万条员工语句重编双域语言模型，彻底消除「寒春课程→好蠢课程」「劲松校区→惊悚小区」「续报→虚报」等误出；下一词联想命中率提升 <strong>3.7 倍</strong>。</div>
+          <div class="log-item"><strong>新增 M端（招生顾问）与 P端（教学老师）双模式效率工作台：</strong>键盘「评语」面板左上角新增 <code>👥全岗 / 🎯M端顾问 / 📚P端教学</code> 零闪烁切换胶囊；M端扩充至 10 大分类 29 条高回复实战话术（含首响破冰采集、6次12h小课包促单、中考听口40分/3+3赋分选科/强基政策速答及监管账户退费兜底）；P端新增 75% 高回复「📊 测评分发」与「📐 学法处方（审题三圈法/草稿折格/费曼复述）」及 12 套角色感知填坑卡。</div>
+          <div class="log-item"><strong>新增「📍 校区速发」（京穗 42 校区）与动态周末短码 <code>zm</code>：</strong>支持海淀/西城/朝阳/东城/丰台昌平/广州按区筛选一键发定位地址；长按任意校区绑定常驻校区自动激活 <code>dz</code>；26 键与九键直接输入校区简拼（如 <code>yqlxq</code>）第 2 候选秒出完整楼层地址；新增 <code>zm</code>（本周末日期）、<code>qj</code>（请假回放说明）、<code>xxj</code>（报名手机号登录提醒）并修复短码上屏残留问题。</div>
+          <div class="log-item"><strong>离线语音升级 201 项内置热词自动同步 + 语料级同音专词纠错：</strong>无需重下 247MB 语音包即可自动同步最新教研/校区/KET/PET 热词及个人自定义词条；新增语境锚定同音纠错，精准修复口述中的「小巴中→小八中」「丸子洗→晚自习」「血管老师→学管老师」「蒲黄鱼校区→蒲黄榆校区」「进出门册→进出门测」「等级复分制→等级赋分制」。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.5.0</span>
+          <span>2026-11-19 · 包体暴瘦至 125.6 MiB / 神经标点 + 教研热词 / 班级名单 / 模糊音 / 一键备份</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>安装包体积直降 58.6%（303.1 MiB → 125.6 MiB）：</strong>将双语语音包改为「首次点语音时从火山引擎高速按需下载」并展示实时进度条，不常用语音的老师秒下秒装；下载完成后永久本地离线运行。</div>
+          <div class="log-item"><strong>离线语音升级 CT-Transformer 神经标点 + 新东方教研热词提权：</strong>全新 <code>v2</code> 离线语音包内置中英双语神经标点模型（自动精准断句补 <code>，。？！</code>）与教研/高频英文热词加权（<code>新东方</code>、<code>家校沟通</code>、<code>PPT</code>、<code>KET</code>、<code>IELTS</code>、<code>ChatGPT</code> 等），彻底改善长段口述标点与英文识别。</div>
+          <div class="log-item"><strong>新增「班级学生名单」管理，课后反馈填坑置顶一键选人：</strong>设置页新增「👥 管理班级学生名单」，支持空格/逗号/顿号/换行批量粘贴本班姓名；在「常用语 → 课后反馈」点击 <code>{姓名}</code> 时本班孩子置顶显示。</div>
+          <div class="log-item"><strong>新增南方模糊音开关 + 个人数据一键备份恢复 + 检查更新：</strong>设置页外露 <code>z/zh、c/ch、s/sh、n/l、f/h、前后鼻音</code> 模糊音偏好开关；支持一键导出/恢复 JSON 备份文件（含短码、话术、常用语、学生名单、行业词库、设置），换机零丢失；新增「🔄 检查并下载最新版」快捷入口。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill">v1.4.0</span>
+          <span>2026-11-19 · 极致性能与稳定性优化（省 200 MB 内存 / 零闪烁局部刷新 / 正式图标）</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item"><strong>常驻内存直降 ~200 MB，彻底防止国产 ROM 杀后台：</strong>语音引擎启动阶段仅预解压到磁盘不占 RAM，首次点击语音才按需加载，并引入引用计数与 <strong>180 秒空闲自动释放</strong> + 系统低内存及时回收；同步将百万词库加载移至后台线程，消除首次弹键盘卡顿。</div>
+          <div class="log-item"><strong>包体立减 24 MiB &amp; 接入火山引擎 8 并发极速下载：</strong>默认真机通用包精准保留 <code>arm64-v8a</code> + <code>armeabi-v7a</code>（剔除电脑模拟器 <code>x86</code> 冗余库），下载页升级为单按钮 8 并发满速下载。</div>
+          <div class="log-item"><strong>效率面板独立组件化 + 零闪烁局部刷新：</strong>抽离独立 <code>PhrasePanelView</code>，点选填坑变量胶囊、切换话术分类或 Tab 时原地局部更新，彻底消除整盘闪烁与滚动条回跳。</div>
+          <div class="log-item"><strong>语音停顿放宽至 1.65s + 未配置短码防误发 + 正式矢量图标：</strong>边看作业边思考不易提前截断；未填写的默认 <code>dz</code>/<code>dh</code> 标记为「待设置」引导编辑防误发家长群；换装蓝底键盘星光矢量应用图标。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.3.2</span>
+          <span>2026-11-19 · 精简非刚需翻译功能</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item hist"><strong>移除顶栏「译」实时翻译条：</strong>去掉低频非刚需的翻译入口，顶栏工具条更清爽直观，聚焦教师与顾问高频输入场景。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.3.1</span>
+          <span>2026-11-19 · 根治双语语音叠字 + 工作面板自适应增高</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item hist"><strong>彻底修复中英双语语音重复叠字（如“或或”“中英英文”）：</strong>将 Transducer <code>decoder</code> / <code>joiner</code> 升级为 FP32 精度并启用 4 路束搜索（<code>modified_beam_search</code>），消除叠字乱码并显著提升中英混说准确度。</div>
+          <div class="log-item hist"><strong>工作面板自适应增高：</strong>进入「填坑反馈（360dp）」「顾问话术/短码/评语（336dp）」「剪贴板/表情/符号（300dp）」「语音（296dp）」时平滑增高，切回打字自动恢复紧凑 236dp。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.3.0</span>
+          <span>2026-11-19 · 教师与顾问三大生产力套件</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item hist"><strong>⚡ 快捷短码 / 顾问资料夹：</strong>26 键与九键打字直接触发，输 <code>rq</code> 出今日日期与星期、<code>sj</code> 出当前时间、<code>mr</code> 出明天日期，内置 <code>dz</code>/<code>dh</code>/<code>st</code>/<code>kb</code>/<code>jf</code> 并支持自由增删编辑。</div>
+          <div class="log-item hist"><strong>📝 变量填坑式个性化评语：</strong>内置 5 套课后反馈/听写/错题/试听/约课模板，点选姓名与评价胶囊实时预览，3 秒生成不重样的一对一反馈。</div>
+          <div class="log-item hist"><strong>💼 顾问金牌异议话术库：</strong>内置 14 条覆盖「觉得贵 / 没时间 / 孩子抵触 / 对比竞品 / 再考虑」的高情商话术，支持自定义编辑及 TXT 批量导入全员同步。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.2.1</span>
+          <span>2026-11-19 · 中英双语语音 / 数字标点整理 / 九键防断句 / 表情增强</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item hist"><strong>离线语音升级中英双语流式识别与智能整理：</strong>支持中英自然混说（自动保留 <code>PPT</code>/<code>PDF</code>/<code>WeChat</code> 写法）、口语中文数字转阿拉伯数字 <code>123</code> 与版本号 <code>V1.4.0</code>、口语改口纠错与“第一/第二”自动分点梳理。</div>
+          <div class="log-item hist"><strong>彻底修复九键长句自动上屏断拼音：</strong>根治九键快打长句时因手指微滑误触发上滑/长按导致拼音被截断的问题；移除冗余小鹤双拼入口防止误触。</div>
+          <div class="log-item hist"><strong>随打/长句/联想全场景表情增强：</strong>支持长句末尾关键词自动出表情（如“今天很开心”→🥳）、选词上屏后联想栏附带表情，词库表情前移至候选第一屏第 3 位。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.2.0</span>
+          <span>2026-11-19 · 双域引擎与新东方教研词库正式版</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item hist"><strong>双域融合解码 + 31 维神经精排：</strong>融合通用语料与 2,428 万段口语对话候选送入 8M Transformer 精排，大幅提升日常长短句与手滑误触纠错准确率。</div>
+          <div class="log-item hist"><strong>20,017 条新东方与多学科专词 + 4.3 倍联想提升：</strong>合入新东方/K12/古诗词/理化生专词与 4,969 条多音字词组；上下文联想扩展至 15.4 万前词 / 47.9 万边；新增教师快捷评语面板与动态 <code>分词 '</code> 键。</div>
+        </div>
+      </div>
+
+      <div class="ver-group">
+        <div class="ver-head">
+          <span class="pill gray">v1.1.0-beta.10 ~ beta.12</span>
+          <span>前期核心基础里程碑</span>
+        </div>
+        <div class="log-list">
+          <div class="log-item hist"><strong>九键逐键实时回显可读拼音 &amp; 拼音区实时光标编辑：</strong>首键起同步显示 <code>ni'hao</code> 音节切分，支持点按或滑动空格在拼音任意位置增删字母；保留九键原键整句候选。</div>
+        </div>
+      </div>
+        </div>
+      </details>
+    </section>
+
+    <section aria-labelledby="features">
+      <h2 id="features">🌟 教师与顾问专属核心能力</h2>
+      <div class="feat-grid">
+        <div class="feat">
+          <strong>⌨️ 一线教研词库与整句纠错</strong>
+          <span>内置费曼卡片、云教室、寒春续报、进出门测及京穗校区专词，26 键/T9 整句识别兼顾手滑容错。</span>
+        </div>
+        <div class="feat">
+          <strong>🎯 M端顾问 / 📚 P端教学工作台</strong>
+          <span>话术面板一键切换岗位视图：顾问专属破冰促单与政策速答，教学专属测评分发与学法处方。</span>
+        </div>
+        <div class="feat">
+          <strong>📍 京穗 42 校区速发与短码</strong>
+          <span>输入校区简拼（如 <code>yqlxq</code>）候选秒出楼层地址；长按设常驻校区自动激活 <code>dz</code> 短码。</span>
+        </div>
+        <div class="feat">
+          <strong>🎤 离线中英语音与同音专词纠错</strong>
+          <span>支持 <code>320</code> 条教研离线热词与语境同音纠错，免停顿连续听写并自动整理数字与标点。</span>
+        </div>
+        <div class="feat">
+          <strong>📝 班级名单与变量填坑卡</strong>
+          <span>内置 12 套课后反馈/试听/请假回放模板与班级姓名置顶，3 秒生成不重样一对一反馈。</span>
+        </div>
+        <div class="feat">
+          <strong>💾 多格式词库导入与端到端备份</strong>
+          <span>支持搜狗/百度/QQ/Rime 词库导入、<code>zm/qj/xxj</code> 动态短码及个人数据加密云同步。</span>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="benchmarks">
+      <details class="fold bench-fold">
+        <summary id="benchmarks">
+          <span class="fold-main">📊 展开完整实测对比报告</span>
+          <span class="fold-hint">日常 1,440 句 · 万象/水杉 2,213 句 · 新东方 2,000 条 · 按键响应 0.247 ms · 4,000 回归</span>
+        </summary>
+        <div class="fold-body">
+          <div class="bench-tabs" role="tablist" aria-label="选择实测报告维度">
+            <button type="button" class="bench-tab active" data-bench="daily" role="tab" aria-selected="true">日常对话 1,440 句</button>
+            <button type="button" class="bench-tab" data-bench="gate3" role="tab" aria-selected="false">万象/水杉公开集</button>
+            <button type="button" class="bench-tab" data-bench="xdf" role="tab" aria-selected="false">新东方家校 2,000 条</button>
+            <button type="button" class="bench-tab" data-bench="latency" role="tab" aria-selected="false">按键响应速度</button>
+            <button type="button" class="bench-tab" data-bench="v5" role="tab" aria-selected="false">4,000 回归与历史</button>
+          </div>
+
+          <div class="bench-panel active" id="bench-daily" role="tabpanel">
+            <h3 class="bench-title">实测对比：教师精灵 vs 豆包输入法 vs 新东方 SDK 输入法</h3>
+            <!-- QUALITY_1440_LATEST_START -->
+      <p class="lead">用 <strong>1,440 句真实日常聊天</strong>实测（含正常打字与手机手滑误触），统计打完一遍后<strong>首选 Top-1 / Top-3 / 首屏 Top-8</strong> 命中率（v1.9.9 Build 87 实测）：</p>
+      <div class="table-wrap">
+        <table class="comparison">
+          <thead>
+            <tr>
+              <th>日常打字场景</th>
+              <th>教师精灵 B87<span class="sub-th">首选 / Top-3 / 首屏 Top-8</span></th>
+              <th>豆包输入法 1.5.6<span class="sub-th">联网智能模式</span></th>
+              <th>新东方 SDK 输入法<span class="sub-th">旧版基线</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>26 键日常综合（1,440 句）<span class="sub-th">正常 960 + 错输 480</span></th>
+              <td><strong>62.2%</strong> / 72.3% / 77.0% <span class="delta">首选 +3.3%</span></td>
+              <td>58.9% / 69.0% / -</td>
+              <td>36.9% / - / -</td>
+            </tr>
+            <tr>
+              <th>26 键按错字纠错（480 句）<span class="sub-th">邻键误触 / 漏按 / 按反</span></th>
+              <td><strong>54.4%</strong> / 65.0% / 70.8% <span class="delta">首选 +19.6%</span></td>
+              <td>34.8% / 43.1% / -</td>
+              <td>19.4% / - / -</td>
+            </tr>
+            <tr>
+              <th>九键日常综合（1,440 句）<span class="sub-th">正常 960 + 错输 480</span></th>
+              <td><strong>39.5%</strong> / 45.2% / 49.3% <span class="delta">首选 +0.9%</span></td>
+              <td>38.6% / 52.6% / -</td>
+              <td>21.8% / - / -</td>
+            </tr>
+            <tr>
+              <th>九键按错字纠错（480 句）<span class="sub-th">邻键误触 / 漏按 / 按反</span></th>
+              <td><strong>30.0%</strong> / 36.7% / 38.3% <span class="delta">首选 +17.3%</span></td>
+              <td>12.7% / 20.2% / -</td>
+              <td>4.8% / - / -</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="summary-box">
+        <strong>一句话看懂：</strong>在包含手机日常手滑的真实场景下，<strong>教师精灵输入法 B87</strong>（纯本地运行、400 句 26 键单键中位仅 <code>1.13 ms</code>）的首选准确率已超过<strong>联网态的豆包输入法</strong>，相比<strong>新东方 SDK 输入法</strong>提升约 25 个百分点，尤其在按错字母自动纠错上领先约 20 个百分点。<br>
+        <span class="summary-note">补充说明：若一字不差敲网络口语长句（960 句），26 键教师精灵 <code>66.0% / 75.9% / 80.1%</code>（豆包联网 <code>70.9% / 82.0%</code>）、T9 <code>44.3% / 49.5% / 54.8%</code>（豆包联网 <code>51.6% / 68.9%</code>）；内置 125.8 万词表 + 20,017 条新东方与 K12 学科专词 + 15.4 万上下文联想词。</span>
+      </div>
+      <!-- QUALITY_1440_LATEST_END -->
+            <details class="fold sub-fold">
+              <summary>
+                <span class="fold-main">查看各版本 1,440 句历史对比</span>
+                <span class="fold-hint">门禁 A 历史</span>
+              </summary>
+              <div class="fold-body">
+                <div class="table-wrap">
+                  <table class="comparison">
+                    <thead>
+                      <tr>
+                        <th>版本 / 对比对象</th>
+                        <th>26 键 1,440 句综合<span class="sub-th">首选 / Top-3 / 首屏 · 对比豆包 · 正常 / 错输</span></th>
+                        <th>九键 1,440 句综合<span class="sub-th">首选 / Top-3 / 首屏 · 对比豆包 · 正常 / 错输</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- QUALITY_1440_HISTORY_START -->
+            <tr>
+              <th>v1.9.9 B87<span class="pill" style="margin-left:4px;font-size:.7rem;">最新</span><span class="sub-th">2026-11-28 20:04 · v1.9.9 B87：端侧伴聊模型 v2.0.0 与顶栏动态教师精灵</span></th>
+              <td><strong>62.2%</strong> / 72.3% / 77.0% <span class="delta delta-pos">+3.3%</span><span class="sub-th">正常 66.0% · 错输 54.4% (895/1041/1109)</span></td>
+              <td><strong>39.5%</strong> / 45.2% / 49.3% <span class="delta delta-pos">+0.9%</span><span class="sub-th">正常 44.3% · 错输 30.0% (569/651/710)</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B86<span class="sub-th">2026-11-28 16:09 · v1.9.9 Build 86：✨ 精灵伴聊端侧 Qwen3-0.6B INT4 离线 AI 模型与零 PII 联系人风格记忆 RAG</span></th>
+              <td><strong>62.2%</strong> / 72.3% / 77.0% <span class="delta delta-pos">+3.3%</span><span class="sub-th">正常 66.0% · 错输 54.4% (895/1041/1109)</span></td>
+              <td><strong>39.5%</strong> / 45.2% / 49.3% <span class="delta delta-pos">+0.9%</span><span class="sub-th">正常 44.3% · 错输 30.0% (569/651/710)</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B85<span class="sub-th">2026-11-28 12:41 · 企微「✨精灵伴聊」双向上下文+9类防误判+全端图文向导</span></th>
+              <td><strong>62.2%</strong> / 72.3% / 77.0% <span class="delta delta-pos">+3.3%</span><span class="sub-th">正常 66.0% · 错输 54.4% (895/1041/1109)</span></td>
+              <td><strong>39.5%</strong> / 45.2% / 49.3% <span class="delta delta-pos">+0.9%</span><span class="sub-th">正常 44.3% · 错输 30.0% (569/651/710)</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B84<span class="sub-th">2026-11-28 08:58 · Build 84: 企微自动回复本屏可见区/对方气泡精准提取、家长同事分流与300 FAQ语义匹配、新增本屏引文与全文预览卡片面板</span></th>
+              <td><strong>62.2%</strong> / 72.3% / 77.0% <span class="delta delta-pos">+3.3%</span><span class="sub-th">正常 66.0% · 错输 54.4% (895/1041/1109)</span></td>
+              <td><strong>39.5%</strong> / 45.2% / 49.3% <span class="delta delta-pos">+0.9%</span><span class="sub-th">正常 44.3% · 错输 30.0% (569/651/710)</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B83<span class="sub-th">2026-11-28 06:04 · Build 83: 修复企微只读无障碍真机漏扫（flagIncludeNotImportantViews/多窗口择优/深树剪枝/宽坐标）与升级后服务断连显式提醒</span></th>
+              <td><strong>62.2%</strong> / 72.3% / 77.0% <span class="delta delta-pos">+3.3%</span><span class="sub-th">正常 66.0% · 错输 54.4% (895/1041/1109)</span></td>
+              <td><strong>39.5%</strong> / 45.2% / 49.3% <span class="delta delta-pos">+0.9%</span><span class="sub-th">正常 44.3% · 错输 30.0% (569/651/710)</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B82<span class="sub-th">2026-11-28 04:04 · Build 82: 企微无障碍上手简化 + 应用内自动升级全链路修复</span></th>
+              <td><strong>62.2%</strong> / 72.3% / 77.0% <span class="delta delta-pos">+3.3%</span><span class="sub-th">正常 66.0% · 错输 54.4% (895/1041/1109)</span></td>
+              <td><strong>39.5%</strong> / 45.2% / 49.3% <span class="delta delta-pos">+0.9%</span><span class="sub-th">正常 44.3% · 错输 30.0% (569/651/710)</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B81<span class="sub-th">2026-11-28 00:29 · Build 81: M3 交接卡/手机号脱敏/资料追问钩子/企微只读实验室 + 精简顶栏与面板去说明行/不回滚/Hex矢量下拉收起键</span></th>
+              <td><strong>62.2%</strong> / 72.3% / 77.0% <span class="delta delta-pos">+3.3%</span><span class="sub-th">正常 66.0% · 错输 54.4% (895/1041/1109)</span></td>
+              <td><strong>39.5%</strong> / 45.2% / 49.3% <span class="delta delta-pos">+0.9%</span><span class="sub-th">正常 44.3% · 错输 30.0% (569/651/710)</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B80<span class="sub-th">2026-11-27 21:38 · M2离线家校工作台(竞品作战卡/300FAQ/175校区/学法处方/课后点评/内置短码直发去常用收藏)+应用内4线程断点自动升级</span></th>
+              <td><strong>62.2%</strong> / 72.3% / 77.0% <span class="delta delta-pos">+3.3%</span><span class="sub-th">正常 66.0% · 错输 54.4% (895/1041/1109)</span></td>
+              <td><strong>39.5%</strong> / 45.2% / 49.3% <span class="delta delta-pos">+0.9%</span><span class="sub-th">正常 44.3% · 错输 30.0% (569/651/710)</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B79<span class="sub-th">2026-11-27 18:07 · Build 79: M1 新东方家校评测集、双通道词库与运行时整句领域覆盖层 + Hex 四角键 1.5 格等宽对齐(全端同步)</span></th>
+              <td><strong>62.2%</strong> / 72.3% / 77.0% <span class="delta delta-pos">+3.3%</span><span class="sub-th">正常 66.0% · 错输 54.4% (895/1041/1109)</span></td>
+              <td><strong>39.5%</strong> / 45.2% / 49.3% <span class="delta delta-pos">+0.9%</span><span class="sub-th">正常 44.3% · 错输 30.0% (569/651/710)</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B78<span class="sub-th">2026-11-27 13:27 · Build 78: 修复持续选联想词与顶栏重合，统一所有菜单界面与键盘等高零跳动</span></th>
+              <td><strong>62.0%</strong> / 72.3% / 77.1% <span class="delta delta-pos">+3.1%</span><span class="sub-th">正常 65.8% · 错输 54.4% (893/1041/1110)</span></td>
+              <td><strong>39.5%</strong> / 45.2% / 49.3% <span class="delta delta-pos">+0.9%</span><span class="sub-th">正常 44.3% · 错输 30.0% (569/651/710)</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B77<span class="sub-th">2026-11-27 10:35 · Build 77: 顶栏还原符号与常驻菜单 + 统一右上角返回键盘/去底栏 + 丝滑表情顶栏 + 分步选词防吞尾与防误清</span></th>
+              <td><strong>62.0%</strong> / 72.3% / 77.1% <span class="delta delta-pos">+3.1%</span><span class="sub-th">正常 65.8% · 错输 54.4% (893/1041/1110)</span></td>
+              <td><strong>39.5%</strong> / 45.2% / 49.3% <span class="delta delta-pos">+0.9%</span><span class="sub-th">正常 44.3% · 错输 30.0% (569/651/710)</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B76<span class="sub-th">2026-11-27 08:09 · Build 76: Hex大字号与四角矢量键 + 顶栏放大/语音纯图标 + 三大面板去底栏 + 实际大小分步选词修复</span></th>
+              <td><strong>62.0%</strong> / 72.3% / 77.1% <span class="delta delta-pos">+3.1%</span><span class="sub-th">正常 65.8% · 错输 54.4% (893/1041/1110)</span></td>
+              <td><strong>39.5%</strong> / 45.2% / 49.3% <span class="delta delta-pos">+0.9%</span><span class="sub-th">正常 44.3% · 错输 30.0% (569/651/710)</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B75<span class="sub-th">2026-11-27 02:29 · Build 75: T9核心五项修复 + 首屏阶梯Top-3与ChoiceRanker精排恢复 + Hex 3×2菜单与语音静音</span></th>
+              <td><strong>62.0%</strong> / 72.3% / 77.1% <span class="delta delta-pos">+3.1%</span><span class="sub-th">正常 65.8% · 错输 54.4% (893/1041/1110)</span></td>
+              <td><strong>39.5%</strong> / 45.2% / 49.3% <span class="delta delta-pos">+0.9%</span><span class="sub-th">正常 44.3% · 错输 30.0% (569/651/710)</span></td>
+            </tr>
+            <tr class="row-baseline">
+              <th>豆包输入法 1.5.6<span class="sub-th">联网智能模式 · 同集基线</span></th>
+              <td>58.9% / 69.0% / -<span class="sub-th">正常 70.9% · 错输 34.8% (848/994)</span></td>
+              <td>38.6% / 52.6% / -<span class="sub-th">正常 51.6% · 错输 12.7% (556/758)</span></td>
+            </tr>
+            <tr class="row-baseline">
+              <th>新东方 SDK 输入法<span class="sub-th">旧版基线</span></th>
+              <td>36.9% / - / -<span class="sub-th">错输 19.4%</span></td>
+              <td>21.8% / - / -<span class="sub-th">错输 4.8%</span></td>
+            </tr>
+            <!-- QUALITY_1440_HISTORY_END -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <div class="bench-panel" id="bench-gate3" role="tabpanel">
+            <h3 class="bench-title">门禁 3 · 评测公信力：万象 / 水杉第三方权威公开测试集</h3>
+            <!-- GATE3_PUBLIC_START -->
+      <p class="lead">基于外部开源社区 <strong>5 套不可变 Commit + SHA-256 校验公开集</strong>（总计 <strong>2,213 句</strong> · v1.9.9 Build 87 纯离线手机端逐键实测），检验跨领域公开场景泛化能力：</p>
+      <div class="table-wrap">
+        <table class="comparison">
+          <thead>
+            <tr>
+              <th>第三方公开评测集（来源与协议）</th>
+              <th>教师精灵 B87 · 26 键<span class="sub-th">整句 Top-1 / Top-3 / 首屏 · 字准</span></th>
+              <th>教师精灵 B87 · 九键<span class="sub-th">整句 Top-1 / Top-3 / 首屏 · 字准</span></th>
+              <th>上游公开报告参考基线<span class="sub-th">同集整句 / 字准</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>万象五体裁公开整句集（246 句）<span class="sub-th">amzxyz/rime-wanxiang-data@ead3c33 · CC-BY-4.0</span></th>
+              <td><strong>60.2%</strong> / 75.6% / 81.3%<span class="sub-th">字对 94.41% · 1.23 ms</span></td>
+              <td><strong>48.0%</strong> / 56.9% / 61.0%<span class="sub-th">字对 87.91% · 2.46 ms</span></td>
+              <td>万象 + Gram 66.7%/94.8% · 万象（纯词库） 48.0%/88.8% · 白霜 + Gram 68.7%/94.9% · 雾凇 + Gram 64.2%/94.2%</td>
+            </tr>
+            <tr>
+              <th>万象 2026-11-23 公开新文集（零训练泄漏）（195 句）<span class="sub-th">gaboolic/rime-schema-compare@faad44b · Open-Research-Corpus</span></th>
+              <td><strong>81.0%</strong> / 88.2% / 91.3%<span class="sub-th">字对 96.73% · 1.26 ms</span></td>
+              <td><strong>63.6%</strong> / 69.7% / 73.8%<span class="sub-th">字对 90.47% · 2.49 ms</span></td>
+              <td>万象 + Gram 77.4%/95.7% · 万象（纯词库） 67.2%/92.9% · 白霜 + Gram 79.5%/96.2% · 雾凇 + Gram 73.8%/95.4%</td>
+            </tr>
+            <tr>
+              <th>水杉手写无歧义整句集（60 句）<span class="sub-th">metasequoiaime/chinese-ime-lm@0b36d3f · GPL-3.0</span></th>
+              <td><strong>86.7%</strong> / 91.7% / 91.7%<span class="sub-th">字对 97.49% · 1.14 ms</span></td>
+              <td><strong>76.7%</strong> / 80.0% / 80.0%<span class="sub-th">字对 94.29% · 2.32 ms</span></td>
+              <td>MSIME 官方参考 -</td>
+            </tr>
+            <tr>
+              <th>水杉九键长句专项集（4–12 字全 ≤32 键）（81 句）<span class="sub-th">metasequoiaime/msime@91fbced · GPL-3.0</span></th>
+              <td><strong>96.3%</strong> / 98.8% / 98.8%<span class="sub-th">字对 99.54% · 1.15 ms</span></td>
+              <td><strong>90.1%</strong> / 95.1% / 96.3%<span class="sub-th">字对 98.46% · 2.31 ms</span></td>
+              <td>水杉九键专项 -</td>
+            </tr>
+            <tr>
+              <th>水杉 2026-09~10 新语料未见整句集（1631 句）<span class="sub-th">metasequoiaime/chinese-ime-lm@0b36d3f · GPL-3.0</span></th>
+              <td><strong>87.5%</strong> / 94.3% / 96.6%<span class="sub-th">字对 97.93% · 1.25 ms</span></td>
+              <td><strong>74.2%</strong> / 81.1% / 85.2%<span class="sub-th">字对 93.94% · 2.47 ms</span></td>
+              <td>水杉引擎原序 (6选1池内) 69.3% · 水杉 4.25M 重排 (带上下文) 80.7%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3 style="margin:1.1rem 0 .45rem;font-size:1.02rem;color:var(--ink);">万象五体裁（246 句）分项实测 &amp; 同集主流桌面/Rime 基线对照</h3>
+      <div class="table-wrap">
+        <table class="comparison">
+          <thead>
+            <tr>
+              <th>体裁 / 上游公开基线</th>
+              <th>26 键整句 Top-1 / Top-3 / 首屏<span class="sub-th">字准 (Levenshtein)</span></th>
+              <th>九键整句 Top-1 / Top-3 / 首屏<span class="sub-th">字准 (Levenshtein)</span></th>
+              <th>评测口径 / 协议</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>万象 · 新闻 news（36 句）</th>
+              <td><strong>91.7%</strong> / 91.7% / 91.7%<span class="sub-th">字对 98.87%</span></td>
+              <td><strong>88.9%</strong> / 94.4% / 94.4%<span class="sub-th">字对 97.18%</span></td>
+              <td>CC-BY-4.0 端到端全句</td>
+            </tr>
+            <tr>
+              <th>万象 · 小说 novel（136 句）</th>
+              <td><strong>50.0%</strong> / 73.5% / 82.4%<span class="sub-th">字对 93.43%</span></td>
+              <td><strong>37.5%</strong> / 48.5% / 53.7%<span class="sub-th">字对 86.51%</span></td>
+              <td>CC-BY-4.0 端到端全句</td>
+            </tr>
+            <tr>
+              <th>万象 · 散文 prose（38 句）</th>
+              <td><strong>50.0%</strong> / 60.5% / 63.2%<span class="sub-th">字对 94.11%</span></td>
+              <td><strong>28.9%</strong> / 34.2% / 39.5%<span class="sub-th">字对 85.57%</span></td>
+              <td>CC-BY-4.0 端到端全句</td>
+            </tr>
+            <tr>
+              <th>万象 · 科技 tech（31 句）</th>
+              <td><strong>77.4%</strong> / 83.9% / 87.1%<span class="sub-th">字对 93.75%</span></td>
+              <td><strong>71.0%</strong> / 80.6% / 83.9%<span class="sub-th">字对 87.98%</span></td>
+              <td>CC-BY-4.0 端到端全句</td>
+            </tr>
+            <tr>
+              <th>万象 · 综合 test（5 句）</th>
+              <td><strong>80.0%</strong> / 80.0% / 80.0%<span class="sub-th">字对 98.41%</span></td>
+              <td><strong>40.0%</strong> / 40.0% / 40.0%<span class="sub-th">字对 85.71%</span></td>
+              <td>CC-BY-4.0 端到端全句</td>
+            </tr>
+            <tr class="row-baseline">
+              <th>万象 + Gram（246 句上游基线）<span class="sub-th">rime-schema-compare 2026-04-21</span></th>
+              <td>66.67%<span class="sub-th">字对 94.84%（仅测 26 键）</span></td>
+              <td>-</td>
+              <td>rime-schema-compare 公开报告</td>
+            </tr>
+            <tr class="row-baseline">
+              <th>万象（纯词库）（246 句上游基线）<span class="sub-th">rime-schema-compare 2026-04-21</span></th>
+              <td>47.97%<span class="sub-th">字对 88.78%（仅测 26 键）</span></td>
+              <td>-</td>
+              <td>rime-schema-compare 公开报告</td>
+            </tr>
+            <tr class="row-baseline">
+              <th>白霜 + Gram（246 句上游基线）<span class="sub-th">rime-schema-compare 2026-04-21</span></th>
+              <td>68.70%<span class="sub-th">字对 94.91%（仅测 26 键）</span></td>
+              <td>-</td>
+              <td>rime-schema-compare 公开报告</td>
+            </tr>
+            <tr class="row-baseline">
+              <th>雾凇 + Gram（246 句上游基线）<span class="sub-th">rime-schema-compare 2026-04-21</span></th>
+              <td>64.23%<span class="sub-th">字对 94.23%（仅测 26 键）</span></td>
+              <td>-</td>
+              <td>rime-schema-compare 公开报告</td>
+            </tr>
+            <tr class="row-baseline">
+              <th>手心输入法（Win）（246 句上游基线）<span class="sub-th">other_latest 2026-04-26</span></th>
+              <td>71.14%<span class="sub-th">字对 -（仅测 26 键）</span></td>
+              <td>-</td>
+              <td>rime-schema-compare 公开报告</td>
+            </tr>
+            <tr class="row-baseline">
+              <th>微软拼音（Win）（246 句上游基线）<span class="sub-th">other_latest 2026-04-26</span></th>
+              <td>67.89%<span class="sub-th">字对 92.71%（仅测 26 键）</span></td>
+              <td>-</td>
+              <td>rime-schema-compare 公开报告</td>
+            </tr>
+            <tr class="row-baseline">
+              <th>搜狗拼音（Win）（246 句上游基线）<span class="sub-th">other_latest 2026-04-26</span></th>
+              <td>54.47%<span class="sub-th">字对 77.02%（仅测 26 键）</span></td>
+              <td>-</td>
+              <td>rime-schema-compare 公开报告</td>
+            </tr>
+            <tr class="row-baseline">
+              <th>微信输入法（Win）（246 句上游基线）<span class="sub-th">other_latest 2026-04-26</span></th>
+              <td>51.63%<span class="sub-th">字对 89.18%（仅测 26 键）</span></td>
+              <td>-</td>
+              <td>rime-schema-compare 公开报告</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="summary-box">
+        <strong>公信力口径说明：</strong>万象五体裁（<code>246</code> 句）26 键整句 <code>60.2%</code> / 字准 <code>94.41%</code>，2026-11-23 公开新文（<code>195</code> 句）26 键整句 <code>81.0%</code> / 字准 <code>96.73%</code>。本端采用<strong>严格逐字精确匹配</strong>（不启用「的/地/得」「他/她/它」同义归并），且纯手机端运行（零桌面大词库/联网云端），同时给出手机端罕见的九键全套基线；水杉 <code>1,631</code> 句为无上下文端到端全解码（原仓 <code>69.3%/80.7%</code> 为固定 6 选 1 候选池重排口径）。
+      </div>
+      <!-- GATE3_PUBLIC_END -->
+            <details class="fold sub-fold">
+              <summary>
+                <span class="fold-main">查看各版本门禁 3 历史追踪</span>
+                <span class="fold-hint">万象/水杉跨版本回归</span>
+              </summary>
+              <div class="fold-body">
+                <div class="table-wrap">
+                  <table class="comparison">
+                    <thead>
+                      <tr>
+                        <th>版本</th>
+                        <th>万象五体裁 (246)</th>
+                        <th>公开新文 (195)</th>
+                        <th>水杉整句 / 九键 (60 / 81)</th>
+                        <th>水杉未见 (1,631)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- GATE3_PUBLIC_HISTORY_START -->
+            <tr>
+              <th>v1.9.9 B87<span class="pill" style="margin-left:4px;font-size:.7rem;">最新</span><span class="sub-th">2026-11-28 20:04</span></th>
+              <td><strong>26: 60.2%</strong> (94.4%)<span class="sub-th">T9: 48.0% (87.9%) · P50 1.23ms</span></td>
+              <td><strong>26: 81.0%</strong> (96.7%)<span class="sub-th">T9: 63.6% (90.5%) · P50 1.26ms</span></td>
+              <td><strong>26: 86.7%</strong> (97.5%)<span class="sub-th">T9: 76.7% (94.3%) · P50 1.14ms</span><span class="sub-th">九键集: <strong>26: 96.3%</strong> (99.5%) / T9: 90.1% (98.5%) · P50 1.15ms</span></td>
+              <td><strong>26: 87.5%</strong> (97.9%)<span class="sub-th">T9: 74.2% (93.9%) · P50 1.25ms</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B86<span class="sub-th">2026-11-28 16:09</span></th>
+              <td><strong>26: 60.2%</strong> (94.4%)<span class="sub-th">T9: 48.0% (87.9%) · P50 1.23ms</span></td>
+              <td><strong>26: 81.0%</strong> (96.7%)<span class="sub-th">T9: 63.6% (90.5%) · P50 1.26ms</span></td>
+              <td><strong>26: 86.7%</strong> (97.5%)<span class="sub-th">T9: 76.7% (94.3%) · P50 1.13ms</span><span class="sub-th">九键集: <strong>26: 96.3%</strong> (99.5%) / T9: 90.1% (98.5%) · P50 1.15ms</span></td>
+              <td><strong>26: 87.5%</strong> (97.9%)<span class="sub-th">T9: 74.2% (93.9%) · P50 1.24ms</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B85<span class="sub-th">2026-11-28 12:41</span></th>
+              <td><strong>26: 60.2%</strong> (94.4%)<span class="sub-th">T9: 48.0% (87.9%) · P50 1.25ms</span></td>
+              <td><strong>26: 81.0%</strong> (96.7%)<span class="sub-th">T9: 63.6% (90.5%) · P50 1.28ms</span></td>
+              <td><strong>26: 86.7%</strong> (97.5%)<span class="sub-th">T9: 76.7% (94.3%) · P50 1.15ms</span><span class="sub-th">九键集: <strong>26: 96.3%</strong> (99.5%) / T9: 90.1% (98.5%) · P50 1.16ms</span></td>
+              <td><strong>26: 87.5%</strong> (97.9%)<span class="sub-th">T9: 74.2% (93.9%) · P50 1.28ms</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B84<span class="sub-th">2026-11-28 08:58</span></th>
+              <td><strong>26: 60.2%</strong> (94.4%)<span class="sub-th">T9: 48.0% (87.9%) · P50 1.26ms</span></td>
+              <td><strong>26: 81.0%</strong> (96.7%)<span class="sub-th">T9: 63.6% (90.5%) · P50 1.28ms</span></td>
+              <td><strong>26: 86.7%</strong> (97.5%)<span class="sub-th">T9: 76.7% (94.3%) · P50 1.16ms</span><span class="sub-th">九键集: <strong>26: 96.3%</strong> (99.5%) / T9: 90.1% (98.5%) · P50 1.17ms</span></td>
+              <td><strong>26: 87.5%</strong> (97.9%)<span class="sub-th">T9: 74.2% (93.9%) · P50 1.27ms</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B83<span class="sub-th">2026-11-28 06:04</span></th>
+              <td><strong>26: 60.2%</strong> (94.4%)<span class="sub-th">T9: 48.0% (87.9%) · P50 1.24ms</span></td>
+              <td><strong>26: 81.0%</strong> (96.7%)<span class="sub-th">T9: 63.6% (90.5%) · P50 1.26ms</span></td>
+              <td><strong>26: 86.7%</strong> (97.5%)<span class="sub-th">T9: 76.7% (94.3%) · P50 1.15ms</span><span class="sub-th">九键集: <strong>26: 96.3%</strong> (99.5%) / T9: 90.1% (98.5%) · P50 1.16ms</span></td>
+              <td><strong>26: 87.5%</strong> (97.9%)<span class="sub-th">T9: 74.2% (93.9%) · P50 1.25ms</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B82<span class="sub-th">2026-11-28 04:04</span></th>
+              <td><strong>26: 60.2%</strong> (94.4%)<span class="sub-th">T9: 48.0% (87.9%) · P50 1.25ms</span></td>
+              <td><strong>26: 81.0%</strong> (96.7%)<span class="sub-th">T9: 63.6% (90.5%) · P50 1.27ms</span></td>
+              <td><strong>26: 86.7%</strong> (97.5%)<span class="sub-th">T9: 76.7% (94.3%) · P50 1.14ms</span><span class="sub-th">九键集: <strong>26: 96.3%</strong> (99.5%) / T9: 90.1% (98.5%) · P50 1.16ms</span></td>
+              <td><strong>26: 87.5%</strong> (97.9%)<span class="sub-th">T9: 74.2% (93.9%) · P50 1.25ms</span></td>
+            </tr>
+            <!-- GATE3_PUBLIC_HISTORY_END -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <div class="bench-panel" id="bench-xdf" role="tabpanel">
+            <h3 class="bench-title">新东方家校沟通专属评测（2,000 条脱敏场景集 · 纯聚合指标）</h3>
+            <!-- XDF_EVAL_START -->
+      <p class="lead">基于严格时间切分与脱敏防泄漏的 <strong>2,000 条新东方真实家校沟通评测集</strong>（仅展示纯聚合统计，零原始聊天文本），对比 M1 引入前基线（v1.9.9 B78）：</p>
+      <div class="table-wrap">
+        <table class="comparison">
+          <thead>
+            <tr>
+              <th>布局与分组</th>
+              <th>教师精灵 v1.9.9 B87<span class="sub-th">首选 / Top-3 / 首屏 Top-8</span></th>
+              <th>接入前基线 B78<span class="sub-th">首选 / Top-3 / 首屏 Top-8</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>26 键 · 全部家校场景（2,000 条）<span class="sub-th">单键 P50 1.17 ms · P95 1.96 ms</span></th>
+              <td><strong>68.3%</strong> / 80.0% / 83.5% <span class="delta delta-pos">+4.2%</span><span class="sub-th">1367 / 1601 / 1669</span></td>
+              <td>64.1% / 75.3% / 79.3%<span class="sub-th">1282 / 1507 / 1587</span></td>
+            </tr>
+            <tr>
+              <th>26 键 · 正常输入（1,200 条）</th>
+              <td><strong>70.7%</strong> / 82.2% / 85.6% <span class="delta delta-pos">+4.2%</span><span class="sub-th">848 / 986 / 1027</span></td>
+              <td>66.5% / 76.8% / 81.0%<span class="sub-th">798 / 922 / 972</span></td>
+            </tr>
+            <tr>
+              <th>26 键 · 有错输入（800 条）</th>
+              <td><strong>64.9%</strong> / 76.9% / 80.2% <span class="delta delta-pos">+4.4%</span><span class="sub-th">519 / 615 / 642</span></td>
+              <td>60.5% / 73.1% / 76.9%<span class="sub-th">484 / 585 / 615</span></td>
+            </tr>
+            <tr>
+              <th>T9 九键 · 全部家校场景（2,000 条）<span class="sub-th">单键 P50 2.34 ms · P95 4.03 ms</span></th>
+              <td><strong>43.1%</strong> / 51.4% / 56.2% <span class="delta delta-pos">+5.1%</span><span class="sub-th">863 / 1027 / 1125</span></td>
+              <td>38.0% / 45.1% / 49.5%<span class="sub-th">761 / 902 / 990</span></td>
+            </tr>
+            <tr>
+              <th>T9 九键 · 正常输入（1,200 条）</th>
+              <td><strong>48.1%</strong> / 55.9% / 62.8% <span class="delta delta-pos">+5.5%</span><span class="sub-th">577 / 671 / 754</span></td>
+              <td>42.6% / 48.8% / 55.0%<span class="sub-th">511 / 586 / 660</span></td>
+            </tr>
+            <tr>
+              <th>T9 九键 · 有错输入（800 条）</th>
+              <td><strong>35.8%</strong> / 44.5% / 46.4% <span class="delta delta-pos">+4.5%</span><span class="sub-th">286 / 356 / 371</span></td>
+              <td>31.2% / 39.5% / 41.2%<span class="sub-th">250 / 316 / 330</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3 style="margin:1.1rem 0 .45rem;font-size:1.02rem;color:var(--ink);">六大家校业务分组聚合表现（vs 接入前 B78 基线）</h3>
+      <div class="table-wrap">
+        <table class="comparison">
+          <thead>
+            <tr>
+              <th>业务场景分组</th>
+              <th>教师精灵 v1.9.9 B87 · 26 键<span class="sub-th">首选 / Top-3 / 首屏 Top-8</span></th>
+              <th>教师精灵 v1.9.9 B87 · T9 九键<span class="sub-th">首选 / Top-3 / 首屏 Top-8</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>新东方专词与产品（300 条）</th>
+              <td><strong>63.0%</strong> / 82.7% / 86.7% <span class="delta delta-pos">+5.3%</span><span class="sub-th">B78 57.7% (173/300)</span></td>
+              <td><strong>53.0%</strong> / 63.3% / 70.7% <span class="delta delta-pos">+7.0%</span><span class="sub-th">B78 46.0% (138/300)</span></td>
+            </tr>
+            <tr>
+              <th>校区地址与排课调课（300 条）</th>
+              <td><strong>69.7%</strong> / 81.3% / 85.0% <span class="delta delta-pos">+5.0%</span><span class="sub-th">B78 64.7% (194/300)</span></td>
+              <td><strong>41.0%</strong> / 48.0% / 54.3% <span class="delta delta-pos">+6.7%</span><span class="sub-th">B78 34.3% (103/300)</span></td>
+            </tr>
+            <tr>
+              <th>学科知识点与考试（400 条）</th>
+              <td><strong>72.5%</strong> / 81.2% / 82.8% <span class="delta delta-pos">+4.2%</span><span class="sub-th">B78 68.2% (273/400)</span></td>
+              <td><strong>45.0%</strong> / 52.2% / 56.8% <span class="delta delta-pos">+2.2%</span><span class="sub-th">B78 42.8% (171/400)</span></td>
+            </tr>
+            <tr>
+              <th>M 端招生咨询与异议（350 条）</th>
+              <td><strong>67.1%</strong> / 78.6% / 82.3% <span class="delta delta-pos">+6.0%</span><span class="sub-th">B78 61.1% (214/350)</span></td>
+              <td><strong>36.9%</strong> / 46.6% / 49.7% <span class="delta delta-pos">+5.1%</span><span class="sub-th">B78 31.7% (111/350)</span></td>
+            </tr>
+            <tr>
+              <th>P 端学情反馈与打卡（350 条）</th>
+              <td><strong>71.7%</strong> / 80.3% / 83.7% <span class="delta delta-pos">+2.6%</span><span class="sub-th">B78 69.1% (242/350)</span></td>
+              <td><strong>46.3%</strong> / 54.3% / 57.7% <span class="delta delta-pos">+6.9%</span><span class="sub-th">B78 39.4% (138/350)</span></td>
+            </tr>
+            <tr>
+              <th>校内跨部门协同（300 条）</th>
+              <td><strong>64.3%</strong> / 76.0% / 80.7% <span class="delta delta-pos">+2.3%</span><span class="sub-th">B78 62.0% (186/300)</span></td>
+              <td><strong>36.7%</strong> / 43.7% / 49.0% <span class="delta delta-pos">+3.3%</span><span class="sub-th">B78 33.3% (100/300)</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- XDF_EVAL_END -->
+          </div>
+
+          <div class="bench-panel" id="bench-latency" role="tabpanel">
+            <h3 class="bench-title">按键响应速度横向对比（过去 3 个 Build + 当前版本 + 豆包联网版 1.5.6）</h3>
+            <!-- LATENCY_BENCH_START -->
+      <p class="lead">使用 <code>bench_key_latency.py</code> 在同一台 Android 14（<code>sdk_gphone64_arm64</code> · 2026-11-28 20:19）上同场实测 44 键连击与 60 句引擎延迟：</p>
+      <div class="table-wrap">
+        <table class="comparison">
+          <thead>
+            <tr>
+              <th>版本 / 竞品</th>
+              <th>Input+Layout P50 / P95 / Max</th>
+              <th>Total Frame P50 / P95 · Jank%</th>
+              <th>44 键总耗时 · 触感 / 退格</th>
+              <th>26 键 / T9 引擎 P50</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>v1.9.9 Build 87<span class="pill" style="margin-left:4px;font-size:.7rem;">最新</span></th>
+              <td><strong>0.247 / 0.872 / 1.154 ms</strong></td>
+              <td><strong>17.206 / 31.719 ms</strong> · 100.0%</td>
+              <td>0.848 s · TICK 44/44 · DOWN (0ms)</td>
+              <td>1.22 / 2.319 ms</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 Build 86</th>
+              <td>0.313 / 0.744 / 0.98 ms</td>
+              <td>17.11 / 18.21 ms · 100.0%</td>
+              <td>0.778 s · TICK 44/44 · DOWN (0ms)</td>
+              <td>1.231 / 2.336 ms</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 Build 85</th>
+              <td>0.253 / 0.973 / 1.598 ms</td>
+              <td>17.075 / 18.803 ms · 100.0%</td>
+              <td>0.827 s · TICK 44/44 · DOWN (0ms)</td>
+              <td>1.233 / 2.323 ms</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 Build 84</th>
+              <td>0.251 / 0.897 / 4.67 ms</td>
+              <td>17.146 / 33.548 ms · 100.0%</td>
+              <td>0.86 s · TICK 44/44 · DOWN (0ms)</td>
+              <td>1.241 / 2.33 ms</td>
+            </tr>
+            <tr class="row-baseline">
+              <th>豆包联网版 1.5.6<span class="sub-th">online 闭源</span></th>
+              <td>0.231 / 3.903 / 6.007 ms</td>
+              <td>29.33 / 52.79 ms · 98.15%</td>
+              <td>1.372 s · none (0/44) · -</td>
+              <td>闭源(仅测 UI)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- LATENCY_BENCH_END -->
+            <details class="fold sub-fold">
+              <summary>
+                <span class="fold-main">查看各版本按键响应门禁 B 历史归档</span>
+                <span class="fold-hint">B70 ~ 当前</span>
+              </summary>
+              <div class="fold-body">
+                <div class="table-wrap">
+                  <table class="comparison">
+                    <thead>
+                      <tr>
+                        <th>版本 / 竞品</th>
+                        <th>Input+Layout P50 / P95 / Max</th>
+                        <th>Total Frame P50 / P95 · Jank%</th>
+                        <th>44 键总耗时 · 触感 / 退格</th>
+                        <th>26 键 / T9 引擎 P50</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- LATENCY_HISTORY_START -->
+            <tr>
+              <th>v1.9.9 Build 87<span class="pill" style="margin-left:4px;font-size:.7rem;">最新</span><span class="sub-th">2026-11-28 20:19 · sdk_gphone64_arm64</span></th>
+              <td><strong>0.247 / 0.872 / 1.154 ms</strong></td>
+              <td><strong>17.206 / 31.719 ms</strong> · 100.0%</td>
+              <td>0.848 s · TICK 44/44 · DOWN (0ms)</td>
+              <td>1.22 / 2.319 ms</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 Build 86<span class="sub-th">2026-11-28 20:19 · sdk_gphone64_arm64</span></th>
+              <td>0.313 / 0.744 / 0.98 ms</td>
+              <td>17.11 / 18.21 ms · 100.0%</td>
+              <td>0.778 s · TICK 44/44 · DOWN (0ms)</td>
+              <td>1.231 / 2.336 ms</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 Build 85<span class="sub-th">2026-11-28 20:19 · sdk_gphone64_arm64</span></th>
+              <td>0.253 / 0.973 / 1.598 ms</td>
+              <td>17.075 / 18.803 ms · 100.0%</td>
+              <td>0.827 s · TICK 44/44 · DOWN (0ms)</td>
+              <td>1.233 / 2.323 ms</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 Build 84<span class="sub-th">2026-11-28 20:19 · sdk_gphone64_arm64</span></th>
+              <td>0.251 / 0.897 / 4.67 ms</td>
+              <td>17.146 / 33.548 ms · 100.0%</td>
+              <td>0.86 s · TICK 44/44 · DOWN (0ms)</td>
+              <td>1.241 / 2.33 ms</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 Build 83<span class="sub-th">2026-11-28 16:24 · sdk_gphone64_arm64</span></th>
+              <td>0.337 / 2.095 / 3.198 ms</td>
+              <td>17.148 / 26.895 ms · 100.0%</td>
+              <td>0.865 s · TICK 44/44 · DOWN (0ms)</td>
+              <td>1.246 / 2.321 ms</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 Build 82<span class="sub-th">2026-11-28 12:57 · sdk_gphone64_arm64</span></th>
+              <td>0.137 / 2.191 / 5.03 ms</td>
+              <td>17.017 / 33.401 ms · 98.0%</td>
+              <td>1.172 s · TICK 44/44 · DOWN (0ms)</td>
+              <td>1.151 / 2.275 ms</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 Build 81<span class="sub-th">2026-11-28 09:17 · sdk_gphone64_arm64</span></th>
+              <td>0.124 / 0.69 / 0.811 ms</td>
+              <td>17.495 / 33.401 ms · 100.0%</td>
+              <td>1.176 s · TICK 44/44 · DOWN (0ms)</td>
+              <td>1.248 / 2.313 ms</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 Build 80<span class="sub-th">2026-11-28 06:20 · sdk_gphone64_arm64</span></th>
+              <td>0.171 / 1.61 / 4.309 ms</td>
+              <td>17.14 / 33.389 ms · 100.0%</td>
+              <td>1.081 s · TICK 44/44 · DOWN (0ms)</td>
+              <td>1.175 / 2.275 ms</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 Build 79<span class="sub-th">2026-11-28 04:15 · sdk_gphone64_arm64</span></th>
+              <td>0.236 / 1.056 / 5.799 ms</td>
+              <td>33.428 / 54.107 ms · 98.36%</td>
+              <td>2.273 s · TICK 44/44 · DOWN (0ms)</td>
+              <td>1.241 / 2.433 ms</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 Build 78<span class="sub-th">2026-11-28 00:40 · sdk_gphone64_arm64</span></th>
+              <td>0.154 / 0.676 / 0.745 ms</td>
+              <td>18.467 / 33.611 ms · 95.83%</td>
+              <td>1.169 s · TICK 44/44 · DOWN (0ms)</td>
+              <td>1.156 / 2.152 ms</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 Build 77<span class="sub-th">2026-11-27 21:49 · sdk_gphone64_arm64</span></th>
+              <td>0.129 / 1.375 / 7.383 ms</td>
+              <td>16.72 / 33.385 ms · 93.48%</td>
+              <td>1.054 s · TICK 44/44 · DOWN (0ms)</td>
+              <td>1.095 / 2.176 ms</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 Build 76<span class="sub-th">2026-11-27 18:18 · sdk_gphone64_arm64</span></th>
+              <td>0.266 / 0.586 / 2.142 ms</td>
+              <td>16.716 / 17.003 ms · 69.05%</td>
+              <td>0.717 s · TICK 44/44 · DOWN (0ms)</td>
+              <td>1.061 / 2.169 ms</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 Build 75<span class="sub-th">2026-11-27 13:34 · sdk_gphone64_arm64</span></th>
+              <td>0.283 / 0.611 / 0.667 ms</td>
+              <td>16.718 / 16.773 ms · 65.22%</td>
+              <td>0.814 s · TICK 44/44 · DOWN (0ms)</td>
+              <td>1.052 / 2.202 ms</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 Build 74<span class="sub-th">2026-11-27 10:42 · sdk_gphone64_arm64</span></th>
+              <td>0.158 / 0.776 / 2.714 ms</td>
+              <td>33.379 / 50.054 ms · 100.0%</td>
+              <td>1.157 s · TICK 44/44 · DOWN (0ms)</td>
+              <td>1.111 / 2.115 ms</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 Build 73<span class="sub-th">2026-11-27 08:17 · sdk_gphone64_arm64</span></th>
+              <td>0.143 / 1.268 / 1.317 ms</td>
+              <td>33.387 / 66.736 ms · 98.21%</td>
+              <td>1.287 s · TICK 44/44 · DOWN (0ms)</td>
+              <td>1.119 / 2.017 ms</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 Build 72<span class="sub-th">2026-11-27 02:42 · sdk_gphone64_arm64</span></th>
+              <td>0.145 / 2.529 / 3.016 ms</td>
+              <td>33.388 / 50.055 ms · 98.11%</td>
+              <td>1.174 s · TICK 44/44 · DOWN (0ms)</td>
+              <td>1.144 / 2.085 ms</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 Build 71<span class="sub-th">2026-11-26 13:38 · sdk_gphone64_arm64</span></th>
+              <td>0.14 / 2.214 / 9.229 ms</td>
+              <td>33.386 / 50.077 ms · 100.0%</td>
+              <td>1.365 s · CLICK 44/44 · DOWN (0ms)</td>
+              <td>1.144 / 2.163 ms</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 Build 70<span class="sub-th">2026-11-26 15:45 · sdk_gphone64_arm64</span></th>
+              <td>0.152 / 2.78 / 14.971 ms</td>
+              <td>33.383 / 50.13 ms · 100.0%</td>
+              <td>1.559 s · TICK 44/44 · DOWN (0ms)</td>
+              <td>1.185 / 2.144 ms</td>
+            </tr>
+            <tr class="row-baseline">
+              <th>豆包联网版 1.5.6<span class="sub-th">online 闭源 · 2026-11-28 20:19</span></th>
+              <td>0.231 / 3.903 / 6.007 ms</td>
+              <td>29.33 / 52.79 ms · 98.15%</td>
+              <td>1.372 s · none (0/44) · -</td>
+              <td>闭源(仅测 UI)</td>
+            </tr>
+            <!-- LATENCY_HISTORY_END -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <div class="bench-panel" id="bench-v5" role="tabpanel">
+            <h3 class="bench-title">4,000 条 v5 候选词准确性回归对比（26 键 + T9 九键）</h3>
+            <p class="lead">在签名生产包同机回放 <strong>4,000 条 v5 评测集</strong>（1,600 正常 + 2,400 错输，共 70,681 键），输出首选 / Top-3 / 首屏（Top-8）与历史及豆包基线对比：</p>
+            <!-- V5_4000_LATEST_START -->
+      <div class="table-wrap">
+        <table class="comparison">
+          <thead>
+            <tr>
+              <th>模式与分组</th>
+              <th>教师精灵 v1.9.9 B87<span class="sub-th">首选 / Top-3 / 首屏 Top-8</span></th>
+              <th>历史基线 v1.2.0<span class="sub-th">首选 / Top-3 / 首屏 Top-8</span></th>
+              <th>豆包 1.5.6 离线基线<span class="sub-th">首选 / Top-3</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>26 键 · 全部（4,000 条）<span class="sub-th">单键 P50 1.01 ms · P95 1.74 ms</span></th>
+              <td><strong>83.3%</strong> / 90.2% / 93.1%<span class="sub-th">3333 / 3608 / 3725</span></td>
+              <td>83.5% / 92.5% / 94.8%<span class="sub-th">3338 / 3699 / 3790</span></td>
+              <td>39.8% / 44.5% / -<span class="sub-th">1593 / 1778</span></td>
+            </tr>
+            <tr>
+              <th>26 键 · 正常 / 错输分项<span class="sub-th">1,600 正常 · 2,400 错输</span></th>
+              <td>89.5% / 94.3% / 95.8%<span class="sub-th">错输 79.2% / 87.5% / 91.4%</span></td>
+              <td>89.6% / 95.4% / 97.1%<span class="sub-th">错输 79.4% / 90.5% / 93.2%</span></td>
+              <td>87.2% / 92.6% / -<span class="sub-th">错输 8.2% / 12.4% / -</span></td>
+            </tr>
+            <tr>
+              <th>T9 九键 · 全部（4,000 条）<span class="sub-th">单键 P50 2.02 ms · P95 3.80 ms</span></th>
+              <td><strong>52.8%</strong> / 60.5% / 65.8%<span class="sub-th">2112 / 2419 / 2630</span></td>
+              <td>52.4% / 62.8% / 69.4%<span class="sub-th">2095 / 2510 / 2776</span></td>
+              <td>31.8% / 37.4% / -<span class="sub-th">1271 / 1497</span></td>
+            </tr>
+            <tr>
+              <th>T9 九键 · 正常 / 错输分项<span class="sub-th">1,600 正常 · 2,400 错输</span></th>
+              <td>71.9% / 78.7% / 84.8%<span class="sub-th">错输 40.1% / 48.3% / 53.0%</span></td>
+              <td>71.8% / 81.2% / 88.4%<span class="sub-th">错输 39.5% / 50.5% / 56.8%</span></td>
+              <td>71.1% / 81.3% / -<span class="sub-th">错输 5.5% / 8.2% / -</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- V5_4000_LATEST_END -->
+            <details class="fold sub-fold">
+              <summary>
+                <span class="fold-main">查看各版本 4,000 条 v5 门禁 A 历史对比</span>
+                <span class="fold-hint">B75 ~ 当前</span>
+              </summary>
+              <div class="fold-body">
+                <div class="table-wrap">
+                  <table class="comparison">
+                    <thead>
+                      <tr>
+                        <th>版本 / 对比对象</th>
+                        <th>26 键（4,000 条）<span class="sub-th">首选 / Top-3 / 首屏 · 正常 / 错输</span></th>
+                        <th>T9 九键（4,000 条）<span class="sub-th">首选 / Top-3 / 首屏 · 正常 / 错输</span></th>
+                        <th>单键延迟 (P50 / P95)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- V5_4000_HISTORY_START -->
+            <tr>
+              <th>v1.9.9 B87<span class="pill" style="margin-left:4px;font-size:.7rem;">最新</span><span class="sub-th">2026-11-28 20:04 · v1.9.9 B87：端侧伴聊模型 v2.0.0 与顶栏动态教师精灵</span></th>
+              <td><strong>83.3%</strong> / 90.2% / 93.1%<span class="sub-th">正常 89.5% · 错输 79.2% (3333/3608/3725)</span></td>
+              <td><strong>52.8%</strong> / 60.5% / 65.8%<span class="sub-th">正常 71.9% · 错输 40.1% (2112/2419/2630)</span></td>
+              <td>26键 1.01 / 1.74 ms<span class="sub-th">T9 2.02 / 3.80 ms</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B86<span class="sub-th">2026-11-28 16:09 · v1.9.9 Build 86：✨ 精灵伴聊端侧 Qwen3-0.6B INT4 离线 AI 模型与零 PII 联系人风格记忆 RAG</span></th>
+              <td><strong>83.3%</strong> / 90.2% / 93.1%<span class="sub-th">正常 89.5% · 错输 79.2% (3333/3608/3725)</span></td>
+              <td><strong>52.8%</strong> / 60.5% / 65.8%<span class="sub-th">正常 71.9% · 错输 40.1% (2112/2419/2630)</span></td>
+              <td>26键 1.00 / 1.72 ms<span class="sub-th">T9 2.02 / 3.79 ms</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B85<span class="sub-th">2026-11-28 12:41 · 企微「✨精灵伴聊」双向上下文+9类防误判+全端图文向导</span></th>
+              <td><strong>83.3%</strong> / 90.2% / 93.1%<span class="sub-th">正常 89.5% · 错输 79.2% (3333/3608/3725)</span></td>
+              <td><strong>52.8%</strong> / 60.5% / 65.8%<span class="sub-th">正常 71.9% · 错输 40.1% (2112/2419/2630)</span></td>
+              <td>26键 1.03 / 1.87 ms<span class="sub-th">T9 2.05 / 4.00 ms</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B84<span class="sub-th">2026-11-28 08:58 · Build 84: 企微自动回复本屏可见区/对方气泡精准提取、家长同事分流与300 FAQ语义匹配、新增本屏引文与全文预览卡片面板</span></th>
+              <td><strong>83.3%</strong> / 90.2% / 93.1%<span class="sub-th">正常 89.5% · 错输 79.2% (3333/3608/3725)</span></td>
+              <td><strong>52.8%</strong> / 60.5% / 65.8%<span class="sub-th">正常 71.9% · 错输 40.1% (2112/2419/2630)</span></td>
+              <td>26键 1.11 / 5.68 ms<span class="sub-th">T9 2.37 / 8.21 ms</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B83<span class="sub-th">2026-11-28 06:04 · Build 83: 修复企微只读无障碍真机漏扫（flagIncludeNotImportantViews/多窗口择优/深树剪枝/宽坐标）与升级后服务断连显式提醒</span></th>
+              <td><strong>83.3%</strong> / 90.2% / 93.1%<span class="sub-th">正常 89.5% · 错输 79.2% (3333/3608/3725)</span></td>
+              <td><strong>52.8%</strong> / 60.5% / 65.8%<span class="sub-th">正常 71.9% · 错输 40.1% (2112/2419/2630)</span></td>
+              <td>26键 1.02 / 1.85 ms<span class="sub-th">T9 2.04 / 4.00 ms</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B82<span class="sub-th">2026-11-28 04:04 · Build 82: 企微无障碍上手简化 + 应用内自动升级全链路修复</span></th>
+              <td><strong>83.3%</strong> / 90.2% / 93.1%<span class="sub-th">正常 89.5% · 错输 79.2% (3333/3608/3725)</span></td>
+              <td><strong>52.8%</strong> / 60.5% / 65.8%<span class="sub-th">正常 71.9% · 错输 40.1% (2112/2419/2630)</span></td>
+              <td>26键 1.02 / 1.87 ms<span class="sub-th">T9 2.08 / 4.17 ms</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B81<span class="sub-th">2026-11-28 00:29 · Build 81: M3 交接卡/手机号脱敏/资料追问钩子/企微只读实验室 + 精简顶栏与面板去说明行/不回滚/Hex矢量下拉收起键</span></th>
+              <td><strong>83.3%</strong> / 90.2% / 93.1%<span class="sub-th">正常 89.5% · 错输 79.2% (3333/3608/3725)</span></td>
+              <td><strong>52.8%</strong> / 60.5% / 65.8%<span class="sub-th">正常 71.9% · 错输 40.1% (2112/2419/2630)</span></td>
+              <td>26键 1.01 / 1.84 ms<span class="sub-th">T9 2.04 / 4.00 ms</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B80<span class="sub-th">2026-11-27 21:38 · M2离线家校工作台(竞品作战卡/300FAQ/175校区/学法处方/课后点评/内置短码直发去常用收藏)+应用内4线程断点自动升级</span></th>
+              <td><strong>83.3%</strong> / 90.2% / 93.1%<span class="sub-th">正常 89.5% · 错输 79.2% (3333/3608/3725)</span></td>
+              <td><strong>52.8%</strong> / 60.5% / 65.8%<span class="sub-th">正常 71.9% · 错输 40.1% (2112/2419/2630)</span></td>
+              <td>26键 1.03 / 1.87 ms<span class="sub-th">T9 2.05 / 4.02 ms</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B79<span class="sub-th">2026-11-27 18:07 · Build 79: M1 新东方家校评测集、双通道词库与运行时整句领域覆盖层 + Hex 四角键 1.5 格等宽对齐(全端同步)</span></th>
+              <td><strong>83.3%</strong> / 90.2% / 93.1%<span class="sub-th">正常 89.5% · 错输 79.2% (3333/3608/3725)</span></td>
+              <td><strong>52.8%</strong> / 60.5% / 65.8%<span class="sub-th">正常 71.9% · 错输 40.1% (2112/2419/2630)</span></td>
+              <td>26键 1.01 / 1.84 ms<span class="sub-th">T9 2.05 / 3.99 ms</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B78<span class="sub-th">2026-11-27 13:27 · Build 78: 修复持续选联想词与顶栏重合，统一所有菜单界面与键盘等高零跳动</span></th>
+              <td><strong>82.9%</strong> / 89.7% / 92.9%<span class="sub-th">正常 89.4% · 错输 78.5% (3315/3589/3717)</span></td>
+              <td><strong>52.5%</strong> / 59.9% / 65.2%<span class="sub-th">正常 71.8% · 错输 39.7% (2101/2397/2607)</span></td>
+              <td>26键 0.96 / 1.72 ms<span class="sub-th">T9 1.91 / 3.77 ms</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B77<span class="sub-th">2026-11-27 10:35 · Build 77: 顶栏还原符号与常驻菜单 + 统一右上角返回键盘/去底栏 + 丝滑表情顶栏 + 分步选词防吞尾与防误清</span></th>
+              <td><strong>82.9%</strong> / 89.7% / 92.9%<span class="sub-th">正常 89.4% · 错输 78.5% (3315/3589/3717)</span></td>
+              <td><strong>52.5%</strong> / 59.9% / 65.2%<span class="sub-th">正常 71.8% · 错输 39.7% (2101/2397/2607)</span></td>
+              <td>26键 0.95 / 1.70 ms<span class="sub-th">T9 1.90 / 3.73 ms</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B76<span class="sub-th">2026-11-27 08:09 · Build 76: Hex大字号与四角矢量键 + 顶栏放大/语音纯图标 + 三大面板去底栏 + 实际大小分步选词修复</span></th>
+              <td><strong>82.9%</strong> / 89.7% / 92.9%<span class="sub-th">正常 89.4% · 错输 78.5% (3315/3589/3717)</span></td>
+              <td><strong>52.5%</strong> / 59.9% / 65.2%<span class="sub-th">正常 71.8% · 错输 39.7% (2101/2397/2607)</span></td>
+              <td>26键 0.92 / 1.68 ms<span class="sub-th">T9 1.89 / 3.76 ms</span></td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B75<span class="sub-th">2026-11-27 02:29 · Build 75: T9核心五项修复 + 首屏阶梯Top-3与ChoiceRanker精排恢复 + Hex 3×2菜单与语音静音</span></th>
+              <td><strong>82.9%</strong> / 89.7% / 92.9%<span class="sub-th">正常 89.4% · 错输 78.5% (3315/3589/3717)</span></td>
+              <td><strong>52.5%</strong> / 59.9% / 65.2%<span class="sub-th">正常 71.8% · 错输 39.7% (2101/2397/2607)</span></td>
+              <td>26键 0.92 / 1.68 ms<span class="sub-th">T9 1.89 / 3.73 ms</span></td>
+            </tr>
+            <tr class="row-baseline">
+              <th>历史基线 v1.2.0<span class="sub-th">早期离线基线</span></th>
+              <td>83.5% / 92.5% / 94.8%<span class="sub-th">正常 89.6% · 错输 79.4% (3338 / 3699 / 3790)</span></td>
+              <td>52.4% / 62.8% / 69.4%<span class="sub-th">正常 71.8% · 错输 39.5% (2095 / 2510 / 2776)</span></td>
+              <td>-</td>
+            </tr>
+            <tr class="row-baseline">
+              <th>豆包 1.5.6 离线基线<span class="sub-th">offline 基础模式</span></th>
+              <td>39.8% / 44.5% / -<span class="sub-th">正常 87.2% · 错输 8.2% (1593 / 1778)</span></td>
+              <td>31.8% / 37.4% / -<span class="sub-th">正常 71.1% · 错输 5.5% (1271 / 1497)</span></td>
+              <td>-</td>
+            </tr>
+            <!-- V5_4000_HISTORY_END -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </details>
+            <details class="fold sub-fold">
+              <summary>
+                <span class="fold-main">查看各版本 400 句真实未见对话横向对比</span>
+                <span class="fold-hint">JVM + 400 句历史追踪</span>
+              </summary>
+              <div class="fold-body">
+                <p class="lead">每次发版均自动运行核心 JVM 回归门禁与 <strong>400 句真实未见对话集</strong>（含正常打字与手滑误触），跨版本追踪 26 键 / T9 首选率与出词延迟：</p>
+                <div class="table-wrap">
+                  <table class="comparison">
+                    <thead>
+                      <tr>
+                        <th>版本 / 对比对象</th>
+                        <th>26 键首选率<span class="sub-th">对比豆包差值 · Top3 · P50</span></th>
+                        <th>T9 九键首选率<span class="sub-th">对比豆包差值 · Top3 · P50</span></th>
+                        <th>JVM 回归门禁</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- VERSION_BENCHMARK_START -->
+            <tr>
+              <th>v1.9.9 B87<span class="pill" style="margin-left:4px;font-size:.7rem;">最新</span><span class="sub-th">2026-11-28 20:04 · v1.9.9 B87：端侧伴聊模型 v2.0.0 与顶栏动态教师精灵</span></th>
+              <td><strong>60.2%</strong> (241/400) <span class="delta delta-pos">+3.0%</span><span class="sub-th">Top3 71.2% · 首屏 76.0% · 1.13 ms</span></td>
+              <td><strong>37.8%</strong> (151/400) <span class="delta delta-pos">+9.0%</span><span class="sub-th">Top3 43.8% · 首屏 47.8% · 2.21 ms</span></td>
+              <td>14/14 PASS (665 checks)</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B86<span class="sub-th">2026-11-28 16:09 · v1.9.9 Build 86：✨ 精灵伴聊端侧 Qwen3-0.6B INT4 离线 AI 模型与零 PII 联系人风格记忆 RAG</span></th>
+              <td><strong>60.2%</strong> (241/400) <span class="delta delta-pos">+3.0%</span><span class="sub-th">Top3 71.2% · 首屏 76.0% · 1.07 ms</span></td>
+              <td><strong>37.8%</strong> (151/400) <span class="delta delta-pos">+9.0%</span><span class="sub-th">Top3 43.8% · 首屏 47.8% · 2.15 ms</span></td>
+              <td>14/14 PASS (643 checks)</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B85<span class="sub-th">2026-11-28 12:41 · 企微「✨精灵伴聊」双向上下文+9类防误判+全端图文向导</span></th>
+              <td><strong>60.2%</strong> (241/400) <span class="delta delta-pos">+3.0%</span><span class="sub-th">Top3 71.2% · 首屏 76.0% · 1.13 ms</span></td>
+              <td><strong>37.8%</strong> (151/400) <span class="delta delta-pos">+9.0%</span><span class="sub-th">Top3 43.8% · 首屏 47.8% · 2.25 ms</span></td>
+              <td>13/13 PASS (592 checks)</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B84<span class="sub-th">2026-11-28 08:58 · Build 84: 企微自动回复本屏可见区/对方气泡精准提取、家长同事分流与300 FAQ语义匹配、新增本屏引文与全文预览卡片面板</span></th>
+              <td><strong>60.2%</strong> (241/400) <span class="delta delta-pos">+3.0%</span><span class="sub-th">Top3 71.2% · 首屏 76.0% · 1.25 ms</span></td>
+              <td><strong>37.8%</strong> (151/400) <span class="delta delta-pos">+9.0%</span><span class="sub-th">Top3 43.8% · 首屏 47.8% · 3.08 ms</span></td>
+              <td>13/13 PASS (500 checks)</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B83<span class="sub-th">2026-11-28 06:04 · Build 83: 修复企微只读无障碍真机漏扫（flagIncludeNotImportantViews/多窗口择优/深树剪枝/宽坐标）与升级后服务断连显式提醒</span></th>
+              <td><strong>60.2%</strong> (241/400) <span class="delta delta-pos">+3.0%</span><span class="sub-th">Top3 71.2% · 首屏 76.0% · 1.15 ms</span></td>
+              <td><strong>37.8%</strong> (151/400) <span class="delta delta-pos">+9.0%</span><span class="sub-th">Top3 43.8% · 首屏 47.8% · 2.27 ms</span></td>
+              <td>13/13 PASS (493 checks)</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B82<span class="sub-th">2026-11-28 04:04 · Build 82: 企微无障碍上手简化 + 应用内自动升级全链路修复</span></th>
+              <td><strong>60.2%</strong> (241/400) <span class="delta delta-pos">+3.0%</span><span class="sub-th">Top3 71.2% · 首屏 76.0% · 1.14 ms</span></td>
+              <td><strong>37.8%</strong> (151/400) <span class="delta delta-pos">+9.0%</span><span class="sub-th">Top3 43.8% · 首屏 47.8% · 2.26 ms</span></td>
+              <td>13/13 PASS (487 checks)</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B81<span class="sub-th">2026-11-28 00:29 · Build 81: M3 交接卡/手机号脱敏/资料追问钩子/企微只读实验室 + 精简顶栏与面板去说明行/不回滚/Hex矢量下拉收起键</span></th>
+              <td><strong>60.2%</strong> (241/400) <span class="delta delta-pos">+3.0%</span><span class="sub-th">Top3 71.2% · 首屏 76.0% · 1.12 ms</span></td>
+              <td><strong>37.8%</strong> (151/400) <span class="delta delta-pos">+9.0%</span><span class="sub-th">Top3 43.8% · 首屏 47.8% · 2.25 ms</span></td>
+              <td>13/13 PASS (471 checks)</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B80<span class="sub-th">2026-11-27 21:38 · M2离线家校工作台(竞品作战卡/300FAQ/175校区/学法处方/课后点评/内置短码直发去常用收藏)+应用内4线程断点自动升级</span></th>
+              <td><strong>60.2%</strong> (241/400) <span class="delta delta-pos">+3.0%</span><span class="sub-th">Top3 71.2% · 首屏 76.0% · 1.14 ms</span></td>
+              <td><strong>37.8%</strong> (151/400) <span class="delta delta-pos">+9.0%</span><span class="sub-th">Top3 43.8% · 首屏 47.8% · 2.28 ms</span></td>
+              <td>12/12 PASS (403 checks)</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B79<span class="sub-th">2026-11-27 18:07 · Build 79: M1 新东方家校评测集、双通道词库与运行时整句领域覆盖层 + Hex 四角键 1.5 格等宽对齐(全端同步)</span></th>
+              <td><strong>60.2%</strong> (241/400) <span class="delta delta-pos">+3.0%</span><span class="sub-th">Top3 71.2% · 首屏 76.0% · 1.12 ms</span></td>
+              <td><strong>37.8%</strong> (151/400) <span class="delta delta-pos">+9.0%</span><span class="sub-th">Top3 43.8% · 首屏 47.8% · 2.23 ms</span></td>
+              <td>10/10 PASS (281 checks)</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B78<span class="sub-th">2026-11-27 13:27 · Build 78: 修复持续选联想词与顶栏重合，统一所有菜单界面与键盘等高零跳动</span></th>
+              <td><strong>60.2%</strong> (241/400) <span class="delta delta-pos">+3.0%</span><span class="sub-th">Top3 71.2% · 首屏 76.0% · 1.05 ms</span></td>
+              <td><strong>37.8%</strong> (151/400) <span class="delta delta-pos">+9.0%</span><span class="sub-th">Top3 43.8% · 首屏 47.8% · 2.09 ms</span></td>
+              <td>10/10 PASS (281 checks)</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B77<span class="sub-th">2026-11-27 10:35 · Build 77: 顶栏还原符号与常驻菜单 + 统一右上角返回键盘/去底栏 + 丝滑表情顶栏 + 分步选词防吞尾与防误清</span></th>
+              <td><strong>60.2%</strong> (241/400) <span class="delta delta-pos">+3.0%</span><span class="sub-th">Top3 71.2% · 首屏 76.0% · 1.05 ms</span></td>
+              <td><strong>37.8%</strong> (151/400) <span class="delta delta-pos">+9.0%</span><span class="sub-th">Top3 43.8% · 首屏 47.8% · 2.08 ms</span></td>
+              <td>10/10 PASS (277 checks)</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B76<span class="sub-th">2026-11-27 08:09 · Build 76: Hex大字号与四角矢量键 + 顶栏放大/语音纯图标 + 三大面板去底栏 + 实际大小分步选词修复</span></th>
+              <td><strong>60.2%</strong> (241/400) <span class="delta delta-pos">+3.0%</span><span class="sub-th">Top3 71.2% · 首屏 76.0% · 1.03 ms</span></td>
+              <td><strong>37.8%</strong> (151/400) <span class="delta delta-pos">+9.0%</span><span class="sub-th">Top3 43.8% · 首屏 47.8% · 2.08 ms</span></td>
+              <td>10/10 PASS (276 checks)</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B75<span class="sub-th">2026-11-27 02:29 · Build 75: T9核心五项修复 + 首屏阶梯Top-3与ChoiceRanker精排恢复 + Hex 3×2菜单与语音静音</span></th>
+              <td><strong>60.2%</strong> (241/400) <span class="delta delta-pos">+3.0%</span><span class="sub-th">Top3 71.2% · 首屏 76.0% · 0.99 ms</span></td>
+              <td><strong>37.8%</strong> (151/400) <span class="delta delta-pos">+9.0%</span><span class="sub-th">Top3 43.8% · 首屏 47.8% · 2.02 ms</span></td>
+              <td>10/10 PASS (273 checks)</td>
+            </tr>
+            <tr>
+              <th>v1.9.9 B44<span class="sub-th">2026-11-20 16:26 · v1.9.9 豆包风格多音节阶梯排序+消除长句emoji与低质全句混排</span></th>
+              <td><strong>60.2%</strong> (241/400) <span class="delta delta-pos">+3.0%</span><span class="sub-th">Top3 61.2% · 2.40 ms</span></td>
+              <td><strong>37.8%</strong> (151/400) <span class="delta delta-pos">+9.0%</span><span class="sub-th">Top3 38.8% · 5.47 ms</span></td>
+              <td>8/8 PASS (147 checks)</td>
+            </tr>
+            <tr>
+              <th>v1.9.8 B43<span class="sub-th">2026-11-20 15:55 · v1.9.8 多音节首屏分层混排优化</span></th>
+              <td><strong>60.2%</strong> (241/400) <span class="delta delta-pos">+3.0%</span><span class="sub-th">Top3 67.5% · 2.36 ms</span></td>
+              <td><strong>37.8%</strong> (151/400) <span class="delta delta-pos">+9.0%</span><span class="sub-th">Top3 42.2% · 4.82 ms</span></td>
+              <td>8/8 PASS (147 checks)</td>
+            </tr>
+            <tr>
+              <th>v1.9.7 B42<span class="sub-th">2026-11-20 14:01 · v1.9.7 异步非阻塞解码+零重建候选栏+消除全键盘重排</span></th>
+              <td><strong>60.2%</strong> (241/400) <span class="delta delta-pos">+3.0%</span><span class="sub-th">Top3 72.0% · 2.39 ms</span></td>
+              <td><strong>37.8%</strong> (151/400) <span class="delta delta-pos">+9.0%</span><span class="sub-th">Top3 47.0% · 4.95 ms</span></td>
+              <td>8/8 PASS (147 checks)</td>
+            </tr>
+            <tr>
+              <th>v1.9.6 B41<span class="sub-th">2026-11-20 13:23 · v1.9.6 无锁mmap+L1缓存基准</span></th>
+              <td><strong>60.2%</strong> (241/400) <span class="delta delta-pos">+3.0%</span><span class="sub-th">Top3 72.0% · 2.62 ms</span></td>
+              <td><strong>37.8%</strong> (151/400) <span class="delta delta-pos">+9.0%</span><span class="sub-th">Top3 47.0% · 5.28 ms</span></td>
+              <td>8/8 PASS (147 checks)</td>
+            </tr>
+            <tr>
+              <th>v1.8.0 B33<span class="sub-th">2026-11-20 10:19 · THUOCL/高斯热区/场景感知/mmap/热插拔词包</span></th>
+              <td><strong>60.2%</strong> (241/400) <span class="delta delta-pos">+3.0%</span><span class="sub-th">Top3 72.0% · 2.80 ms</span></td>
+              <td><strong>37.8%</strong> (151/400) <span class="delta delta-pos">+9.0%</span><span class="sub-th">Top3 47.0% · 5.25 ms</span></td>
+              <td>8/8 PASS (147 checks)</td>
+            </tr>
+            <tr>
+              <th>v1.7.0 B32<span class="sub-th">2026-11-20 08:47 · 语音光标/T9图标/350地名/微动效</span></th>
+              <td><strong>60.2%</strong> (241/400) <span class="delta delta-pos">+3.0%</span><span class="sub-th">Top3 72.0% · 2.38 ms</span></td>
+              <td><strong>37.8%</strong> (151/400) <span class="delta delta-pos">+9.0%</span><span class="sub-th">Top3 47.0% · 4.76 ms</span></td>
+              <td>4/4 PASS (111 checks)</td>
+            </tr>
+            <tr>
+              <th>v1.2.0 B18<span class="sub-th">2026-11-19 09:26 · 双域整句纠错 + 8M Transformer 精排</span></th>
+              <td><strong>60.2%</strong> (241/400) <span class="delta delta-pos">+3.0%</span><span class="sub-th">Top3 75.0% · 2.30 ms</span></td>
+              <td><strong>37.8%</strong> (151/400) <span class="delta delta-pos">+9.0%</span><span class="sub-th">Top3 48.5% · 4.30 ms</span></td>
+              <td>PASS</td>
+            </tr>
+            <tr class="row-baseline">
+              <th>豆包输入法（联网智能）<span class="sub-th">同集横向竞品/旧版基线</span></th>
+              <td>57.2% (229/400)<span class="sub-th">Top3 68.0%</span></td>
+              <td>28.8% (115/400)<span class="sub-th">Top3 41.2%</span></td>
+              <td>-</td>
+            </tr>
+            <tr class="row-baseline">
+              <th>新东方 SDK（旧版基线）<span class="sub-th">同集横向竞品/旧版基线</span></th>
+              <td>31.2% (125/400)<span class="sub-th">Top3 41.2%</span></td>
+              <td>16.2% (65/400)<span class="sub-th">Top3 21.8%</span></td>
+              <td>-</td>
+            </tr>
+            <!-- VERSION_BENCHMARK_END -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      if (/MicroMessenger/i.test(navigator.userAgent)) {
+        document.getElementById('wechat-tip').style.display = 'block';
+      }
+
+      const turboBtn = document.getElementById('turbo-btn');
+      const harmonyBtn = document.getElementById('harmony-btn');
+      const macosBtn = document.getElementById('macos-btn');
+      const iosBtn = document.getElementById('ios-btn');
+      const windowsBtn = document.getElementById('windows-btn');
+      const progressWrap = document.getElementById('progress-wrap');
+      const progressFill = document.getElementById('progress-fill');
+      const progressText = document.getElementById('progress-text');
+      const shaLabel = document.getElementById('sha-label');
+      const shaCode = document.getElementById('apk-sha');
+
+      let manifestData = null;
+      let fallbackUrl = '教师精灵输入法-1.9.9.apk';
+      let currentOs = 'android';
+
+      function updateShaDisplay(os) {
+        const labelMap = {
+          android: 'Android APK',
+          harmony: '鸿蒙通用包',
+          macos: 'macOS PKG',
+          ios: 'iOS IPA',
+          windows: 'Windows EXE'
+        };
+        if (shaLabel) shaLabel.textContent = labelMap[os] || '安装包';
+        if (!shaCode) return;
+        if (!manifestData) {
+          shaCode.textContent = '加载校验码…';
+          return;
+        }
+        const plats = manifestData.platforms || {};
+        let pkg = null;
+        if (os === 'android') pkg = manifestData.apk || manifestData.universal || manifestData.arm64;
+        else if (os === 'harmony') pkg = plats.harmonyos || manifestData.apk || manifestData.universal || manifestData.arm64;
+        else if (os === 'macos') pkg = plats.macos;
+        else if (os === 'ios') pkg = plats.ios;
+        else if (os === 'windows') pkg = plats.windows;
+        shaCode.textContent = (pkg && pkg.sha256) ? pkg.sha256 : '暂无对应平台校验码';
+      }
+
+      async function sha256Hex(buffer) {
+        const digest = await crypto.subtle.digest('SHA-256', buffer);
+        return Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, '0')).join('');
+      }
+
+      fetch('manifest.json?t=' + Date.now(), { cache: 'no-store' })
+        .then(r => r.ok ? r.json() : null)
+        .then(data => {
+          if (!data) return;
+          manifestData = data;
+          const pkg = data.apk || data.universal || data.arm64;
+          document.getElementById('ver-pill').textContent = 'v' + data.version + (data.version_code ? ' (Build ' + data.version_code + ')' : '');
+          document.getElementById('date-pill').textContent = (data.updated_at || '').slice(0, 16);
+          document.getElementById('apk-ver-meta').textContent = 'v' + data.version;
+          if (data.version_code) {
+            const b = document.getElementById('apk-build-meta');
+            if (b) b.textContent = String(data.version_code);
+          }
+          document.getElementById('harmony-ver-meta').textContent = 'v' + data.version;
+          document.getElementById('apk-size').textContent = pkg.mib.toFixed(1);
+          fallbackUrl = pkg.tos_url || pkg.mirror_ghfast || pkg.github_url || fallbackUrl;
+          const plats = data.platforms || {};
+          if (plats.macos) {
+            document.getElementById('macos-ver-meta').textContent = 'v' + data.version;
+            document.getElementById('macos-size').textContent = plats.macos.mib.toFixed(1);
+          }
+          if (plats.ios) {
+            document.getElementById('ios-ver-meta').textContent = 'v' + data.version;
+            document.getElementById('ios-size').textContent = plats.ios.mib.toFixed(1);
+          }
+          if (plats.windows) {
+            document.getElementById('windows-ver-meta').textContent = 'v' + data.version;
+            document.getElementById('windows-size').textContent = plats.windows.mib.toFixed(1);
+          }
+          updateShaDisplay(currentOs);
+        })
+        .catch(() => {});
+
+      async function startTurboDownload(info, btn, mimeType, backupUrl) {
+        if (info && info.tos_url) {
+          window.location.href = info.tos_url;
+          return;
+        }
+        if (!info || !info.chunks || !info.chunks.length) {
+          if (backupUrl) window.location.href = backupUrl;
+          return;
+        }
+        const chunks = info.chunks;
+        const results = new Array(chunks.length);
+        const loadedPerChunk = new Array(chunks.length).fill(0);
+        const totalBytes = info.bytes;
+        const startedAt = performance.now();
+        const origLabel = btn.textContent;
+
+        btn.disabled = true;
+        progressWrap.style.display = 'block';
+        progressFill.style.width = '0%';
+        progressText.textContent = '正在连接火山引擎北京节点下载 ' + info.filename + '…';
+
+        function renderProgress(extra) {
+          const done = loadedPerChunk.reduce((a, b) => a + b, 0);
+          const pct = Math.min(100, (done * 100) / totalBytes);
+          const sec = Math.max(0.1, (performance.now() - startedAt) / 1000);
+          const speed = (done / 1048576) / sec;
+          progressFill.style.width = pct.toFixed(1) + '%';
+          progressText.textContent = extra || (
+            '火山引擎高速下载 ' + (done / 1048576).toFixed(1) + ' / ' + (totalBytes / 1048576).toFixed(1) +
+            ' MiB (' + pct.toFixed(0) + '%) · ' + speed.toFixed(2) + ' MiB/s'
+          );
+        }
+
+        let cursor = 0;
+        async function worker() {
+          while (cursor < chunks.length) {
+            const idx = cursor++;
+            const meta = chunks[idx];
+            const chunkUrl = meta.sha256
+              ? (meta.path + (meta.path.indexOf('?') >= 0 ? '&' : '?') + 'v=' + meta.sha256.slice(0, 12))
+              : meta.path;
+            let attempt = 0;
+            while (true) {
+              attempt++;
+              try {
+                const resp = await fetch(chunkUrl, { cache: 'force-cache' });
+                if (!resp.ok) throw new Error('HTTP ' + resp.status);
+                const reader = resp.body && resp.body.getReader ? resp.body.getReader() : null;
+                let buf;
+                if (reader) {
+                  const parts = [];
+                  let rec = 0;
+                  while (true) {
+                    const step = await reader.read();
+                    if (step.done) break;
+                    parts.push(step.value);
+                    rec += step.value.byteLength;
+                    loadedPerChunk[idx] = rec;
+                    renderProgress();
+                  }
+                  const merged = new Uint8Array(rec);
+                  let off = 0;
+                  for (const p of parts) { merged.set(p, off); off += p.byteLength; }
+                  buf = merged.buffer;
+                } else {
+                  buf = await resp.arrayBuffer();
+                  loadedPerChunk[idx] = buf.byteLength;
+                  renderProgress();
+                }
+                if (crypto && crypto.subtle && meta.sha256) {
+                  const hex = await sha256Hex(buf);
+                  if (hex !== meta.sha256) throw new Error('分片校验不匹配');
+                }
+                results[idx] = buf;
+                break;
+              } catch (err) {
+                if (attempt >= 3) throw err;
+                await new Promise(r => setTimeout(r, 400 * attempt));
+              }
+            }
+          }
+        }
+
+        try {
+          const concurrency = Math.min(8, chunks.length);
+          const pool = [];
+          for (let w = 0; w < concurrency; w++) pool.push(worker());
+          await Promise.all(pool);
+          renderProgress('✅ 校验通过，正在保存 ' + info.filename + '…');
+          const blob = new Blob(results, { type: mimeType || 'application/octet-stream' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = info.filename;
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          setTimeout(() => URL.revokeObjectURL(url), 60000);
+          btn.disabled = false;
+          btn.textContent = '✅ 下载完成，点击可重新下载';
+        } catch (err) {
+          progressText.textContent = '⚠️ 通道异常（' + err.message + '），正在切换备用线路…';
+          btn.disabled = false;
+          btn.textContent = origLabel;
+          if (backupUrl) window.location.href = backupUrl;
+        }
+      }
+
+      turboBtn.addEventListener('click', () => {
+        const info = manifestData && (manifestData.apk || manifestData.universal || manifestData.arm64);
+        startTurboDownload(info, turboBtn, 'application/vnd.android.package-archive', fallbackUrl);
+      });
+      harmonyBtn.addEventListener('click', () => {
+        const info = manifestData && ((manifestData.platforms && manifestData.platforms.harmonyos) || manifestData.apk);
+        startTurboDownload(info, harmonyBtn, 'application/vnd.android.package-archive', fallbackUrl);
+      });
+      macosBtn.addEventListener('click', () => {
+        const info = manifestData && manifestData.platforms && manifestData.platforms.macos;
+        startTurboDownload(info, macosBtn, 'application/octet-stream', '');
+      });
+      iosBtn.addEventListener('click', () => {
+        const info = manifestData && manifestData.platforms && manifestData.platforms.ios;
+        startTurboDownload(info, iosBtn, 'application/octet-stream', '');
+      });
+      windowsBtn.addEventListener('click', () => {
+        const info = manifestData && manifestData.platforms && manifestData.platforms.windows;
+        startTurboDownload(info, windowsBtn, 'application/octet-stream', '');
+      });
+      // 四端平台切换（按设备自动定位当前系统，规整展示单平台下载卡片）
+      const osTabs = Array.from(document.querySelectorAll('.os-tab'));
+      const osPanels = Array.from(document.querySelectorAll('.os-panel'));
+      function selectOs(os) {
+        currentOs = os;
+        osTabs.forEach(t => t.classList.toggle('active', t.dataset.os === os));
+        osPanels.forEach(p => p.classList.toggle('active', p.id === 'panel-' + os));
+        updateShaDisplay(os);
+      }
+      osTabs.forEach(t => t.addEventListener('click', () => selectOs(t.dataset.os)));
+      const ua = navigator.userAgent || '';
+      if (/OpenHarmony|HarmonyOS/i.test(ua) && !/Android/i.test(ua)) selectOs('harmony');
+      else if (/Android|HarmonyOS/i.test(ua)) selectOs('android');
+      else if (/iPhone|iPad|iPod/i.test(ua)) selectOs('ios');
+      else if (/Windows/i.test(ua)) selectOs('windows');
+      else if (/Macintosh|Mac OS X/i.test(ua)) selectOs('macos');
+      else updateShaDisplay(currentOs);
+
+      // 实测对比 4-Tab 切换
+      const benchTabs = Array.from(document.querySelectorAll('.bench-tab'));
+      const benchPanels = Array.from(document.querySelectorAll('.bench-panel'));
+      function selectBench(key) {
+        benchTabs.forEach(t => {
+          const on = t.dataset.bench === key;
+          t.classList.toggle('active', on);
+          t.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        benchPanels.forEach(p => p.classList.toggle('active', p.id === 'bench-' + key));
+      }
+      benchTabs.forEach(t => t.addEventListener('click', () => selectBench(t.dataset.bench)));
+
+      // 深浅主题切换与系统/夜间护眼联动
+      const rootEl = document.documentElement;
+      const metaTheme = document.getElementById('meta-theme-color');
+      const themeToggle = document.getElementById('theme-toggle');
+      const themeIcon = document.getElementById('theme-icon');
+      const themeLabel = document.getElementById('theme-label');
+      const mqlDark = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+      const SUN_SVG = '<circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>';
+      const MOON_SVG = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+
+      function getSavedTheme() {
+        try { return localStorage.getItem('tpa_site_theme'); } catch (e) { return null; }
+      }
+      function resolveAutoTheme() {
+        const hour = new Date().getHours();
+        return (mqlDark && mqlDark.matches) || hour >= 20 || hour < 7 ? 'dark' : 'light';
+      }
+      function applySiteTheme(theme, persist) {
+        rootEl.setAttribute('data-theme', theme);
+        if (metaTheme) metaTheme.setAttribute('content', theme === 'dark' ? '#0b1120' : '#f1f5f9');
+        if (persist) {
+          try { localStorage.setItem('tpa_site_theme', theme); } catch (e) {}
+        }
+        const isDark = theme === 'dark';
+        if (themeIcon) themeIcon.innerHTML = isDark ? SUN_SVG : MOON_SVG;
+        if (themeLabel) themeLabel.textContent = isDark ? '浅色' : '深色';
+        if (themeToggle) {
+          themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+          themeToggle.setAttribute('title', isDark ? '当前深色护眼模式，点击切换浅色' : '当前浅色模式，点击切换深色');
+        }
+      }
+      applySiteTheme(rootEl.getAttribute('data-theme') || resolveAutoTheme(), false);
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          const cur = rootEl.getAttribute('data-theme') || resolveAutoTheme();
+          applySiteTheme(cur === 'dark' ? 'light' : 'dark', true);
+        });
+      }
+      if (mqlDark) {
+        const onSysChange = () => {
+          const saved = getSavedTheme();
+          if (saved !== 'dark' && saved !== 'light') applySiteTheme(resolveAutoTheme(), false);
+        };
+        if (mqlDark.addEventListener) mqlDark.addEventListener('change', onSysChange);
+        else if (mqlDark.addListener) mqlDark.addListener(onSysChange);
+      }
+    })();
+  </script>
+</body>
+</html>
